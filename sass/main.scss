@@ -10,6 +10,7 @@ html,
 body {
     position: relative;
     height: 100%;
+    font-size: 18px;
 }
 
 body {
@@ -194,7 +195,36 @@ header {
 }
 
 footer {
-    background-color: #666;
-    // padding: 20px;
-    height: 100px;
+    background-color: #252525;
+    padding: 48px 40px 200px;
+    color: $maincolor;
+    &>ul {
+        display: flex;
+        flex-wrap: wrap;
+        &>li {
+            flex: 1;
+            &:nth-child(1) {
+                flex: 3;
+                display: flex;
+                flex-wrap: wrap;
+                &>* {
+                    display: block;
+                    align-self: flex-end;
+                }
+                img {
+                    margin-bottom: 16px;
+                }
+            }
+            h4 {
+                margin-bottom: 45px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            li {
+                margin-bottom: 27px;
+                font-size: 21px;
+                font-weight: 100;
+            }
+        }
+    }
 }
