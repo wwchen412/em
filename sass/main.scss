@@ -75,13 +75,11 @@ header {
 }
 
 .mainSlider {
-    &.swiper-container {
-        width: 100%;
-        height: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .swiper-slide {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    .section {
         background-size: cover;
         background-repeat: no-repeat;
         position: relative;
@@ -91,15 +89,22 @@ header {
             position: absolute;
             top: 0;
             left: 50%;
-            transform: translate(-50%, 200%);
+            transform: translate(-50%, 0);
             z-index: 0;
-            opacity: 0;
-            transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
         }
-        &.swiper-slide-active {
+        &.active {
             .bgimg {
-                opacity: 1;
-                transform: translate(-50%, 0);
+                animation: fadeIn 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+            }
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                    transform: translate(-50%, 200%);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translate(-50%, 0);
+                }
             }
         }
     }
@@ -107,6 +112,10 @@ header {
         color: $maincolor;
         position: relative;
         z-index: 1;
+        display: block;
+        margin: auto;
+        text-align: center;
+        max-width: 400px;
         a {
             display: block;
             margin: 0 auto;
@@ -134,20 +143,36 @@ header {
 }
 
 #dots {
+    position: absolute;
     right: auto !important;
     left: 40px;
     bottom: 140px;
     top: auto;
     transform: translate(0);
-    .swiper-pagination-bullet-active {
+    .dot-active {
         background-color: $maincolor;
     }
-    .swiper-pagination-bullet {
-        background-color: lighten($maincolor, 1%);
+    .dot {
+        margin: 10px 0;
+        transition: .2s;
+        a {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: block;
+            background-color: lighten($maincolor, 5%);
+        }
+        &.active {
+            a {
+                background-color: $maincolor;
+            }
+            transform: scale(1.2);
+            transition: .2s;
+        }
     }
 }
 
-.swiper-slide {
+.section {
     text-align: center;
     font-size: 18px;
     background: #fff;
@@ -168,7 +193,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 99;
-    padding: 30px 40px 40px;
+    padding: 0px 40px 40px;
     p {
         color: $maincolor;
     }

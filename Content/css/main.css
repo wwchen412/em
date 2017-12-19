@@ -62,64 +62,80 @@ header {
         width: 52px;
         margin-right: 17px; }
 
-.mainSlider.swiper-container {
+.mainSlider {
   width: 100%;
   height: 100%;
   margin-left: auto;
   margin-right: auto; }
+  .mainSlider .section {
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative; }
+    .mainSlider .section .bgimg {
+      max-width: 600px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+      z-index: 0; }
+    .mainSlider .section.active .bgimg {
+      -webkit-animation: fadeIn 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+      animation: fadeIn 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards; }
 
-.mainSlider .swiper-slide {
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative; }
-  .mainSlider .swiper-slide .bgimg {
-    max-width: 600px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    -webkit-transform: translate(-50%, 200%);
-    -ms-transform: translate(-50%, 200%);
-    transform: translate(-50%, 200%);
-    z-index: 0;
+@-webkit-keyframes fadeIn {
+  0% {
     opacity: 0;
-    -webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    -o-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); }
-  .mainSlider .swiper-slide.swiper-slide-active .bgimg {
+    -webkit-transform: translate(-50%, 200%);
+    transform: translate(-50%, 200%); }
+  100% {
     opacity: 1;
     -webkit-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    transform: translate(-50%, 0); }
+    transform: translate(-50%, 0); } }
 
-.mainSlider .content {
-  color: #ddd;
-  position: relative;
-  z-index: 1; }
-  .mainSlider .content a {
-    display: block;
-    margin: 0 auto;
-    padding: 10px;
-    border: 1px solid #ddd;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, 200%);
+    transform: translate(-50%, 200%); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); } }
+  .mainSlider .content {
     color: #ddd;
-    border-radius: 30px;
-    text-decoration: none; }
-
-.mainSlider .video-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%); }
-  .mainSlider .video-wrap video {
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin: auto;
+    text-align: center;
+    max-width: 400px; }
+    .mainSlider .content a {
+      display: block;
+      margin: 0 auto;
+      padding: 10px;
+      border: 1px solid #ddd;
+      color: #ddd;
+      border-radius: 30px;
+      text-decoration: none; }
+  .mainSlider .video-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover; }
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+    .mainSlider .video-wrap video {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
 
 #dots {
+  position: absolute;
   right: auto !important;
   left: 40px;
   bottom: 140px;
@@ -127,12 +143,30 @@ header {
   -webkit-transform: translate(0);
   -ms-transform: translate(0);
   transform: translate(0); }
-  #dots .swiper-pagination-bullet-active {
+  #dots .dot-active {
     background-color: #ddd; }
-  #dots .swiper-pagination-bullet {
-    background-color: #e0e0e0; }
+  #dots .dot {
+    margin: 10px 0;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s; }
+    #dots .dot a {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: block;
+      background-color: #eaeaea; }
+    #dots .dot.active {
+      -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      transform: scale(1.2);
+      -webkit-transition: .2s;
+      -o-transition: .2s;
+      transition: .2s; }
+      #dots .dot.active a {
+        background-color: #ddd; }
 
-.swiper-slide {
+.section {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -145,7 +179,7 @@ header {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
-  .swiper-slide h2 {
+  .section h2 {
     font-size: 72px;
     font-weight: 400; }
 
@@ -155,7 +189,7 @@ header {
   left: 0;
   width: 100%;
   z-index: 99;
-  padding: 30px 40px 40px; }
+  padding: 0px 40px 40px; }
   .slider-footer p {
     color: #ddd; }
   .slider-footer ul {

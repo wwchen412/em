@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>EM</title>
-    <link rel="stylesheet" href="Content/css/swiper.min.css">
+    <!-- <link rel="stylesheet" href="Content/css/slider.min.css"> -->
+    <link rel="stylesheet" href="Content/css/jquery.fullpage.min.css">
     <link rel="stylesheet" href="Content/css/main.css">
 
 </head>
@@ -28,9 +29,9 @@
         </nav>
     </header>
 
-    <div class="mainSlider swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
+    <div class="mainSlider slider-container">
+        <div class="slider-wrapper" id="fullpage">
+            <div class="section">
                 <div class="video-wrap">
                     <video src="Content/img/indexBG.mp4" autoplay muted loop></video>
                 </div>
@@ -40,7 +41,7 @@
                         <br>ON THE GO</h2>
                 </div>
             </div>
-            <div class="swiper-slide" style="background-image:url('Content/img/section2.png')">
+            <div class="section" style="background-image:url('Content/img/section2.png')">
 
                 <div class="content">
                     <!-- 圖文編輯器內容 -->
@@ -53,7 +54,7 @@
                 <!-- 設定的圖片 -->
                 <img src="Content/img/item.png" alt="" class="bgimg">
             </div>
-            <div class="swiper-slide" style="background-image:url('Content/img/section3.jpg')">
+            <div class="section" style="background-image:url('Content/img/section3.jpg')">
                 <div class="content">
                     <!-- 圖文編輯器內容 -->
                     <div class="main-content">
@@ -65,7 +66,7 @@
                 <!-- 設定的圖片 -->
                 <img src="Content/img/item2.png" alt="" class="bgimg">
             </div>
-            <div class="swiper-slide" style="background-image:url('Content/img/section2.png')">
+            <div class="section" style="background-image:url('Content/img/section2.png')">
 
                 <div class="content">
                     <!-- 圖文編輯器內容 -->
@@ -78,10 +79,65 @@
                 <!-- 設定的圖片 -->
                 <img src="Content/img/item3.png" alt="" class="bgimg">
             </div>
+            <div class="section fp-auto-height">
+                <footer>
+                    <ul>
+                        <li>
+                            <div>
+                                <img src="Content/img/logo.svg" alt="" width="163px">
+                                <p>© 2017 EnergieMAX Design Corp. All Rights Reserved
+                                </p>
+                            </div>
+
+                        </li>
+                        <li>
+                            <h4>Product</h4>
+                            <ul>
+                                <li>Power</li>
+                                <li>Cable</li>
+                                <li>Accessories</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>Support</h4>
+                            <ul>
+                                <li>FAQ</li>
+                                <li>Warranty</li>
+                                <li>Privacy Policy</li>
+                                <li>Terms & Conditions</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>About EnergieMAX
+                            </h4>
+                            <ul>
+                                <li>News</li>
+                                <li>Contact</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </footer>
+            </div>
 
         </div>
         <!-- Add Pagination -->
-        <div class="swiper-pagination" id="dots"></div>
+        <div id="dots">
+            <div data-menuanchor="firstPage" class="dot active">
+                <a href="#firstPage"></a>
+            </div>
+            <div data-menuanchor="secondPage" class="dot">
+                <a href="#secondPage"></a>
+            </div>
+            <div data-menuanchor="3rdPage" class="dot">
+                <a href="#3rdPage"></a>
+            </div>
+            <div data-menuanchor="4thPage" class="dot">
+                <a href="#4thPage"></a>
+            </div>
+        </div>
+
+        <!--  -->
         <div class="slider-footer">
             <ul>
                 <li>
@@ -107,58 +163,18 @@
     </div>
 
 
-    <footer>
-        <ul>
-            <li>
-                <div>
-                    <img src="Content/img/logo.svg" alt="" width="163px">
-                    <p>© 2017 EnergieMAX Design Corp. All Rights Reserved
-                    </p>
-                </div>
 
-            </li>
-            <li>
-                <h4>Product</h4>
-                <ul>
-                    <li>Power</li>
-                    <li>Cable</li>
-                    <li>Accessories</li>
-                </ul>
-            </li>
-            <li>
-                <h4>Support</h4>
-                <ul>
-                    <li>FAQ</li>
-                    <li>Warranty</li>
-                    <li>Privacy Policy</li>
-                    <li>Terms & Conditions</li>
-                </ul>
-            </li>
-            <li>
-                <h4>About EnergieMAX
-                </h4>
-                <ul>
-                    <li>News</li>
-                    <li>Contact</li>
-                </ul>
-            </li>
-        </ul>
-
-    </footer>
     <!-- jQuery JS 1.12.4 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="scripts/swiper.min.js"></script>
-    <!-- Swiper -->
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            direction: 'vertical',
-            slidesPerView: 1,
+    <script src="scripts/jquery.fullpage.min.js"></script>
 
-            mousewheel: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#fullpage').fullpage({
+                anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage'],
+                menu: '#dots'
+            });
+
         });
     </script>
 
