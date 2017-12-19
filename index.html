@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>EM</title>
-    <!-- <link rel="stylesheet" href="Content/css/slider.min.css"> -->
+
     <link rel="stylesheet" href="Content/css/jquery.fullpage.min.css">
     <link rel="stylesheet" href="Content/css/main.css">
 
@@ -33,7 +33,7 @@
         <div class="slider-wrapper" id="fullpage">
             <div class="section">
                 <div class="video-wrap">
-                    <video src="Content/img/indexBG.mp4" autoplay muted loop></video>
+                    <video src="Content/img/indexBG.mp4" autoplay muted loop data-autoplay></video>
                 </div>
 
                 <div class="content">
@@ -47,7 +47,7 @@
                     <!-- 圖文編輯器內容 -->
                     <div class="main-content">
                         <h2>POWER</h2>
-                        <p style="margin:52px 0;">Work in more than 150 contries</p>
+                        <p style="">Work in more than 150 contries</p>
                     </div>
                     <a href="">Explore</a>
                 </div>
@@ -59,7 +59,7 @@
                     <!-- 圖文編輯器內容 -->
                     <div class="main-content">
                         <h2>POWER</h2>
-                        <p style="margin:52px 0;">Work in more than 150 contries</p>
+                        <p style="">Work in more than 150 contries</p>
                     </div>
                     <a href="">Explore</a>
                 </div>
@@ -72,14 +72,14 @@
                     <!-- 圖文編輯器內容 -->
                     <div class="main-content">
                         <h2>POWER</h2>
-                        <p style="margin:52px 0;">Work in more than 150 contries</p>
+                        <p style="">Work in more than 150 contries</p>
                     </div>
                     <a href="">Explore</a>
                 </div>
                 <!-- 設定的圖片 -->
                 <img src="Content/img/item3.png" alt="" class="bgimg">
             </div>
-            <div class="section fp-auto-height">
+            <div class="section fp-auto-height fp-auto-height-responsive">
                 <footer>
                     <ul>
                         <li>
@@ -122,7 +122,7 @@
 
         </div>
         <!-- Add Pagination -->
-        <div id="dots">
+        <div id="dots" class="d-sm-none">
             <div data-menuanchor="firstPage" class="dot active">
                 <a href="#firstPage"></a>
             </div>
@@ -140,15 +140,15 @@
         <!--  -->
         <div class="slider-footer">
             <ul>
-                <li>
+                <li class="d-sm-none">
                     <a href=""><img src="Content/img/logo.svg" alt="" width="150px" style="margin:30px 0;"></a>
                     <p style="font-size:18px">2017 All Right Reserved</p>
                 </li>
                 <li class="text-center">
                     <img src="Content/img/arrow.svg" alt="" width="40px" class="inlineBlock" style="margin-right:22px;">
-                    <p class="inlineBlock">Scrool Down</p>
+                    <p class="inlineBlock d-sm-none">Scrool Down</p>
                 </li>
-                <li class="text-right contact">
+                <li class="text-right contact d-sm-none">
                     <p class="inlineBlock">EN / CN</p>
                     <a href="">
                         <img src="Content/img/fb.svg" alt="" class="inlineBlock">
@@ -171,8 +171,24 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#fullpage').fullpage({
-                anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage'],
-                menu: '#dots'
+                anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'footer'],
+                menu: '#dots',
+                keyboardScrolling: true,
+                animateAnchor: true,
+                scrollOverflow: true,
+                responsiveWidth: 576,
+                onLeave: function(index, nextIndex, direction) {
+                    var leavingSection = $(this);
+
+                    //after leaving section 2
+                    if (index == 4 && direction == 'down') {
+                        $('.slider-footer').fadeOut();
+                        $('#dots').fadeOut();
+                    } else {
+                        $('.slider-footer').fadeIn();
+                        $('#dots').fadeIn();
+                    }
+                }
             });
 
         });
