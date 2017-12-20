@@ -32,14 +32,14 @@
     <div class="mainSlider products">
         <div id="fullpage">
             <!-- 商品規格 -->
-            <div class="section thumbnail" style="background-image:url('Content/img/section2.png')">
+            <div class="section thumbnail mainpage" style="background-image:url('Content/img/section2.png')">
 
                 <div class="content">
                     <div class="container">
                         <!-- 圖文編輯器內容 -->
                         <div class="main-content">
                             <h2 class="target">400QC</h2>
-                            <p class="target" style="">Work in more than 150 contries</p>
+                            <p class="target" style="">4 –Port Travel Charger 40W with Quick Charge 3.0</p>
                             <h4 class="target">USD 19.99</h4>
                         </div>
 
@@ -86,9 +86,10 @@
                                 </div>
 
                             </li>
-                            <li class="text-left">
-                                <h3>Experience Quick Charge 3.0</h3>
-                                <p>World's quick charging leader, you can charge a typical phone from 0 to 80% in about 35 minutes.</p>
+                            <li>
+                                <h3>Power all your devices together
+                                </h3>
+                                <p>Four USB ports pumping out 40W of power to keep all your devices charged up and ready to go.</p>
                             </li>
                         </ul>
                     </div>
@@ -116,8 +117,8 @@
                     <div class="half halfL">
                         <div class="text">
                             <div class="text-inner">
-                                <h3>Power all your devices together</h3>
-                                <p>Four USB ports pumping out 40W of power to keep all your devices charged up and ready to go.</p>
+                                <h3>Quick charge ready</h3>
+                                <p>The indicator lights up in green when QC 3.0 is activated </p>
                             </div>
 
                         </div>
@@ -217,7 +218,7 @@
 
             </div>
             <!-- 商品規格 -->
-            <div class="section" style="background-image:url('Content/img/section2.png')">
+            <div class="section section-spec" style="background-image:url('Content/img/section2.png')">
 
                 <div class="content">
                     <div class="container">
@@ -392,7 +393,7 @@
                     var leavingSection = $(this);
 
                     //after leaving section 2
-                    if (index == 4 && direction == 'down') {
+                    if (index >= 1 && direction == 'down') {
                         $('.slider-footer').fadeOut();
                         $('#dots').fadeOut();
                     } else {
