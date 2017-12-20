@@ -295,6 +295,31 @@ header {
             object-fit: cover;
         }
     }
+    .product-select {
+        margin-top: 44px;
+        li {
+            display: inline-block;
+            // background-color: #f00;
+            width: 20px;
+            height: 20px;
+            border: 2px solid $navcolor;
+            padding: 10px;
+            border-radius: 50%;
+            margin: 0 10px;
+            cursor: pointer;
+            position: relative;
+            span {
+                display: block;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
 }
 
 #dots {
