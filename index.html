@@ -28,7 +28,7 @@
             </ul>
         </nav>
     </header>
-
+    <!-- 第一區塊  -->
     <div class="mainSlider slider-container">
         <div class="slider-wrapper" id="fullpage">
             <div class="section">
@@ -38,43 +38,43 @@
 
                 <div class="content">
                     <div class="container">
-                        <h2>POWER
+                        <h2 class="target">POWER
                             <br>ON THE GO</h2>
                     </div>
 
                 </div>
             </div>
-            <div class="section" style="background-image:url('Content/img/section2.png')">
+            <div class="section thumbnail" style="background-image:url('Content/img/section2.png')">
 
                 <div class="content">
                     <div class="container">
 
                         <!-- 圖文編輯器內容 -->
                         <div class="main-content">
-                            <h2>POWER</h2>
-                            <p style="">Work in more than 150 contries</p>
+                            <h2 class="target">POWER</h2>
+                            <p style="" class="target">Work in more than 150 contries</p>
                         </div>
-                        <a href="">Explore</a>
+                        <a href="" class="target">Explore</a>
                     </div>
                 </div>
                 <!-- 設定的圖片 -->
                 <img src="Content/img/item.png" alt="" class="bgimg">
             </div>
-            <div class="section" style="background-image:url('Content/img/section3.jpg')">
+            <div class="section thumbnail" style="background-image:url('Content/img/section3.jpg')">
                 <div class="content">
                     <div class="container">
                         <!-- 圖文編輯器內容 -->
                         <div class="main-content">
-                            <h2>POWER</h2>
-                            <p style="">Work in more than 150 contries</p>
+                            <h2 class="target">POWER</h2>
+                            <p style="" class="target">Work in more than 150 contries</p>
                         </div>
-                        <a href="">Explore</a>
+                        <a href="" class="target">Explore</a>
                     </div>
                 </div>
                 <!-- 設定的圖片 -->
                 <img src="Content/img/item2.png" alt="" class="bgimg">
             </div>
-            <div class="section" style="background-image:url('Content/img/section2.png')">
+            <div class="section thumbnail" style="background-image:url('Content/img/section2.png')">
 
                 <div class="content">
                     <div class="container">
@@ -82,10 +82,10 @@
 
                         <!-- 圖文編輯器內容 -->
                         <div class="main-content">
-                            <h2>POWER</h2>
-                            <p style="">Work in more than 150 contries</p>
+                            <h2 class="target">POWER</h2>
+                            <p class="target">Work in more than 150 contries</p>
                         </div>
-                        <a href="">Explore</a>
+                        <a href="" class="target">Explore</a>
                     </div>
                 </div>
                 <!-- 設定的圖片 -->
@@ -154,14 +154,14 @@
             <ul>
                 <li class="d-sm-none">
                     <a href=""><img src="Content/img/logo.svg" alt="" width="150px" style="margin:30px 0;"></a>
-                    <p style="font-size:18px">2017 All Right Reserved</p>
+                    <p style="font-size:18px" class="">2017 All Right Reserved</p>
                 </li>
                 <li class="text-center">
                     <img src="Content/img/arrow.svg" alt="" width="40px" class="inlineBlock" style="margin-right:22px;">
-                    <p class="inlineBlock d-sm-none">Scrool Down</p>
+                    <p class="inlineBlock d-sm-none ">Scrool Down</p>
                 </li>
                 <li class="text-right contact d-sm-none">
-                    <p class="inlineBlock">EN / CN</p>
+                    <p class="inlineBlock ">EN / CN</p>
                     <a href="">
                         <img src="Content/img/fb.svg" alt="" class="inlineBlock">
                     </a>
@@ -179,15 +179,22 @@
     <!-- jQuery JS 1.12.4 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="scripts/jquery.fullpage.min.js"></script>
+    <script src="scripts/jquery.fullpage.extensions.min.js"></script>
+    <script src="scripts/bgcheck.js"></script>
 
     <script type="text/javascript">
+        BackgroundCheck.init({
+            targets: '.target',
+            images: '.thumbnail'
+        });
         $(document).ready(function() {
+
             $('#fullpage').fullpage({
                 anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'footer'],
                 menu: '#dots',
                 keyboardScrolling: true,
                 animateAnchor: true,
-                scrollOverflow: true,
+                // scrollOverflow: true,
                 responsiveWidth: 576,
                 onLeave: function(index, nextIndex, direction) {
                     var leavingSection = $(this);
@@ -200,10 +207,19 @@
                         $('.slider-footer').fadeIn();
                         $('#dots').fadeIn();
                     }
+                },
+                afterLoad: function(anchorLink, index) {
+                    BackgroundCheck.refresh();
+                },
+                afterRender: function() {
+                    BackgroundCheck.refresh();
                 }
+
             });
 
         });
+    </script>
+    <script>
     </script>
 
 </body>
