@@ -227,6 +227,75 @@ header {
                     }
                 }
             }
+            // fadein
+            .fadeLeft {
+                animation: fadeLeft 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+            }
+            @keyframes fadeLeft {
+                0% {
+                    opacity: 0;
+                    transform: translate(50%, 0%);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translate(0%, 0%);
+                }
+            }
+            .fadeRight {
+                animation: fadeRight 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+            }
+            @keyframes fadeRight {
+                0% {
+                    opacity: 0;
+                    transform: translate(-50%, 0%);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translate(0%, 0%);
+                }
+            }
+            // fadein
+            .fadeLeft {
+                animation: fadeLeft 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+            }
+            @keyframes fadeLeft {
+                0% {
+                    opacity: 0;
+                    transform: translate(50%, 0%);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translate(0%, 0%);
+                }
+            }
+            .fadeDown {
+                opacity: 0;
+                animation: fadeDown 2s 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+            }
+            @keyframes fadeDown {
+                0% {
+                    opacity: 0;
+                    transform: translate(0%, -50%);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translate(0%, 0%);
+                }
+            }
+            .fadeUp {
+                opacity: 0;
+                animation: fadeUp 2s 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+            }
+            @keyframes fadeUp {
+                0% {
+                    opacity: 0;
+                    transform: translate(0%, 50%);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translate(0%, 0%);
+                }
+            }
         }
     }
     // 內容
