@@ -136,6 +136,9 @@ header {
             &.menu {
                 width: 52px;
                 margin-right: 17px;
+                @include range-width(300px, 768px) {
+                    width: 32px;
+                }
             }
         }
         .background--light {

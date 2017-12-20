@@ -117,6 +117,10 @@ header {
       header li svg.menu {
         width: 52px;
         margin-right: 17px; }
+        @media screen and (max-width: 768px) and (min-width: 300px) {
+          header li img.menu,
+          header li svg.menu {
+            width: 32px; } }
     header li .background--light svg .cls-2 {
       fill: #252525; }
 
