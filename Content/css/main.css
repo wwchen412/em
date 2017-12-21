@@ -471,10 +471,7 @@ footer {
         font-size: 26px;
         margin-bottom: 10px; } }
   .products .content .animation-text .circle {
-    width: 264px;
-    height: 264px;
-    border: 1px solid #B43D37;
-    border-radius: 50%;
+    position: relative;
     margin: 0 auto;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -496,6 +493,13 @@ footer {
       @media screen and (max-width: 768px) and (min-width: 300px) {
         .products .content .animation-text .circle h4 {
           font-size: 28px; } }
+    .products .content .animation-text .circle svg + div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
 
 .products .content.half-block {
   height: 100%; }

@@ -87,14 +87,18 @@
                                 <img src="Content/img/VN7CiU2_.jpg" alt="">
                             </li>
                             <li>
-                                <div class="circle">
+                                <div class="figure circle">
+                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+                                                <path class="path" fill="none" stroke="#B43D37" stroke-width="3" stroke-miterlimit="10" d="M100.416,2.001C154.35,2.225,198,46.015,198,100
+                                                    c0,54.124-43.876,98-98,98S2,154.124,2,100S45.876,2,100,2" style=" stroke-dasharray:615.423px 615.423px;stroke-dashoffset: 615.423px;"/>
+                                            </svg>
                                     <div>
-                                        <h4>80%</h4>
+                                        <h4><span>80</span></h4>
                                         <h4>in 35 min</h4>
 
                                     </div>
-
                                 </div>
+
 
                             </li>
                             <li>
@@ -352,6 +356,15 @@
             <div data-menuanchor="4thPage" class="dot">
                 <a href="#4thPage"></a>
             </div>
+            <div data-menuanchor="5thPage" class="dot">
+                <a href="#5thPage"></a>
+            </div>
+            <div data-menuanchor="6thPage" class="dot">
+                <a href="#6thPage"></a>
+            </div>
+            <div data-menuanchor="7thPage" class="dot">
+                <a href="#7thPage"></a>
+            </div>
         </div>
 
         <!--  -->
@@ -386,6 +399,7 @@
     <script src="scripts/jquery.fullpage.min.js"></script>
     <script src="scripts/jquery.fullpage.extensions.min.js"></script>
     <script src="scripts/bgcheck.js"></script>
+    <script src="scripts/velocity.min.js"></script>
 
     <script type="text/javascript">
         BackgroundCheck.init({
@@ -395,7 +409,7 @@
         $(document).ready(function() {
             function initialization() {
                 $('#fullpage').fullpage({
-                    // anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'footer'],
+                    anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage', '7thPage', 'footer'],
                     menu: '#dots',
                     keyboardScrolling: true,
                     animateAnchor: true,
@@ -404,18 +418,25 @@
 
                     onLeave: function(index, nextIndex, direction) {
                         var leavingSection = $(this);
-
+                        console.log(index);
                         //after leaving section 2
                         if (index >= 1 && direction == 'down') {
-                            $('.slider-footer').fadeOut();
+                            $('.arrow').fadeOut();
+                            $('.arrow+p').fadeOut();
+
+                        } else if (index >= 6) {
                             $('#dots').fadeOut();
                         } else {
-                            $('.slider-footer').fadeIn();
+                            $('.arrow').fadeIn();
+                            $('.arrow+p').fadeIn();
                             $('#dots').fadeIn();
                         }
                     },
                     afterLoad: function(anchorLink, index) {
                         BackgroundCheck.refresh();
+                        if (anchorLink == '3rdPage') {
+                            svgCircle();
+                        }
                     },
                     afterRender: function() {
                         BackgroundCheck.refresh();
@@ -423,10 +444,65 @@
                 });
             }
             initialization();
+
             $('#moveSectionDown').click(function(e) {
                 e.preventDefault();
                 $.fn.fullpage.moveSectionDown();
             });
+
+
+            // 圓圈動畫
+            function svgCircle() {
+                var path = $('.circle svg').find('path');
+                var pathLength = path[0].getTotalLength();
+                var speed = 1.5;
+                var percent = parseInt($('.figure span').html()) * 0.01;
+
+                path.css({
+                    'stroke-dasharray': pathLength + ' ' + pathLength,
+                    'stroke-dashoffset': pathLength
+                });
+
+                if (!isIE()) {
+                    $('.path').velocity({
+                        'stroke-dashoffset': pathLength * (1 - percent)
+                    }, {
+                        duration: speed * 1000,
+                        progress: function() {
+                            var percentText = 100 - Math.round(parseFloat($(this).css('stroke-dashoffset')) / pathLength * 100);
+                            $('.figure span').html(percentText + '%');
+                        }
+
+                    });
+
+                } else {
+                    var currentPathLength = pathLength;
+                    var requestAnimationFrameID = requestAnimationFrame(doAnim);
+
+                    function doAnim() {
+                        if (currentPathLength <= pathLength * (1 - percent)) {
+                            cancelAnimationFrame(requestAnimationFrameID);
+                            return;
+                        }
+
+                        var percentText = 100 - Math.round(parseFloat(currentPathLength) / pathLength * 100);
+                        $('.figure h4 span').html(percentText + '%');
+
+                        $('.path').css({
+                            'stroke-dashoffset': currentPathLength
+                        });
+                        currentPathLength -= 2;
+                        requestAnimationFrameID = requestAnimationFrame(doAnim);
+                    }
+                }
+
+                function isIE(userAgent) {
+                    userAgent = userAgent || navigator.userAgent;
+                    return userAgent.indexOf("MSIE ") > -1 || userAgent.indexOf("Trident/") > -1;
+                }
+            }
+
+            // svgCircle();
 
         });
     </script>

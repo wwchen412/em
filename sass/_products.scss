@@ -63,10 +63,11 @@
                 }
             }
             .circle {
-                width: 264px;
-                height: 264px;
-                border: 1px solid #B43D37;
-                border-radius: 50%;
+                // width: 264px;
+                // height: 264px;
+                // border: 1px solid #B43D37;
+                // border-radius: 50%;
+                position: relative;
                 margin: 0 auto;
                 display: flex;
                 flex-wrap: wrap;
@@ -81,6 +82,12 @@
                     @include range-width(300px, 768px) {
                         font-size: 28px;
                     }
+                }
+                svg+div {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
                 }
             }
         }
