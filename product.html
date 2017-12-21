@@ -83,8 +83,8 @@
 
                         <ul class="animation-text">
                             <li>
-                                <h3>Experience Quick Charge 3.0</h3>
-                                <img src="Content/img/VN7CiU2_.jpg" alt="">
+                                <h3 class="fadeDown">Experience Quick Charge 3.0</h3>
+                                <img src="Content/img/VN7CiU2_.jpg" alt="" class="fadeUp">
                             </li>
                             <li>
                                 <div class="figure circle">
@@ -102,9 +102,9 @@
 
                             </li>
                             <li>
-                                <h3>Power all your devices together
+                                <h3 class="fadeDown">Power all your devices together
                                 </h3>
-                                <p>Four USB ports pumping out 40W of power to keep all your devices charged up and ready to go.</p>
+                                <p class="fadeUp">Four USB ports pumping out 40W of power to keep all your devices charged up and ready to go.</p>
                             </li>
                         </ul>
                     </div>
@@ -423,19 +423,23 @@
                         if (index >= 1 && direction == 'down') {
                             $('.arrow').fadeOut();
                             $('.arrow+p').fadeOut();
-
-                        } else if (index >= 6) {
-                            $('#dots').fadeOut();
                         } else {
                             $('.arrow').fadeIn();
                             $('.arrow+p').fadeIn();
-                            $('#dots').fadeIn();
+
                         }
                     },
                     afterLoad: function(anchorLink, index) {
                         BackgroundCheck.refresh();
                         if (anchorLink == '3rdPage') {
                             svgCircle();
+                        } else if (anchorLink == 'footer') {
+                            $('.slider-footer').fadeOut(100);
+                            $('#dots').fadeOut(100);
+
+                        } else {
+                            $('.slider-footer').fadeIn();
+                            $('#dots').fadeIn();
                         }
                     },
                     afterRender: function() {
