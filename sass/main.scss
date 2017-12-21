@@ -103,8 +103,9 @@ p {
     }
 }
 
+// 偵測背景變色
 .target {
-    transition: .5s;
+    transition: .1s;
 }
 
 .background--light {
@@ -133,3 +134,4 @@ p {
 @import '_index.scss';
 @import '_footer.scss';
 @import '_products.scss';
+@import '_animation.scss';

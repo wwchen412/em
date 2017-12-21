@@ -1,0 +1,71 @@
+// 圖片出現
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+// 圖片出現
+@keyframes fadeInBig {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+// 從左邊出現
+@keyframes fadeLeft {
+    0% {
+        opacity: 0;
+        transform: translate(50%, 0%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0%, 0%);
+    }
+}
+
+// 從右邊出現
+@keyframes fadeRight {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 0%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0%, 0%);
+    }
+}
+
+// 從上面出現
+@keyframes fadeDown {
+    0% {
+        opacity: 0;
+        transform: translate(0%, -50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0%, 0%);
+    }
+}
+
+// 由下往上出現
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translate(0%, 50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0%, 0%);
+    }
+}
