@@ -362,7 +362,7 @@
                     <p style="font-size:18px" class="">2017 All Right Reserved</p>
                 </li>
                 <li class="text-center">
-                    <img src="Content/img/arrow.svg" alt="" class="inlineBlock  arrow">
+                    <img id="moveSectionDown" src="Content/img/arrow.svg" alt="" class="inlineBlock  arrow ">
                     <p class="inlineBlock d-sm-none ">Scrool Down</p>
                 </li>
                 <li class="text-right contact d-sm-none">
@@ -393,31 +393,39 @@
             images: '.thumbnail'
         });
         $(document).ready(function() {
-            $('#fullpage').fullpage({
-                // anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'footer'],
-                menu: '#dots',
-                keyboardScrolling: true,
-                animateAnchor: true,
-                // scrollOverflow: true,
-                responsiveWidth: 576,
-                onLeave: function(index, nextIndex, direction) {
-                    var leavingSection = $(this);
+            function initialization() {
+                $('#fullpage').fullpage({
+                    // anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'footer'],
+                    menu: '#dots',
+                    keyboardScrolling: true,
+                    animateAnchor: true,
+                    // scrollOverflow: true,
+                    responsiveWidth: 769,
 
-                    //after leaving section 2
-                    if (index >= 1 && direction == 'down') {
-                        $('.slider-footer').fadeOut();
-                        $('#dots').fadeOut();
-                    } else {
-                        $('.slider-footer').fadeIn();
-                        $('#dots').fadeIn();
+                    onLeave: function(index, nextIndex, direction) {
+                        var leavingSection = $(this);
+
+                        //after leaving section 2
+                        if (index >= 1 && direction == 'down') {
+                            $('.slider-footer').fadeOut();
+                            $('#dots').fadeOut();
+                        } else {
+                            $('.slider-footer').fadeIn();
+                            $('#dots').fadeIn();
+                        }
+                    },
+                    afterLoad: function(anchorLink, index) {
+                        BackgroundCheck.refresh();
+                    },
+                    afterRender: function() {
+                        BackgroundCheck.refresh();
                     }
-                },
-                afterLoad: function(anchorLink, index) {
-                    BackgroundCheck.refresh();
-                },
-                afterRender: function() {
-                    BackgroundCheck.refresh();
-                }
+                });
+            }
+            initialization();
+            $('#moveSectionDown').click(function(e) {
+                e.preventDefault();
+                $.fn.fullpage.moveSectionDown();
             });
 
         });
