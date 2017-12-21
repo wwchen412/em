@@ -1,0 +1,259 @@
+@import '_color.scss';
+@import '_mixin.scss';
+.mainSlider {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    .section {
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        // background-position: 50% 50%;
+        // background-image: url('../Content/img/section3.png');
+        // 圖片背景商品圖
+        .bgimg {
+            max-width: 600px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            z-index: 0;
+            opacity: 0;
+            &.bgimg-big {
+                max-width: 1170px;
+                @include range-width(300px, 768px) {
+                    object-fit: cover;
+                    height: auto;
+                    max-width: 80%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            @include range-width(300px, 768px) {
+                max-width: 100%;
+            }
+        }
+        &.active {
+            .bgimg {
+                animation: fadeIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+            }
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                    transform: translate(-50%, 50%);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translate(-50%, 0);
+                }
+            }
+            @include range-width(300px, 768px) {
+                .bgimg-big {
+                    animation: fadeInBig 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+                }
+                @keyframes fadeInBig {
+                    0% {
+                        opacity: 0;
+                        transform: translate(-50%, 50%);
+                    }
+                    100% {
+                        opacity: 1;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+            // fadein
+            .fadeLeft {
+                animation: fadeLeft 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+            }
+            @keyframes fadeLeft {
+                0% {
+                    opacity: 0;
+                    transform: translate(50%, 0%);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translate(0%, 0%);
+                }
+            }
+            .fadeRight {
+                animation: fadeRight 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+            }
+            @keyframes fadeRight {
+                0% {
+                    opacity: 0;
+                    transform: translate(-50%, 0%);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translate(0%, 0%);
+                }
+            }
+            // fadein
+            .fadeLeft {
+                animation: fadeLeft 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+            }
+            @keyframes fadeLeft {
+                0% {
+                    opacity: 0;
+                    transform: translate(50%, 0%);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translate(0%, 0%);
+                }
+            }
+            .fadeDown {
+                opacity: 0;
+                animation: fadeDown 2s 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+            }
+            @keyframes fadeDown {
+                0% {
+                    opacity: 0;
+                    transform: translate(0%, -50%);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translate(0%, 0%);
+                }
+            }
+            .fadeUp {
+                opacity: 0;
+                animation: fadeUp 2s 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+            }
+            @keyframes fadeUp {
+                0% {
+                    opacity: 0;
+                    transform: translate(0%, 50%);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translate(0%, 0%);
+                }
+            }
+        }
+    }
+    // 內容
+    .content {
+        color: $maincolor;
+        position: relative;
+        z-index: 1;
+        display: block;
+        margin: auto;
+        text-align: center;
+        @include range-width(300px, 768px) {
+            padding: 0 40px;
+            h2 {
+                font-size: 48px;
+            }
+        }
+        a {
+            display: block;
+            margin: 0 auto;
+            padding: 15px;
+            border: 1px solid $maincolor;
+            color: $maincolor;
+            // background-color: #f00;
+            border-radius: 30px;
+            text-decoration: none;
+            max-width: 292px;
+            font-size: 16px;
+            font-weight: lighter;
+            @include range-width(300px, 768px) {
+                font-size: 14px;
+                max-width: 200px;
+                padding: 8px 10px;
+            }
+            &.background--light {
+                border: 1px solid #252525;
+            }
+        }
+    }
+    .main-content {
+        // h3 {
+        //     font-size: 42px;
+        // }
+        h4 {
+            margin: 120px 0 55px;
+            font-size: 36px;
+            font-weight: normal;
+        }
+        p {
+            margin: 52px 0 70px;
+            @include range-width(300px, 768px) {
+                margin-top: 17px;
+                font-size: 14px;
+            }
+        }
+    }
+    .video-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        filter: grayscale(100%);
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .product-select {
+        margin-top: 44px;
+        li {
+            display: inline-block;
+            // background-color: #f00;
+            width: 20px;
+            height: 20px;
+            border: 2px solid $navcolor;
+            padding: 10px;
+            border-radius: 50%;
+            margin: 0 10px;
+            cursor: pointer;
+            position: relative;
+            span {
+                display: block;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+#dots {
+    position: absolute;
+    right: auto !important;
+    left: 40px;
+    bottom: 140px;
+    top: auto;
+    transform: translate(0);
+    .dot-active {
+        background-color: $navcolor;
+    }
+    .dot {
+        margin: 10px 0;
+        transition: .2s;
+        a {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: block;
+            background-color: lighten($navcolor, 5%);
+        }
+        &.active {
+            a {
+                background-color: $navcolor;
+            }
+            transform: scale(1.2);
+            transition: .2s;
+        }
+    }
+}

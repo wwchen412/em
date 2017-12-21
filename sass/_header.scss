@@ -1,0 +1,54 @@
+@import '_color.scss';
+@import '_mixin.scss';
+// header
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    padding: 20px;
+    color: $navcolor;
+    // background-color: #f00;
+    ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    li {
+        display: inline-block;
+        color: $maincolor;
+        vertical-align: middle;
+        &>* {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        p {
+            color: $navcolor;
+        }
+        img,
+        svg {
+            width: 30px;
+            .cls-1 {
+                fill: none;
+            }
+            .cls-2 {
+                fill: $maincolor;
+                stroke-width: 0;
+            }
+            &.menu {
+                width: 52px;
+                margin-right: 17px;
+                @include range-width(300px, 768px) {
+                    width: 32px;
+                }
+            }
+        }
+        .background--light {
+            svg {
+                .cls-2 {
+                    fill: #252525;
+                }
+            }
+        }
+    }
+}

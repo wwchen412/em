@@ -63,6 +63,8 @@ p {
 
 .bg-red {
   background: #B43D37; }
+  .bg-red:hover {
+    background: #a03631; }
 
 .bg-blur {
   -webkit-filter: blur(10px);
@@ -78,6 +80,34 @@ p {
 @media screen and (min-width: 769px) {
   .d-md-block {
     display: block !important; } }
+
+.target {
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s; }
+
+.background--light {
+  color: #252525 !important; }
+
+.background--dark {
+  color: #ddd !important; }
+
+.section {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .section h2 {
+    font-size: 72px;
+    font-weight: 400; }
 
 header {
   position: fixed;
@@ -123,17 +153,6 @@ header {
             width: 32px; } }
     header li .background--light svg .cls-2 {
       fill: #252525; }
-
-.target {
-  -webkit-transition: .5s;
-  -o-transition: .5s;
-  transition: .5s; }
-
-.background--light {
-  color: #252525 !important; }
-
-.background--dark {
-  color: #ddd !important; }
 
 .mainSlider {
   width: 100%;
@@ -430,23 +449,6 @@ header {
       transition: .2s; }
       #dots .dot.active a {
         background-color: #787878; }
-
-.section {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center; }
-  .section h2 {
-    font-size: 72px;
-    font-weight: 400; }
 
 .slider-footer {
   position: absolute;
