@@ -282,3 +282,29 @@
         padding: 124px 0 40px;
     }
 }
+
+#wave {
+    position: relative;
+    canvas {
+        width: 100% !important;
+        height: auto !important;
+    }
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: $navcolor;
+        display: block;
+        border-radius: 50%;
+        top: 50%;
+        transform: translate(0%, -50%);
+    }
+    &:before {
+        left: 0;
+    }
+    &:after {
+        right: 0;
+    }
+}

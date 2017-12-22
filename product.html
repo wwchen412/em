@@ -170,7 +170,8 @@
                             <div class="text-center">
                                 <div>
                                     <h3 class="text-center fadeDown">EnergieMax® AIBoost </h3>
-                                    <img src="Content/img/aniline.png" alt="" class="img-fluid" height="100px">
+                                    <div id="wave">
+                                    </div>
                                     <p class="fadeUp">Maintains the fatest speed, whatever cable you use</p>
                                 </div>
 
@@ -400,6 +401,7 @@
     <script src="scripts/jquery.fullpage.extensions.min.js"></script>
     <script src="scripts/bgcheck.js"></script>
     <script src="scripts/velocity.min.js"></script>
+    <script src="scripts/siriwave.js"></script>
 
     <script type="text/javascript">
         BackgroundCheck.init({
@@ -506,7 +508,15 @@
                 }
             }
 
-            // svgCircle();
+            // wave
+            var SW = new SiriWave({
+                width: 500,
+                height: 200,
+                speed: 0.03,
+                amplitude: .3,
+                container: document.getElementById('wave'),
+                autostart: true,
+            });
 
         });
     </script>
