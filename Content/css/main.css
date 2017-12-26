@@ -119,7 +119,7 @@ header {
   color: #787878; }
   header #menu {
     position: relative;
-    z-index: 103;
+    z-index: 102;
     cursor: pointer; }
   header .menuUl {
     display: -webkit-box;
@@ -216,11 +216,18 @@ header {
   transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1); }
   .menu-list.active {
     left: 0; }
+    .menu-list.active .logo-area {
+      -webkit-animation: fadeDown .5s .5s forwards;
+      animation: fadeDown .5s .5s forwards; }
+    .menu-list.active .showImg {
+      -webkit-animation: fadeUp .5s .8s forwards;
+      animation: fadeUp .5s .8s forwards; }
   .menu-list .logo-area {
     display: block;
     width: 100%;
     padding: 115px 0 40px;
-    text-align: center; }
+    text-align: center;
+    opacity: 0; }
     @media screen and (max-width: 768px) and (min-width: 300px) {
       .menu-list .logo-area {
         padding: 80px 0 20px; } }
@@ -269,7 +276,8 @@ header {
             .menu-list .lists ul li a {
               font-size: 16px; } }
   .menu-list .showImg {
-    width: 50%; }
+    width: 50%;
+    opacity: 0; }
     .menu-list .showImg img {
       height: calc(100% - 229px);
       -o-object-fit: cover;
@@ -296,6 +304,17 @@ header {
       .sibling-menu-list.active {
         width: 100%;
         left: 0; } }
+  .sibling-menu-list .back {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 70px;
+    left: 70px;
+    cursor: pointer; }
+    @media screen and (max-width: 768px) and (min-width: 300px) {
+      .sibling-menu-list .back {
+        left: 20px;
+        top: 30px; } }
   .sibling-menu-list ul {
     font-size: 0;
     padding: 140px; }
