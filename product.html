@@ -16,17 +16,148 @@
 
     <header>
         <nav>
-            <ul>
-                <li>
-                    <a href="">
-                        <img src="Content/img/menu.svg" alt="" class="menu">
-                    </a>
-                    <p>MENU</p>
+            <ul class="menuUl">
+                <li id="menu">
+                    <div>
+                        <div class="menu-line"></div>
+                        <!-- <img src="Content/img/menu.svg" alt="" class="menu"> -->
+                    </div>
+    
+    
+                    <p class="d-sm-none">MENU</p>
                 </li>
                 <li>
                     <img src="Content/img/cart.svg" alt="">
                 </li>
             </ul>
+            <div class="menu-list">
+                <div class="logo-area">
+                    <img src="Content/img/logo.svg" alt="">
+                    <p style="font-size:16px;margin:10px 0;">POWER ON THE GO</p>
+                </div>
+                <div class="lists">
+                    <ul>
+                        <li>
+                            <a href="power.json" class="sub">Power</a>
+                        </li>
+    
+                        <li>
+                            <a href="cable.json" class="sub">Cable</a>
+                        </li>
+    
+                        <li>
+                            <a href="Accessories.json" class="sub">Accessories</a>
+                        </li>
+    
+                    </ul>
+                    <div class="showImg">
+                        <img src="Content/img/navImg.png" alt="" class="img-fluid">
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="">News</a>
+                        </li>
+                        <li>
+                            <a href="">About</a>
+                        </li>
+                        <li>
+                            <a href="">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+    
+    
+            </div>
+    
+            <div class="sibling-menu-list">
+                <div class="back">
+                    <img src="Content/img/back.svg" alt="" class="img-fluid">
+                </div>
+                <!-- 次選單商品列表 -->
+                <ul>
+                    <!-- <li>
+                            <img src="Content/img/shop.png" class="img-fluid" alt="">
+                            <p>3 Port Travel Charger
+                                <span>60W with Type-C Port</span>
+                            </p>
+                            <ul class="dots">
+                                <li style="background:#000;" data-src="Content/img/shop.png"></li>
+                                <li style="background:#eee;" data-src="Content/img/shop_1.png"></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <img src="Content/img/shop.png" class="img-fluid" alt="">
+                            <p>3 Port Travel Charger
+                                <span>60W with Type-C Port</span>
+                            </p>
+                            <ul class="dots">
+                                <li style="background:#000;" data-src="Content/img/shop_1.png"></li>
+                                <li style="background:#fee;" data-src="Content/img/shop_2.png"></li>
+                                <li style="background:#f00;" data-src="Content/img/shop_3.png"></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <img src="Content/img/shop_1.png" class="img-fluid" alt="">
+                            <p>3 Port Travel Charger
+                                <span>60W with Type-C Port</span>
+                            </p>
+                            <ul class="dots">
+                                <li style="background:#000;"></li>
+                                <li></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <img src="Content/img/shop_2.png" class="img-fluid" alt="">
+                            <p>3 Port Travel Charger
+                                <span>60W with Type-C Port</span>
+                            </p>
+                            <ul class="dots">
+                                <li style="background:#000;"></li>
+                                <li></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <img src="Content/img/shop_3.png" class="img-fluid" alt="">
+                            <p>3 Port Travel Charger
+                                <span>60W with Type-C Port</span>
+                            </p>
+                            <ul class="dots">
+                                <li style="background:#000;"></li>
+                                <li></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <img src="Content/img/shop.png" class="img-fluid" alt="">
+                            <p>3 Port Travel Charger
+                                <span>60W with Type-C Port</span>
+                            </p>
+                            <ul class="dots">
+                                <li style="background:#000;"></li>
+                                <li></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <img src="Content/img/shop_1.png" class="img-fluid" alt="">
+                            <p>3 Port Travel Charger
+                                <span>60W with Type-C Port</span>
+                            </p>
+                            <ul class="dots">
+                                <li style="background:#000;"></li>
+                                <li style="background:#000;"></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <img src="Content/img/shop_2.png" class="img-fluid" alt="">
+                            <p>3 Port Travel Charger
+                                <span>60W with Type-C Port</span>
+                            </p>
+                            <ul class="dots">
+                                <li style="background:#000;"></li>
+                                <li style="background:#eee;"></li>
+                            </ul>
+                        </li> -->
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -90,7 +221,7 @@
                             <li>
                                 <div class="figure circle">
                                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                        width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200"
+                                        width="264px" height="264px" viewBox="0 0 200 200" enable-background="new 0 0 200 200"
                                         xml:space="preserve">
                                         <path class="path" fill="none" stroke="#B43D37" stroke-width="3" stroke-miterlimit="10" d="M100.416,2.001C154.35,2.225,198,46.015,198,100
                                                     c0,54.124-43.876,98-98,98S2,154.124,2,100S45.876,2,100,2" style=" stroke-dasharray:615.423px 615.423px;stroke-dashoffset: 615.423px;"
@@ -108,10 +239,9 @@
 
                             </li>
                             <li>
-                                <h3 class="fadeDown">Power all your devices together
+                                <h3 class="fadeDown">20% faster Charging.
                                 </h3>
-                                <p class="fadeUp">Four USB ports pumping out 40W of power to keep all your devices charged up and ready to
-                                    go.
+                                <p class="fadeUp">World's quick charging leader, you can charge a typical phone from 0 to 80% in about 35 minutes.
                                 </p>
                             </li>
                         </ul>

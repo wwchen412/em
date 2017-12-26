@@ -668,7 +668,8 @@ footer {
   .products .content .animation-text li {
     display: inline-block;
     vertical-align: middle;
-    width: calc(100% / 3); }
+    width: calc(100% / 3);
+    padding: 0 40px; }
     @media screen and (max-width: 768px) and (min-width: 300px) {
       .products .content .animation-text li {
         width: 100%;
@@ -683,7 +684,7 @@ footer {
         .products .content .animation-text li:nth-child(3) {
           text-align: center; } }
       .products .content .animation-text li:nth-child(3) h3 {
-        margin-bottom: 22px; }
+        margin-bottom: 52px; }
   .products .content .animation-text h3 {
     font-size: 36px;
     margin-bottom: 52px; }
@@ -842,8 +843,8 @@ footer {
     vertical-align: top;
     margin-bottom: 50px; }
     .certsLabel ul li img {
-      max-width: 50px;
-      margin: 0 auto; }
+      max-width: 70px;
+      margin: 0 auto 32px; }
 
 @media screen and (max-width: 768px) and (min-width: 300px) {
   .certsLabel h3 {
@@ -905,7 +906,7 @@ footer {
 #wave {
   position: relative;
   max-width: 410px;
-  margin: 26px auto; }
+  margin: 0px auto; }
   #wave canvas {
     width: 100% !important;
     height: auto !important; }
