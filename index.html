@@ -16,16 +16,84 @@
 
     <header>
         <nav>
-            <ul>
-                <li>
+            <ul class="menuUl">
+                <li id="menu">
                     <a href="">
-                        <img src="Content/img/menu.svg" alt="" class="menu"></a>
+                        <img src="Content/img/menu.svg" alt="" class="menu">
+                    </a>
                     <p class="d-sm-none">MENU</p>
                 </li>
                 <li>
                     <img src="Content/img/cart.svg" alt="">
                 </li>
             </ul>
+            <div class="menu-list">
+                <div class="logo-area">
+                    <img src="content/img/logo.svg" alt="">
+                    <p style="font-size:16px;margin:10px 0;">POWER ON THE GO</p>
+                </div>
+                <div class="lists">
+                    <ul>
+                        <li>
+                            <a href="">Power</a>
+                        </li>
+
+                        <li>
+                            <a href="">Cable</a>
+                        </li>
+
+                        <li>
+                            <a href="">Accessories</a>
+                        </li>
+
+                    </ul>
+                    <div class="showImg">
+                        <img src="content/img/navImg.png" alt="" class="img-fluid">
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="">News</a>
+                        </li>
+                        <li>
+                            <a href="">About</a>
+                        </li>
+                        <li>
+                            <a href="">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+            <div class="sibling-menu-list">
+                <ul>
+                    <li>
+                        <img src="content/img/shop.png" class="img-fluid" alt="">
+                    </li>
+                    <li>
+                        <img src="content/img/shop.png" class="img-fluid" alt="">
+                    </li>
+                    <li>
+                        <img src="content/img/shop_1.png" class="img-fluid" alt="">
+                    </li>
+                    <li>
+                        <img src="content/img/shop_2.png" class="img-fluid" alt="">
+                    </li>
+                    <li>
+                        <img src="content/img/shop_3.png" class="img-fluid" alt="">
+                    </li>
+                    <li>
+                        <img src="content/img/shop.png" class="img-fluid" alt="">
+                    </li>
+                    <li>
+                        <img src="content/img/shop_1.png" class="img-fluid" alt="">
+                    </li>
+                    <li>
+                        <img src="content/img/shop_2.png" class="img-fluid" alt="">
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
     <!-- 第一區塊  -->
@@ -153,7 +221,9 @@
         <div class="slider-footer">
             <ul>
                 <li class="d-sm-none">
-                    <a href=""><img src="Content/img/logo.svg" alt="" width="150px" style="margin:30px 0;"></a>
+                    <a href="">
+                        <img src="Content/img/logo.svg" alt="" width="150px" style="margin:30px 0;">
+                    </a>
                     <p style="font-size:18px" class="">2017 All Right Reserved</p>
                 </li>
                 <li class="text-center">
@@ -188,8 +258,9 @@
             targets: '.target',
             images: '.thumbnail'
         });
-        $(document).ready(function() {
-
+        $(document).ready(function () {
+            
+            // fullpage 螢幕高
             $('#fullpage').fullpage({
                 anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'footer'],
                 menu: '#dots',
@@ -197,7 +268,7 @@
                 animateAnchor: true,
                 scrollOverflow: true,
                 // responsiveWidth: 576,
-                onLeave: function(index, nextIndex, direction) {
+                onLeave: function (index, nextIndex, direction) {
                     var leavingSection = $(this);
 
                     //after leaving section 2
@@ -209,19 +280,63 @@
                         $('#dots').fadeIn();
                     }
                 },
-                afterLoad: function(anchorLink, index) {
+                afterLoad: function (anchorLink, index) {
                     BackgroundCheck.refresh();
                 },
-                afterRender: function() {
+                afterRender: function () {
                     BackgroundCheck.refresh();
                 }
 
             });
-            $('#moveSectionDown').click(function(e) {
+
+            $('#moveSectionDown').click(function (e) {
                 e.preventDefault();
                 $.fn.fullpage.moveSectionDown();
             });
+            $('#menu').click(function () {
+                event.preventDefault();
 
+                $('.menu-list').toggleClass('active');
+                // $('.sibling-menu-list').toggleClass('active');
+                // 點開選單
+                if($('.menu-list').hasClass('active')){
+                    $.fn.fullpage.destroy('all');
+                    
+                }else if (!$('.menu-list').hasClass('active')){
+                    // 關閉選單
+                  
+                     $('#fullpage').fullpage({
+                        anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'footer'],
+                        menu: '#dots',
+                        keyboardScrolling: true,
+                        animateAnchor: true,
+                        scrollOverflow: true,
+                        // responsiveWidth: 576,
+                        onLeave: function (index, nextIndex, direction) {
+                            var leavingSection = $(this);
+
+                            //after leaving section 2
+                            if (index == 4 && direction == 'down') {
+                                $('.slider-footer').fadeOut();
+                                $('#dots').fadeOut();
+                            } else {
+                                $('.slider-footer').fadeIn();
+                                $('#dots').fadeIn();
+                            }
+                        },
+                        afterLoad: function (anchorLink, index) {
+                            BackgroundCheck.refresh();
+                        },
+                        afterRender: function () {
+                            BackgroundCheck.refresh();
+                        }
+
+                    });
+                }
+               
+                // $('#fullpage').toggleClass('fp-destroyed');
+                // $('html').toggleClass('fp-enabled');
+            })
         });
     </script>
     <script>

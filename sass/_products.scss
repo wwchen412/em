@@ -285,6 +285,8 @@
 
 #wave {
     position: relative;
+    max-width: 410px;
+    margin: 26px auto;
     canvas {
         width: 100% !important;
         height: auto !important;
