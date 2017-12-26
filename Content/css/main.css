@@ -335,8 +335,26 @@ header {
       margin-bottom: 34px;
       background: #fff;
       height: 298px;
-      -webkit-animation: fadeUp .5s;
-      animation: fadeUp .5s; }
+      -webkit-animation: fadeUp .5s backwards;
+      animation: fadeUp .5s backwards; }
+      .sibling-menu-list ul li:nth-child(1) {
+        -webkit-animation-delay: .5s;
+        animation-delay: .5s; }
+      .sibling-menu-list ul li:nth-child(2) {
+        -webkit-animation-delay: .6s;
+        animation-delay: .6s; }
+      .sibling-menu-list ul li:nth-child(3) {
+        -webkit-animation-delay: .7s;
+        animation-delay: .7s; }
+      .sibling-menu-list ul li:nth-child(4) {
+        -webkit-animation-delay: .8s;
+        animation-delay: .8s; }
+      .sibling-menu-list ul li:nth-child(5) {
+        -webkit-animation-delay: .9s;
+        animation-delay: .9s; }
+      .sibling-menu-list ul li:nth-child(6) {
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s; }
       @media screen and (max-width: 768px) and (min-width: 300px) {
         .sibling-menu-list ul li {
           width: 100%;
