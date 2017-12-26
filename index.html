@@ -420,7 +420,7 @@
                         success: function (data) {
                            
                             for (i = 0; i < data.length; i++) {
-                                list.append('<li><img src="' + data[i].itemSrc +
+                                list.html('<li><img src="' + data[i].itemSrc +
                                     '" class="img-fluid" alt=""><p>' + data[i].itemName +
                                     '<span>' + data[i].itemInfo +
                                     '</span></p><ul class="dots"><li style="background:#000;" data-src="Content/img/shop.png"></li><li style="background:#eee;" data-src="Content/img/shop_1.png"></li></ul></li>'
