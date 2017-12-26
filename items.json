@@ -1,0 +1,22 @@
+[{
+    "item": {
+        "itemSrc": "Content/img/shop.png",
+        "itemName": "3 Port Travel Charger ",
+         "itemInfo": "60W with Type-C Port",
+        "imgSelect:": {
+             "color": ["#000", "#eee"],
+             "src": ["Content/img/shop.png", "Content/img/shop_1.png"]
+        }
+    }
+}, {
+  
+    "item": {
+        "itemSrc": "Content/img/shop.png",
+        "itemName": "3 Port Travel Charger ",
+        "itemInfo": "60W with Type-C Port",
+        "imgSelect:": {
+            "color": ["#000", "#eee"],
+            "src": ["Content/img/shop.png", "Content/img/shop_1.png"]
+        }
+    }
+}]

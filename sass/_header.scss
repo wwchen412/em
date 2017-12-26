@@ -38,6 +38,9 @@ header {
       position: relative;
       margin-right: 13px;
       transition: .3s;
+      @include range-width(300px,768px){
+        width: 26px;
+      }
       &:before,&:after{
         content: '';
         display: block;
@@ -61,6 +64,9 @@ header {
         }
         &:after{
           transform: rotate(90deg) translate(-25% , 0);
+          @include range-width(300px,768px){
+              transform: rotate(90deg) translate(-50%, 0);
+          }
         }
       }
       
