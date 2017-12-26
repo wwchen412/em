@@ -130,8 +130,10 @@ header {
   z-index: 102;
   background: #252525;
   left: 125%;
+  transition: .5s;
   &.active {
     left: 25%;
+    overflow: auto;
   }
   ul {
     font-size: 0;

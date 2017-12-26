@@ -223,9 +223,13 @@ header {
   height: 100%;
   z-index: 102;
   background: #252525;
-  left: 125%; }
+  left: 125%;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s; }
   .sibling-menu-list.active {
-    left: 25%; }
+    left: 25%;
+    overflow: auto; }
   .sibling-menu-list ul {
     font-size: 0;
     padding: 140px; }
@@ -251,6 +255,9 @@ header {
   height: 100%;
   margin-left: auto;
   margin-right: auto; }
+  .mainSlider.unscroll {
+    height: 100%;
+    overflow: hidden; }
 
 .section {
   background-size: cover;

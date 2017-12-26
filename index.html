@@ -29,13 +29,13 @@
             </ul>
             <div class="menu-list">
                 <div class="logo-area">
-                    <img src="content/img/logo.svg" alt="">
+                    <img src="Content/img/logo.svg" alt="">
                     <p style="font-size:16px;margin:10px 0;">POWER ON THE GO</p>
                 </div>
                 <div class="lists">
                     <ul>
                         <li>
-                            <a href="">Power</a>
+                            <a href="" class="sub">Power</a>
                         </li>
 
                         <li>
@@ -48,7 +48,7 @@
 
                     </ul>
                     <div class="showImg">
-                        <img src="content/img/navImg.png" alt="" class="img-fluid">
+                        <img src="Content/img/navImg.png" alt="" class="img-fluid">
                     </div>
                     <ul>
                         <li>
@@ -69,28 +69,28 @@
             <div class="sibling-menu-list">
                 <ul>
                     <li>
-                        <img src="content/img/shop.png" class="img-fluid" alt="">
+                        <img src="Content/img/shop.png" class="img-fluid" alt="">
                     </li>
                     <li>
-                        <img src="content/img/shop.png" class="img-fluid" alt="">
+                        <img src="Content/img/shop.png" class="img-fluid" alt="">
                     </li>
                     <li>
-                        <img src="content/img/shop_1.png" class="img-fluid" alt="">
+                        <img src="Content/img/shop_1.png" class="img-fluid" alt="">
                     </li>
                     <li>
-                        <img src="content/img/shop_2.png" class="img-fluid" alt="">
+                        <img src="Content/img/shop_2.png" class="img-fluid" alt="">
                     </li>
                     <li>
-                        <img src="content/img/shop_3.png" class="img-fluid" alt="">
+                        <img src="Content/img/shop_3.png" class="img-fluid" alt="">
                     </li>
                     <li>
-                        <img src="content/img/shop.png" class="img-fluid" alt="">
+                        <img src="Content/img/shop.png" class="img-fluid" alt="">
                     </li>
                     <li>
-                        <img src="content/img/shop_1.png" class="img-fluid" alt="">
+                        <img src="Content/img/shop_1.png" class="img-fluid" alt="">
                     </li>
                     <li>
-                        <img src="content/img/shop_2.png" class="img-fluid" alt="">
+                        <img src="Content/img/shop_2.png" class="img-fluid" alt="">
                     </li>
                 </ul>
             </div>
@@ -298,6 +298,7 @@
 
                 $('.menu-list').toggleClass('active');
                 // $('.sibling-menu-list').toggleClass('active');
+                 $('.mainSlider').toggleClass('unscroll');
                 // 點開選單
                 if($('.menu-list').hasClass('active')){
                     $.fn.fullpage.destroy('all');
@@ -337,6 +338,21 @@
                 // $('#fullpage').toggleClass('fp-destroyed');
                 // $('html').toggleClass('fp-enabled');
             })
+            $('.lists .sub').on('click',function(){
+                event.preventDefault();
+                $('.sibling-menu-list').addClass('active');
+               
+               
+            })
+            //  $('.menu-list').click(function () {
+            //      if($('.sibling-menu-list').hasClass('active')){
+            //          $('.sibling-menu-list').addClass('active');
+            //      }else{
+            //           $('.sibling-menu-list').removeClass('active');
+            //      }
+              
+            // })
+            
         });
     </script>
     <script>
