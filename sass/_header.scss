@@ -218,10 +218,14 @@ header {
     top: 70px;
     left: 70px;
     cursor: pointer;
-    transform: translate(-50%,-50%);
+  
+    @include range-width(769px,0){
+ transform: translate(-50%, -50%) rotate(180deg);
+    }
     @include range-width(300px,768px){
       left: 30px;
       top: 40px;
+       transform: translate(-50%, -50%);
     }
   }
   ul {
