@@ -404,8 +404,9 @@
             })
             // 次級選單
             $('.lists .sub').each(function () {
+ var list = $('.sibling-menu-list ul');
                 var jsonLink = $(this).attr('href');
-                console.log(jsonLink);
+                list.html('');
                 $(this).on('click', function () {
                     event.preventDefault();
                     $('.sibling-menu-list').addClass('active');
@@ -417,7 +418,7 @@
                         type: "GET",
                         url: jsonLink,
                         success: function (data) {
-                            var list = $('.sibling-menu-list ul');
+                           
                             for (i = 0; i < data.length; i++) {
                                 list.append('<li><img src="' + data[i].itemSrc +
                                     '" class="img-fluid" alt=""><p>' + data[i].itemName +
