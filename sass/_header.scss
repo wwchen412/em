@@ -9,6 +9,11 @@ header {
   width: 100%;
   padding: 20px;
   color: $navcolor; // background-color: #f00;
+  #menu {
+    position: relative;
+    z-index: 103;
+    cursor: pointer;
+  }
   .menuUl {
     display: flex;
     justify-content: space-between;
@@ -24,6 +29,43 @@ header {
     p {
       color: $navcolor;
     }
+
+    // 三明治選單
+    .menu-line{
+      width: 52px;
+      height: 2px;
+      background: $navcolor;
+      position: relative;
+      margin-right: 13px;
+      transition: .3s;
+      &:before,&:after{
+        content: '';
+        display: block;
+        position: absolute;
+         transition: .3s;
+        width: 100%;
+        height: 2px;
+         background: $navcolor;
+      }
+      &:before{
+      top: -13px;
+      }
+      &:after{
+        bottom:-13px;
+      }
+      &.active{
+        transform: rotate(45deg) ;
+        &:before{
+          transform: translate(-100%,0);
+          opacity: 0;
+        }
+        &:after{
+          transform: rotate(90deg) translate(-25% , 0);
+        }
+      }
+      
+    }
+    
     img,
     svg {
       width: 30px;
@@ -82,22 +124,32 @@ header {
     display: flex;
     flex-wrap: wrap;
     height: 100%;
+    @include range-width(300px,768px){
+      height: calc(100% - 174px);
+    }
     &>* {
       display: inline-block;
       vertical-align: top;
     }
     ul {
       width: 25%;
+      @include range-width(300px,768px){
+        align-self: flex-end;
+      }
       li {
         display: block;
         text-align: center;
         position: relative;
         z-index: 101;
+        margin-bottom: 60px;
         &:nth-child(2) {
           margin: 168px 0;
+          @include range-width(300px, 768px) {
+          margin: 0 0 60px 0;
+          }
         }
         @include range-width(300px, 768px) {
-          padding: 0 20px;
+          padding: 20px;
         }
         a {
           font-size: 20px;
@@ -105,6 +157,9 @@ header {
           text-decoration: none;
           display: inline-block;
           width: 100%;
+          @include range-width(300px,768px){
+            font-size: 16px;
+          }
         }
       }
     }
@@ -134,28 +189,66 @@ header {
   &.active {
     left: 25%;
     overflow: auto;
+    @include range-width(300px,768px){
+      width: 100%;
+      left: 0;
+    }
   }
   ul {
     font-size: 0;
     padding: 140px; // overflow: scroll;
+    @include range-width(300px,768px){
+      padding:80px 40px;
+    }
     li {
       display: inline-block;
       width: calc(50% - 34px / 2);
       margin-bottom: 34px;
       background: #fff;
       height: 298px;
+      @include range-width(300px,768px){
+        width: 100%;
+        height: 208px;
+        margin-bottom: 20px;
+      }
       img {
         object-fit: cover;
         height: 230px;
+        @include range-width(300px,768px){
+          height: 140px;
+        }
+      }
+      p{
+        text-align: center;
+        margin: 14px 0 18px;
+        width: 100%;
+        font-size: 11px;
+        transform: scale(0.95);
+        color: #000;
+        span{
+          color:$navcolor;
+        }
       }
       &:nth-child(2n) {
         margin-left: 34px;
+         @include range-width(300px, 768px) {
+          margin-left: 0;
+         }
+      }
+    }
+    .dots{
+      padding: 0;
+      text-align: center;
+      width: 100%;
+      li{
+        display: inline-block;
+        margin: 0 8px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        cursor: pointer;
       }
     }
   }
 }
 
-#menu {
-  position: relative;
-  z-index: 101;
-}

@@ -18,9 +18,12 @@
         <nav>
             <ul class="menuUl">
                 <li id="menu">
-                    <a href="">
-                        <img src="Content/img/menu.svg" alt="" class="menu">
-                    </a>
+                   <div>
+                       <div class="menu-line"></div>
+                    <!-- <img src="Content/img/menu.svg" alt="" class="menu"> -->
+                   </div>
+                        
+                   
                     <p class="d-sm-none">MENU</p>
                 </li>
                 <li>
@@ -70,27 +73,82 @@
                 <ul>
                     <li>
                         <img src="Content/img/shop.png" class="img-fluid" alt="">
+                        <p>3 Port Travel Charger <span>60W with Type-C Port</span></p>
+                        <ul class="dots">
+                            <li style="background:#000;"></li>
+                            <li style="background:#eee;"></li>
+                        </ul>
                     </li>
                     <li>
                         <img src="Content/img/shop.png" class="img-fluid" alt="">
+                        <p>3 Port Travel Charger
+                            <span>60W with Type-C Port</span>
+                        </p>
+                        <ul class="dots">
+                            <li style="background:#000;"></li>
+                            <li style="background:#fee;"></li>
+                            <li style="background:#f00;"></li>
+                        </ul>
                     </li>
                     <li>
                         <img src="Content/img/shop_1.png" class="img-fluid" alt="">
+                        <p>3 Port Travel Charger
+                            <span>60W with Type-C Port</span>
+                        </p>
+                        <ul class="dots">
+                            <li style="background:#000;"></li>
+                            <li></li>
+                        </ul>
                     </li>
                     <li>
                         <img src="Content/img/shop_2.png" class="img-fluid" alt="">
+                        <p>3 Port Travel Charger
+                            <span>60W with Type-C Port</span>
+                        </p>
+                        <ul class="dots">
+                            <li style="background:#000;"></li>
+                            <li></li>
+                        </ul>
                     </li>
                     <li>
                         <img src="Content/img/shop_3.png" class="img-fluid" alt="">
+                        <p>3 Port Travel Charger
+                            <span>60W with Type-C Port</span>
+                        </p>
+                        <ul class="dots">
+                            <li style="background:#000;"></li>
+                            <li></li>
+                        </ul>
                     </li>
                     <li>
                         <img src="Content/img/shop.png" class="img-fluid" alt="">
+                        <p>3 Port Travel Charger
+                            <span>60W with Type-C Port</span>
+                        </p>
+                        <ul class="dots">
+                            <li style="background:#000;"></li>
+                            <li></li>
+                        </ul>
                     </li>
                     <li>
                         <img src="Content/img/shop_1.png" class="img-fluid" alt="">
+                        <p>3 Port Travel Charger
+                            <span>60W with Type-C Port</span>
+                        </p>
+                        <ul class="dots">
+                            <li style="background:#000;"></li>
+                            <li style="background:#000;"></li>
+                        </ul>
                     </li>
                     <li>
                         <img src="Content/img/shop_2.png" class="img-fluid" alt="">
+                        <p>3 Port Travel Charger
+                            <span>60W with Type-C Port</span>
+                        </p>
+                        <ul class="dots">
+                            <li style="background:#000;"></li>
+                            <li style="background:#eee;"></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -259,7 +317,7 @@
             images: '.thumbnail'
         });
         $(document).ready(function () {
-            
+
             // fullpage 螢幕高
             $('#fullpage').fullpage({
                 anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'footer'],
@@ -288,25 +346,25 @@
                 }
 
             });
-
+            // 點箭頭往下移動
             $('#moveSectionDown').click(function (e) {
                 e.preventDefault();
                 $.fn.fullpage.moveSectionDown();
             });
+            // 展開選單
             $('#menu').click(function () {
                 event.preventDefault();
-
+                $(this).find('.menu-line').toggleClass('active');
                 $('.menu-list').toggleClass('active');
-                // $('.sibling-menu-list').toggleClass('active');
-                 $('.mainSlider').toggleClass('unscroll');
+              
+                $('.mainSlider').toggleClass('unscroll');
                 // 點開選單
-                if($('.menu-list').hasClass('active')){
+                if ($('.menu-list').hasClass('active')) {
                     $.fn.fullpage.destroy('all');
-                    
-                }else if (!$('.menu-list').hasClass('active')){
+                } else if (!$('.menu-list').hasClass('active')) {
                     // 關閉選單
-                  
-                     $('#fullpage').fullpage({
+
+                    $('#fullpage').fullpage({
                         anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'footer'],
                         menu: '#dots',
                         keyboardScrolling: true,
@@ -333,26 +391,19 @@
                         }
 
                     });
+                    $('.sibling-menu-list').removeClass('active');
                 }
-               
-                // $('#fullpage').toggleClass('fp-destroyed');
-                // $('html').toggleClass('fp-enabled');
+
+                
             })
-            $('.lists .sub').on('click',function(){
+            // 次級選單
+            $('.lists .sub').on('click', function () {
                 event.preventDefault();
                 $('.sibling-menu-list').addClass('active');
-               
-               
             })
-            //  $('.menu-list').click(function () {
-            //      if($('.sibling-menu-list').hasClass('active')){
-            //          $('.sibling-menu-list').addClass('active');
-            //      }else{
-            //           $('.sibling-menu-list').removeClass('active');
-            //      }
-              
-            // })
-            
+
+          
+   
         });
     </script>
     <script>
