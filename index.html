@@ -404,11 +404,13 @@
             })
             // 次級選單
             $('.lists .sub').each(function () {
-            var list = $('.sibling-menu-list ul');
-                var jsonLink = $(this).attr('href');
-                list.html('');
+              
+               
                 $(this).on('click', function () {
+                    var list = $('.sibling-menu-list ul');
+                    var jsonLink = $(this).attr('href');
                     event.preventDefault();
+                     list.html('');
                     $('.sibling-menu-list').addClass('active');
                     $('.back').click(function () {
                         $(this).parents('.sibling-menu-list').removeClass('active');
@@ -420,7 +422,7 @@
                         success: function (data) {
                            
                             for (i = 0; i < data.length; i++) {
-                                list.html('<li><img src="' + data[i].itemSrc +
+                                list.append('<li><img src="' + data[i].itemSrc +
                                     '" class="img-fluid" alt=""><p>' + data[i].itemName +
                                     '<span>' + data[i].itemInfo +
                                     '</span></p><ul class="dots"><li style="background:#000;" data-src="Content/img/shop.png"></li><li style="background:#eee;" data-src="Content/img/shop_1.png"></li></ul></li>'
