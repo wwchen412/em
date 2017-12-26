@@ -316,8 +316,8 @@ header {
     transform: translate(-50%, -50%); }
     @media screen and (max-width: 768px) and (min-width: 300px) {
       .sibling-menu-list .back {
-        left: 20px;
-        top: 30px; } }
+        left: 30px;
+        top: 40px; } }
   .sibling-menu-list ul {
     font-size: 0;
     padding: 140px; }
