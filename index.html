@@ -75,8 +75,8 @@
                         <img src="Content/img/shop.png" class="img-fluid" alt="">
                         <p>3 Port Travel Charger <span>60W with Type-C Port</span></p>
                         <ul class="dots">
-                            <li style="background:#000;"></li>
-                            <li style="background:#eee;"></li>
+                            <li style="background:#000;" data-src="Content/img/shop.png"></li>
+                            <li style="background:#eee;" data-src="Content/img/shop_1.png"></li>
                         </ul>
                     </li>
                     <li>
@@ -85,9 +85,9 @@
                             <span>60W with Type-C Port</span>
                         </p>
                         <ul class="dots">
-                            <li style="background:#000;"></li>
-                            <li style="background:#fee;"></li>
-                            <li style="background:#f00;"></li>
+                            <li style="background:#000;" data-src="Content/img/shop_1.png"></li>
+                            <li style="background:#fee;" data-src="Content/img/shop_2.png"></li>
+                            <li style="background:#f00;" data-src="Content/img/shop_3.png"></li>
                         </ul>
                     </li>
                     <li>
@@ -401,8 +401,14 @@
                 event.preventDefault();
                 $('.sibling-menu-list').addClass('active');
             })
-
-          
+            // 點擊li點 切換圖片attr
+          $('.sibling-menu-list .dots li').each(function(){
+              var img_link = $(this).data('src');
+              console.log(img_link);
+            $(this).click(function(){
+                $(this).parent().siblings('img').attr('src', img_link);
+            })
+          });
    
         });
     </script>
