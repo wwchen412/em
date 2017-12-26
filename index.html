@@ -38,15 +38,15 @@
                 <div class="lists">
                     <ul>
                         <li>
-                            <a href="" class="sub">Power</a>
+                            <a href="item.json" class="sub">Power</a>
                         </li>
 
                         <li>
-                            <a href="">Cable</a>
+                            <a href="" class="sub">Cable</a>
                         </li>
 
                         <li>
-                            <a href="">Accessories</a>
+                            <a href="" class="sub">Accessories</a>
                         </li>
 
                     </ul>
@@ -73,6 +73,7 @@
                 <div class="back">
                     <img src="Content/img/back.svg" alt="" class="img-fluid">
                 </div>
+                <!-- 次選單商品列表 -->
                 <ul>
                     <!-- <li>
                         <img src="Content/img/shop.png" class="img-fluid" alt="">
@@ -402,34 +403,44 @@
 
             })
             // 次級選單
-            $('.lists .sub').on('click', function () {
-                event.preventDefault();
-                $('.sibling-menu-list').addClass('active');
-                $('.back').click(function(){
-                    $(this).parents('.sibling-menu-list').removeClass('active');
-                })
-            })
-            // 讀取次選單商品列表
-            $.ajax({
-                type: "GET",
-                url: "items.json",
-                success: function (data) {
-                    var list = $('.sibling-menu-list ul');
-                    for (i = 0; i < data.length; i++) {
-                      list.append('<li><img src="'+data[i].itemSrc+'" class="img-fluid" alt=""><p>'+ data[i].itemName+'<span>'+ data[i].itemInfo+'</span></p><ul class="dots"><li style="background:#000;" data-src="Content/img/shop.png"></li><li style="background:#eee;" data-src="Content/img/shop_1.png"></li></ul></li>')
-                        console.log(data[i].itemSrc);
-                    }
-                    // 點擊li點 切換圖片attr
-                    $('.sibling-menu-list .dots li').each(function () {
-                        var img_link = $(this).data('src');
-                        console.log(img_link);
-                        $(this).click(function () {
-                            $(this).parent().siblings('img').attr('src', img_link);
-                        })
+            $('.sub').each(function () {
+                var jsonLink = $(this).attr('href');
+                console.log(jsonLink);
+                $('.lists .sub').on('click', function () {
+                    event.preventDefault();
+                    $('.sibling-menu-list').addClass('active');
+                    $('.back').click(function () {
+                        $(this).parents('.sibling-menu-list').removeClass('active');
+                    })
+                    // 讀取次選單商品列表
+                    $.ajax({
+                        type: "GET",
+                        url: jsonLink,
+                        success: function (data) {
+                            var list = $('.sibling-menu-list ul');
+                            for (i = 0; i < data.length; i++) {
+                                list.append('<li><img src="' + data[i].itemSrc +
+                                    '" class="img-fluid" alt=""><p>' + data[i].itemName +
+                                    '<span>' + data[i].itemInfo +
+                                    '</span></p><ul class="dots"><li style="background:#000;" data-src="Content/img/shop.png"></li><li style="background:#eee;" data-src="Content/img/shop_1.png"></li></ul></li>'
+                                )
+
+                            }
+                            // 點擊li點 切換圖片attr
+                            $('.sibling-menu-list .dots li').each(function () {
+                                var img_link = $(this).data('src');
+
+                                $(this).click(function () {
+                                    $(this).parent().siblings('img')
+                                        .attr('src', img_link);
+                                })
+                            });
+                        },
+                        dataType: "json"
                     });
-                },
-                dataType: "json"
-            });
+                })
+
+            })
 
         });
     </script>
