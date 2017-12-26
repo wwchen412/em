@@ -236,6 +236,7 @@ header {
       margin-bottom: 34px;
       background: #fff;
       height: 298px;
+      animation: fadeUp .5s;
       @include range-width(300px,768px){
         width: 100%;
         height: 208px;

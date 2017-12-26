@@ -329,7 +329,9 @@ header {
       width: calc(50% - 34px / 2);
       margin-bottom: 34px;
       background: #fff;
-      height: 298px; }
+      height: 298px;
+      -webkit-animation: fadeUp .5s;
+      animation: fadeUp .5s; }
       @media screen and (max-width: 768px) and (min-width: 300px) {
         .sibling-menu-list ul li {
           width: 100%;
