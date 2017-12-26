@@ -218,6 +218,7 @@ header {
     top: 70px;
     left: 70px;
     cursor: pointer;
+    transform: translate(-50%,-50%);
     @include range-width(300px,768px){
       left: 20px;
       top: 30px;
