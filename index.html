@@ -403,10 +403,10 @@
 
             })
             // 次級選單
-            $('.sub').each(function () {
+            $('.lists .sub').each(function () {
                 var jsonLink = $(this).attr('href');
                 console.log(jsonLink);
-                $('.lists .sub').on('click', function () {
+                $(this).on('click', function () {
                     event.preventDefault();
                     $('.sibling-menu-list').addClass('active');
                     $('.back').click(function () {
