@@ -38,15 +38,15 @@
                 <div class="lists">
                     <ul>
                         <li>
-                            <a href="power.json" class="sub">Power</a>
+                            <a href="power.json" class="sub" data-hoversrc="Content/img/navImg.png">Power</a>
                         </li>
 
                         <li>
-                            <a href="cable.json" class="sub">Cable</a>
+                            <a href="cable.json" class="sub" data-hoversrc="Content/img/shop_1.png">Cable</a>
                         </li>
 
                         <li>
-                            <a href="Accessories.json" class="sub">Accessories</a>
+                            <a href="Accessories.json" class="sub" data-hoversrc="Content/img/shop_2.png">Accessories</a>
                         </li>
 
                     </ul>
@@ -404,13 +404,18 @@
             })
             // 次級選單
             $('.lists .sub').each(function () {
-              
-               
+                $(this).hover(function () {
+
+                    var hoverSrc = $(this).data('hoversrc');
+                    console.log(hoverSrc);
+                    $('.showImg img').attr('src', hoverSrc);
+                })
+
                 $(this).on('click', function () {
                     var list = $('.sibling-menu-list ul');
                     var jsonLink = $(this).attr('href');
                     event.preventDefault();
-                     list.html('');
+                    list.html('');
                     $('.sibling-menu-list').addClass('active');
                     $('.back').click(function () {
                         $(this).parents('.sibling-menu-list').removeClass('active');
@@ -420,7 +425,7 @@
                         type: "GET",
                         url: jsonLink,
                         success: function (data) {
-                           
+
                             for (i = 0; i < data.length; i++) {
                                 list.append('<li><img src="' + data[i].itemSrc +
                                     '" class="img-fluid" alt=""><p>' + data[i].itemName +
