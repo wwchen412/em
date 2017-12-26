@@ -436,6 +436,9 @@
                                 })
                             });
                         },
+                        error: function () {
+                            $('.sibling-menu-list').html("<p>目前沒有資料</p>");
+                        },
                         dataType: "json"
                     });
                 })
