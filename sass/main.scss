@@ -34,6 +34,9 @@ h4 {
 h3 {
     font-size: 42px;
 }
+h4{
+    font-size: 20px;
+}
 
 p {
     letter-spacing: 1px;
@@ -46,11 +49,28 @@ p {
 .vertical-mid{
     vertical-align: middle;
 }
-
+.vertical-top{
+    vertical-align: top;
+}
 .em-4{
     display: inline-block;
     width: calc(100% / 3);
+    @include range-width(300px,768px){
+        width: 100%;
+    }
   
+}
+
+// news左右區塊使用
+.em-6{
+    display: inline-block;
+    width: calc(100% / 2 );
+        &:nth-child(2n){
+            padding:0 30px;
+        }
+     @include range-width(300px, 768px) {
+         width: 100%;
+     }
 }
 
 .color-black {
@@ -60,7 +80,9 @@ p {
 .text-center {
     text-align: center;
 }
-
+.text-jus{
+    text-align: justify;
+}
 .text-left {
     text-align: left;
 }

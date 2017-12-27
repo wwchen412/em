@@ -27,33 +27,93 @@
                         <!-- 圖文編輯器內容 -->
                         <div class="row vertical-mid">
                             <div class="em-4 vertical-mid">
-                                <h3>About us</h3>
+                                <h3 class="text-left">News</h3>
                             </div>
                             <div class="em-4 vertical-mid">
                                 <div class="squareImg">
-                                    <img src="Content/img/item.png" alt="" class="img-fluid">
+                                    <img src="Content/img/news.png" alt="" class="img-fluid">
                                 </div>
 
                             </div>
-                            <div class="em-4 vertical-mid"></div>
+                            <div class="em-4 vertical-mid text-left">
+                                <h3>Don't miss out
+                                </h3>
+                                <p>New release and exclusive offers all over here.
+                                </p>
+                            </div>
                         </div>
 
                     </div>
                 </div>
-                <!-- 設定的圖片 -->
-                <!-- <img src="Content/img/item.png" alt="" class="centerimg"> -->
+               
             </div>
 
-            <div class="section thumbnail" style="background-image:url('Content/img/productbg.png')">
-                <div class="content">
-                    <!-- 圖文編輯器內容 -->
-                    <div class="main-content">
-                        <h3 class="target">Works in more than 150 countries</h3>
-                    </div>
+            <div class="section">
 
-                </div>
-                <!-- 設定的圖片 -->
-                <img src="Content/img/5.png" alt="" class="bgimg bgimg-big">
+                <!-- 單篇文章 -->
+                <article>
+                    <div class="container">
+                        <div class="row">
+                            <div class="em-6 vertical-top">
+                                <img src="Content/img/article.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="em-6 vertical-top text-left">
+                                <p class="date">
+                                    2010.01.01
+                                </p>
+                                <h4>Fake News Sample Text</h4>
+                                <p>In 1994, Calvin Klein stopped producing furs after activists graffitied the company’s offices
+                                    and Klein met with PETA members, who showed him footage of fur livestock being slaughtered.
+                                    According to a statement from the designer at the time, "the fur segment of our business
+                                    simply did not fit with our corporate philosophy any longer.”</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 單篇end -->
+                <article>
+                    <div class="container">
+                        <div class="row">
+                            <div class="em-6 vertical-top">
+                                <img src="Content/img/article_1.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="em-6 vertical-top text-left">
+                                <p class="date">
+                                    2010.01.01
+                                </p>
+                                <h4>Fake News Sample Text</h4>
+                                <p>In 1994, Calvin Klein stopped producing furs after activists graffitied the company’s offices
+                                    and Klein met with PETA members, who showed him footage of fur livestock being slaughtered.
+                                    According to a statement from the designer at the time, "the fur segment of our business
+                                    simply did not fit with our corporate philosophy any longer.”</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div class="container">
+                        <div class="row">
+                            <div class="em-6 vertical-top">
+                                <img src="Content/img/article_2.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="em-6 vertical-top text-left">
+                                <p class="date">
+                                    2010.01.01
+                                </p>
+                                <h4>Fake News Sample Text</h4>
+                                <p>In 1994, Calvin Klein stopped producing furs after activists graffitied the company’s offices
+                                    and Klein met with PETA members, who showed him footage of fur livestock being slaughtered.
+                                    According to a statement from the designer at the time, "the fur segment of our business
+                                    simply did not fit with our corporate philosophy any longer.”</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+
+
+
             </div>
 
 
@@ -110,7 +170,7 @@
             <div data-menuanchor="secondPage" class="dot">
                 <a href="#secondPage"></a>
             </div>
-            <div data-menuanchor="3rdPage" class="dot">
+            <!-- <div data-menuanchor="3rdPage" class="dot">
                 <a href="#3rdPage"></a>
             </div>
             <div data-menuanchor="4thPage" class="dot">
@@ -118,13 +178,8 @@
             </div>
             <div data-menuanchor="5thPage" class="dot">
                 <a href="#5thPage"></a>
-            </div>
-            <div data-menuanchor="6thPage" class="dot">
-                <a href="#6thPage"></a>
-            </div>
-            <div data-menuanchor="7thPage" class="dot">
-                <a href="#7thPage"></a>
-            </div>
+            </div> -->
+
         </div>
 
         <!--  -->
@@ -162,6 +217,7 @@
     <!-- 一頁式js -->
     <script src="scripts/jquery.fullpage.min.js"></script>
     <script src="scripts/jquery.fullpage.extensions.min.js"></script>
+    <script type="text/javascript" src="scripts/scrolloverflow.min.js"></script>
     <!-- 檢查背景圖片顏色 -->
     <script src="scripts/bgcheck.js"></script>
     <!-- 動畫效果 -->
@@ -172,20 +228,15 @@
     <script src="scripts/layout.js"></script>
 
     <script type="text/javascript">
-        BackgroundCheck.init({
-            targets: '.target',
-            images: '.thumbnail'
-        });
         $(document).ready(function () {
             function initialization() {
                 $('#fullpage').fullpage({
-                    // anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage',
-                    //     '7thPage', 'footer'
-                    // ],
+                    anchors: ['firstPage', 'secondPage', 'footer'
+                    ],
                     menu: '#dots',
                     keyboardScrolling: true,
                     animateAnchor: true,
-                    // scrollOverflow: true,
+                    scrollOverflow: true,
                     responsiveWidth: 769,
 
                     onLeave: function (index, nextIndex, direction) {
@@ -198,14 +249,11 @@
                         } else {
                             $('.arrow').fadeIn();
                             $('.arrow+p').fadeIn();
-
                         }
                     },
                     afterLoad: function (anchorLink, index) {
-                        BackgroundCheck.refresh();
-                        if (anchorLink == '3rdPage') {
-                            svgCircle();
-                        } else if (anchorLink == 'footer') {
+                       
+                        if (anchorLink == 'footer') {
                             $('.slider-footer').fadeOut(100);
                             $('#dots').fadeOut(100);
 
@@ -213,9 +261,6 @@
                             $('.slider-footer').fadeIn();
                             $('#dots').fadeIn();
                         }
-                    },
-                    afterRender: function () {
-                        BackgroundCheck.refresh();
                     }
                 });
             }
@@ -227,68 +272,6 @@
             });
 
 
-            // 圓圈動畫
-            function svgCircle() {
-                var path = $('.circle svg').find('path');
-                var pathLength = path[0].getTotalLength();
-                var speed = 1.5;
-                var percent = parseInt($('.figure span').html()) * 0.01;
-
-                path.css({
-                    'stroke-dasharray': pathLength + ' ' + pathLength,
-                    'stroke-dashoffset': pathLength
-                });
-
-                if (!isIE()) {
-                    $('.path').velocity({
-                        'stroke-dashoffset': pathLength * (1 - percent)
-                    }, {
-                        duration: speed * 1000,
-                        progress: function () {
-                            var percentText = 100 - Math.round(parseFloat($(this).css(
-                                'stroke-dashoffset')) / pathLength * 100);
-                            $('.figure span').html(percentText + '%');
-                        }
-
-                    });
-
-                } else {
-                    var currentPathLength = pathLength;
-                    var requestAnimationFrameID = requestAnimationFrame(doAnim);
-
-                    function doAnim() {
-                        if (currentPathLength <= pathLength * (1 - percent)) {
-                            cancelAnimationFrame(requestAnimationFrameID);
-                            return;
-                        }
-
-                        var percentText = 100 - Math.round(parseFloat(currentPathLength) / pathLength * 100);
-                        $('.figure h4 span').html(percentText + '%');
-
-                        $('.path').css({
-                            'stroke-dashoffset': currentPathLength
-                        });
-                        currentPathLength -= 2;
-                        requestAnimationFrameID = requestAnimationFrame(doAnim);
-                    }
-                }
-
-                function isIE(userAgent) {
-                    userAgent = userAgent || navigator.userAgent;
-                    return userAgent.indexOf("MSIE ") > -1 || userAgent.indexOf("Trident/") > -1;
-                }
-            }
-
-            // wave
-            var SW = new SiriWave({
-                width: 500,
-                height: 100,
-                speed: 0.03,
-                color: '#00d0aa',
-                amplitude: .3,
-                container: document.getElementById('wave'),
-                autostart: true,
-            });
 
         });
     </script>

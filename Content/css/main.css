@@ -29,6 +29,9 @@ h4 {
 h3 {
   font-size: 42px; }
 
+h4 {
+  font-size: 20px; }
+
 p {
   letter-spacing: 1px;
   font-size: 1rem; }
@@ -39,15 +42,33 @@ p {
 .vertical-mid {
   vertical-align: middle; }
 
+.vertical-top {
+  vertical-align: top; }
+
 .em-4 {
   display: inline-block;
   width: calc(100% / 3); }
+  @media screen and (max-width: 768px) and (min-width: 300px) {
+    .em-4 {
+      width: 100%; } }
+
+.em-6 {
+  display: inline-block;
+  width: calc(100% / 2); }
+  .em-6:nth-child(2n) {
+    padding: 0 30px; }
+  @media screen and (max-width: 768px) and (min-width: 300px) {
+    .em-6 {
+      width: 100%; } }
 
 .color-black {
   color: #000; }
 
 .text-center {
   text-align: center; }
+
+.text-jus {
+  text-align: justify; }
 
 .text-left {
   text-align: left; }
@@ -1084,6 +1105,13 @@ footer {
     -webkit-transform: translate(0%, 0%);
     transform: translate(0%, 0%); } }
 
+@media screen and (min-width: 769px) {
+  .childpage .row .em-4:nth-child(3) {
+    position: relative;
+    z-index: 1;
+    margin-left: -80px;
+    padding-right: 10px; } }
+
 .childpage .squareImg {
   width: 100%;
   position: relative;
@@ -1096,3 +1124,39 @@ footer {
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover; }
+
+@media screen and (max-width: 768px) and (min-width: 300px) {
+  .childpage .content {
+    padding: 0 20px; } }
+
+@media screen and (max-width: 768px) and (min-width: 300px) {
+  .childpage h3 {
+    font-weight: lighter;
+    font-size: 22px;
+    margin: 10px 0 20px; } }
+
+@media screen and (max-width: 768px) and (min-width: 300px) {
+  .childpage p {
+    font-size: 16px;
+    font-weight: lighter; } }
+
+article {
+  color: #000;
+  margin-bottom: 40px; }
+  article .container {
+    max-width: 1260px; }
+  article h4 {
+    margin-bottom: 18px; }
+  article p {
+    line-height: 180%; }
+  article p.date {
+    font-size: 14px;
+    margin: 90px 0 45px; }
+    @media screen and (max-width: 768px) and (min-width: 300px) {
+      article p.date {
+        margin: 20px 0; } }
+  article:nth-child(2n) .row {
+    direction: rtl; }
+  @media screen and (max-width: 768px) and (min-width: 300px) {
+    article {
+      margin-bottom: 40px; } }

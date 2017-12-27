@@ -2,6 +2,18 @@
 @import "_mixin.scss";
 
 .childpage {
+  .row {
+    .em-4 {
+      @include range-width(769px,0){
+        &:nth-child(3) {
+          position: relative;
+          z-index: 1;
+          margin-left: -80px;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
   .squareImg {
     width: 100%;
     position: relative;
@@ -13,7 +25,56 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-     
     }
   }
+  .content {
+    @include range-width(300px,768px) {
+      padding: 0 20px;
+    }
+  }
+  h3{
+      @include range-width(300px,768px){
+          font-weight: lighter;
+          font-size: 22px;
+          margin:10px 0 20px;
+      }
+  }
+  p{
+          @include range-width(300px, 768px) {
+              font-size: 16px;
+              font-weight: lighter;
+          }
+  }
+}
+
+article{
+    color:#000;
+    margin-bottom: 40px;
+    .container{
+        max-width: 1260px;
+    }
+    
+    h4{
+        margin-bottom: 18px;
+    }
+    p{
+        line-height: 180%;
+    }
+    p.date{
+        font-size: 14px;
+        margin: 90px 0 45px;
+        @include range-width(300px,768px){
+            margin: 20px 0;
+        }
+    }
+    &:nth-child(2n){
+        .row{
+            direction: rtl;
+        }
+        
+    }
+    @include range-width(300px, 768px) {
+        margin-bottom: 40px;
+    }
+   
 }
