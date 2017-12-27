@@ -28,50 +28,47 @@ header {
     }
     p {
       color: $navcolor;
-    }
-
-    // 三明治選單
-    .menu-line{
+    } // 三明治選單
+    .menu-line {
       width: 52px;
       height: 2px;
       background: $navcolor;
       position: relative;
       margin-right: 13px;
       transition: .3s;
-      @include range-width(300px,768px){
+      @include range-width(300px, 768px) {
         width: 26px;
       }
-      &:before,&:after{
+      &:before,
+      &:after {
         content: '';
         display: block;
         position: absolute;
-         transition: .3s;
+        transition: .3s;
         width: 100%;
         height: 2px;
-         background: $navcolor;
+        background: $navcolor;
       }
-      &:before{
-      top: -13px;
+      &:before {
+        top: -13px;
       }
-      &:after{
-        bottom:-13px;
+      &:after {
+        bottom: -13px;
       }
-      &.active{
-        transform: rotate(45deg) ;
-        &:before{
-          transform: translate(-100%,0);
+      &.active {
+        transform: rotate(45deg);
+        &:before {
+          transform: translate(-100%, 0);
           opacity: 0;
         }
-        &:after{
-          transform: rotate(90deg) translate(-25% , 0);
-          @include range-width(300px,768px){
-              transform: rotate(90deg) translate(-50%, 0);
+        &:after {
+          transform: rotate(90deg) translate(-25%, 0);
+          @include range-width(300px, 768px) {
+            transform: rotate(90deg) translate(-50%, 0);
           }
         }
       }
-      
     }
-    
     img,
     svg {
       width: 30px;
@@ -111,14 +108,13 @@ header {
   z-index: 100;
   font-size: 0;
   transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
- 
   &.active {
     left: 0;
-    .logo-area{
-       animation: fadeDown .5s .5s forwards;
+    .logo-area {
+      animation: fadeDown .5s .5s forwards;
     }
-    .showImg{
-       animation: fadeUp .5s .8s forwards;
+    .showImg {
+      animation: fadeUp .5s .8s forwards;
     }
   }
   .logo-area {
@@ -138,7 +134,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     height: 100%;
-    @include range-width(300px,768px){
+    @include range-width(300px, 768px) {
       height: calc(100% - 174px);
     }
     &>* {
@@ -147,7 +143,7 @@ header {
     }
     ul {
       width: 25%;
-      @include range-width(300px,768px){
+      @include range-width(300px, 768px) {
         align-self: flex-end;
       }
       li {
@@ -159,7 +155,7 @@ header {
         &:nth-child(2) {
           margin: 168px 0;
           @include range-width(300px, 768px) {
-          margin: 0 0 60px 0;
+            margin: 0 0 60px 0;
           }
         }
         @include range-width(300px, 768px) {
@@ -171,7 +167,7 @@ header {
           text-decoration: none;
           display: inline-block;
           width: 100%;
-          @include range-width(300px,768px){
+          @include range-width(300px, 768px) {
             font-size: 16px;
           }
         }
@@ -181,12 +177,13 @@ header {
   .showImg {
     width: 50%;
     opacity: 0;
-   
     img {
       height: calc(100% - 229px);
       object-fit: cover;
       @include range-width(300px, 768px) {
         height: calc(100% - 174px);
+        width: 100vw;
+        margin-left: -50%;
       }
     }
   }
@@ -202,11 +199,10 @@ header {
   background: #252525;
   left: 125%;
   transition: .5s;
- 
   &.active {
     left: 25%;
     overflow: auto;
-    @include range-width(300px,768px){
+    @include range-width(300px, 768px) {
       width: 100%;
       left: 0;
     }
@@ -218,21 +214,20 @@ header {
     top: 70px;
     left: 70px;
     cursor: pointer;
-  
-    @include range-width(769px,0){
- transform: translate(-50%, -50%) rotate(180deg);
+    @include range-width(769px, 0) {
+      transform: translate(-50%, -50%) rotate(180deg);
     }
-    @include range-width(300px,768px){
+    @include range-width(300px, 768px) {
       left: 30px;
       top: 40px;
-       transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
     }
   }
   ul {
     font-size: 0;
     padding: 140px; // overflow: scroll;
-    @include range-width(300px,768px){
-      padding:80px 40px;
+    @include range-width(300px, 768px) {
+      padding: 80px 40px;
     }
     li {
       display: inline-block;
@@ -241,25 +236,25 @@ header {
       background: #fff;
       height: 298px;
       animation: fadeUp .5s backwards;
-      &:nth-child(1){
+      &:nth-child(1) {
         animation-delay: .5s;
       }
       &:nth-child(2) {
         animation-delay: .6s;
       }
-       &:nth-child(3) {
-         animation-delay: .7s;
-       }
-        &:nth-child(4) {
-          animation-delay:.8s;
-        }
-        &:nth-child(5) {
-          animation-delay: .9s;
-        }
-        &:nth-child(6) {
-          animation-delay: 1s;
-        }
-      @include range-width(300px,768px){
+      &:nth-child(3) {
+        animation-delay: .7s;
+      }
+      &:nth-child(4) {
+        animation-delay: .8s;
+      }
+      &:nth-child(5) {
+        animation-delay: .9s;
+      }
+      &:nth-child(6) {
+        animation-delay: 1s;
+      }
+      @include range-width(300px, 768px) {
         width: 100%;
         height: 208px;
         margin-bottom: 20px;
@@ -267,33 +262,33 @@ header {
       img {
         object-fit: cover;
         height: 230px;
-        @include range-width(300px,768px){
+        @include range-width(300px, 768px) {
           height: 140px;
         }
       }
-      p{
+      p {
         text-align: center;
         margin: 14px 0 18px;
         width: 100%;
         font-size: 11px;
         transform: scale(0.95);
         color: #000;
-        span{
-          color:$navcolor;
+        span {
+          color: $navcolor;
         }
       }
       &:nth-child(2n) {
         margin-left: 34px;
-         @include range-width(300px, 768px) {
+        @include range-width(300px, 768px) {
           margin-left: 0;
-         }
+        }
       }
     }
-    .dots{
+    .dots {
       padding: 0;
       text-align: center;
       width: 100%;
-      li{
+      li {
         display: inline-block;
         margin: 0 8px;
         width: 8px;
@@ -304,4 +299,3 @@ header {
     }
   }
 }
-

@@ -22,8 +22,8 @@
                         <div class="menu-line"></div>
                         <!-- <img src="Content/img/menu.svg" alt="" class="menu"> -->
                     </div>
-    
-    
+
+
                     <p class="d-sm-none">MENU</p>
                 </li>
                 <li>
@@ -40,15 +40,15 @@
                         <li>
                             <a href="power.json" class="sub">Power</a>
                         </li>
-    
+
                         <li>
                             <a href="cable.json" class="sub">Cable</a>
                         </li>
-    
+
                         <li>
                             <a href="Accessories.json" class="sub">Accessories</a>
                         </li>
-    
+
                     </ul>
                     <div class="showImg">
                         <img src="Content/img/navImg.png" alt="" class="img-fluid">
@@ -65,10 +65,10 @@
                         </li>
                     </ul>
                 </div>
-    
-    
+
+
             </div>
-    
+
             <div class="sibling-menu-list">
                 <div class="back">
                     <img src="Content/img/back.svg" alt="" class="img-fluid">
@@ -625,14 +625,14 @@
                     $('.path').velocity({
                         'stroke-dashoffset': pathLength * (1 - percent)
                     }, {
-                        duration: speed * 1000,
-                        progress: function () {
-                            var percentText = 100 - Math.round(parseFloat($(this).css(
-                                'stroke-dashoffset')) / pathLength * 100);
-                            $('.figure span').html(percentText + '%');
-                        }
+                            duration: speed * 1000,
+                            progress: function () {
+                                var percentText = 100 - Math.round(parseFloat($(this).css(
+                                    'stroke-dashoffset')) / pathLength * 100);
+                                $('.figure span').html(percentText + '%');
+                            }
 
-                    });
+                        });
 
                 } else {
                     var currentPathLength = pathLength;

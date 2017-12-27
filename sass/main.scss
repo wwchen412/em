@@ -39,6 +39,19 @@ p {
     letter-spacing: 1px;
     font-size: 1rem;
 }
+.row{
+    font-size: 0;   
+    
+}
+.vertical-mid{
+    vertical-align: middle;
+}
+
+.em-4{
+    display: inline-block;
+    width: calc(100% / 3);
+  
+}
 
 .color-black {
     color: #000;
@@ -135,3 +148,4 @@ p {
 @import '_footer.scss';
 @import '_products.scss';
 @import '_animation.scss';
+@import '_child.scss';

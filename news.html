@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EM</title>
+
+    <link rel="stylesheet" href="Content/css/jquery.fullpage.min.css">
+    <link rel="stylesheet" href="Content/css/main.css">
+
+</head>
+
+<body>
+
+    <header id="header">
+
+    </header>
+
+    <div class="mainSlider">
+        <div id="fullpage">
+            <!-- 內頁區塊首頁 -->
+            <div class="section childpage" style="background:#252525;">
+                <div class="content">
+                    <div class="container">
+                        <!-- 圖文編輯器內容 -->
+                        <div class="row vertical-mid">
+                            <div class="em-4 vertical-mid">
+                                <h3>About us</h3>
+                            </div>
+                            <div class="em-4 vertical-mid">
+                                <div class="squareImg">
+                                    <img src="Content/img/item.png" alt="" class="img-fluid">
+                                </div>
+
+                            </div>
+                            <div class="em-4 vertical-mid"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 設定的圖片 -->
+                <!-- <img src="Content/img/item.png" alt="" class="centerimg"> -->
+            </div>
+
+            <div class="section thumbnail" style="background-image:url('Content/img/productbg.png')">
+                <div class="content">
+                    <!-- 圖文編輯器內容 -->
+                    <div class="main-content">
+                        <h3 class="target">Works in more than 150 countries</h3>
+                    </div>
+
+                </div>
+                <!-- 設定的圖片 -->
+                <img src="Content/img/5.png" alt="" class="bgimg bgimg-big">
+            </div>
+
+
+
+
+            <!-- footer -->
+            <div class="section fp-auto-height fp-auto-height-responsive">
+                <footer>
+                    <ul>
+                        <li>
+                            <div>
+                                <img src="Content/img/logo.svg" alt="" width="163px">
+                                <p>© 2017 EnergieMAX Design Corp. All Rights Reserved
+                                </p>
+                            </div>
+
+                        </li>
+                        <li>
+                            <h4>Product</h4>
+                            <ul>
+                                <li>Power</li>
+                                <li>Cable</li>
+                                <li>Accessories</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>Support</h4>
+                            <ul>
+                                <li>FAQ</li>
+                                <li>Warranty</li>
+                                <li>Privacy Policy</li>
+                                <li>Terms & Conditions</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4>About EnergieMAX
+                            </h4>
+                            <ul>
+                                <li>News</li>
+                                <li>Contact</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </footer>
+            </div>
+
+        </div>
+        <!-- Add Pagination -->
+        <div id="dots" class="d-sm-none">
+            <div data-menuanchor="firstPage" class="dot active">
+                <a href="#firstPage"></a>
+            </div>
+            <div data-menuanchor="secondPage" class="dot">
+                <a href="#secondPage"></a>
+            </div>
+            <div data-menuanchor="3rdPage" class="dot">
+                <a href="#3rdPage"></a>
+            </div>
+            <div data-menuanchor="4thPage" class="dot">
+                <a href="#4thPage"></a>
+            </div>
+            <div data-menuanchor="5thPage" class="dot">
+                <a href="#5thPage"></a>
+            </div>
+            <div data-menuanchor="6thPage" class="dot">
+                <a href="#6thPage"></a>
+            </div>
+            <div data-menuanchor="7thPage" class="dot">
+                <a href="#7thPage"></a>
+            </div>
+        </div>
+
+        <!--  -->
+        <div class="slider-footer">
+            <ul>
+                <li class="d-sm-none">
+                    <a href="">
+                        <img src="Content/img/logo.svg" alt="" width="150px" style="margin:30px 0;">
+                    </a>
+                    <p style="font-size:18px" class="">2017 All Right Reserved</p>
+                </li>
+                <li class="text-center">
+                    <img id="moveSectionDown" src="Content/img/arrow.svg" alt="" class="inlineBlock  arrow ">
+                    <p class="inlineBlock d-sm-none ">Scrool Down</p>
+                </li>
+                <li class="text-right contact d-sm-none">
+                    <p class="inlineBlock ">EN / CN</p>
+                    <a href="">
+                        <img src="Content/img/fb.svg" alt="" class="inlineBlock">
+                    </a>
+                    <a href="">
+                        <img src="Content/img/mail.svg" alt="" class="inlineBlock">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+    <!-- jQuery JS 1.12.4 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- 一頁式js -->
+    <script src="scripts/jquery.fullpage.min.js"></script>
+    <script src="scripts/jquery.fullpage.extensions.min.js"></script>
+    <!-- 檢查背景圖片顏色 -->
+    <script src="scripts/bgcheck.js"></script>
+    <!-- 動畫效果 -->
+    <script src="scripts/velocity.min.js"></script>
+    <script src="scripts/siriwave.js"></script>
+
+    <!-- layout -->
+    <script src="scripts/layout.js"></script>
+
+    <script type="text/javascript">
+        BackgroundCheck.init({
+            targets: '.target',
+            images: '.thumbnail'
+        });
+        $(document).ready(function () {
+            function initialization() {
+                $('#fullpage').fullpage({
+                    // anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage',
+                    //     '7thPage', 'footer'
+                    // ],
+                    menu: '#dots',
+                    keyboardScrolling: true,
+                    animateAnchor: true,
+                    // scrollOverflow: true,
+                    responsiveWidth: 769,
+
+                    onLeave: function (index, nextIndex, direction) {
+                        var leavingSection = $(this);
+                        console.log(index);
+                        //after leaving section 2
+                        if (index >= 1 && direction == 'down') {
+                            $('.arrow').fadeOut();
+                            $('.arrow+p').fadeOut();
+                        } else {
+                            $('.arrow').fadeIn();
+                            $('.arrow+p').fadeIn();
+
+                        }
+                    },
+                    afterLoad: function (anchorLink, index) {
+                        BackgroundCheck.refresh();
+                        if (anchorLink == '3rdPage') {
+                            svgCircle();
+                        } else if (anchorLink == 'footer') {
+                            $('.slider-footer').fadeOut(100);
+                            $('#dots').fadeOut(100);
+
+                        } else {
+                            $('.slider-footer').fadeIn();
+                            $('#dots').fadeIn();
+                        }
+                    },
+                    afterRender: function () {
+                        BackgroundCheck.refresh();
+                    }
+                });
+            }
+            initialization();
+
+            $('#moveSectionDown').click(function (e) {
+                e.preventDefault();
+                $.fn.fullpage.moveSectionDown();
+            });
+
+
+            // 圓圈動畫
+            function svgCircle() {
+                var path = $('.circle svg').find('path');
+                var pathLength = path[0].getTotalLength();
+                var speed = 1.5;
+                var percent = parseInt($('.figure span').html()) * 0.01;
+
+                path.css({
+                    'stroke-dasharray': pathLength + ' ' + pathLength,
+                    'stroke-dashoffset': pathLength
+                });
+
+                if (!isIE()) {
+                    $('.path').velocity({
+                        'stroke-dashoffset': pathLength * (1 - percent)
+                    }, {
+                        duration: speed * 1000,
+                        progress: function () {
+                            var percentText = 100 - Math.round(parseFloat($(this).css(
+                                'stroke-dashoffset')) / pathLength * 100);
+                            $('.figure span').html(percentText + '%');
+                        }
+
+                    });
+
+                } else {
+                    var currentPathLength = pathLength;
+                    var requestAnimationFrameID = requestAnimationFrame(doAnim);
+
+                    function doAnim() {
+                        if (currentPathLength <= pathLength * (1 - percent)) {
+                            cancelAnimationFrame(requestAnimationFrameID);
+                            return;
+                        }
+
+                        var percentText = 100 - Math.round(parseFloat(currentPathLength) / pathLength * 100);
+                        $('.figure h4 span').html(percentText + '%');
+
+                        $('.path').css({
+                            'stroke-dashoffset': currentPathLength
+                        });
+                        currentPathLength -= 2;
+                        requestAnimationFrameID = requestAnimationFrame(doAnim);
+                    }
+                }
+
+                function isIE(userAgent) {
+                    userAgent = userAgent || navigator.userAgent;
+                    return userAgent.indexOf("MSIE ") > -1 || userAgent.indexOf("Trident/") > -1;
+                }
+            }
+
+            // wave
+            var SW = new SiriWave({
+                width: 500,
+                height: 100,
+                speed: 0.03,
+                color: '#00d0aa',
+                amplitude: .3,
+                container: document.getElementById('wave'),
+                autostart: true,
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
