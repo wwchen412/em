@@ -180,6 +180,7 @@ header {
     img {
       height: calc(100% - 229px);
       object-fit: cover;
+      object-position: 50% 0%;
       @include range-width(300px, 768px) {
         height: calc(100% - 174px);
         width: 100vw;
