@@ -1160,3 +1160,27 @@ article {
   @media screen and (max-width: 768px) and (min-width: 300px) {
     article {
       margin-bottom: 40px; } }
+
+.faq-list {
+  font-size: 0;
+  max-width: 800px;
+  margin: 0 auto; }
+  .faq-list li {
+    display: inline-block;
+    width: calc(100% / 5); }
+    .faq-list li:hover svg .cls-1 {
+      fill: #c3312f; }
+    .faq-list li:hover p {
+      color: #c3312f; }
+    .faq-list li svg {
+      max-width: 78px;
+      width: 100%;
+      cursor: pointer; }
+      .faq-list li svg .cls-1 {
+        fill: #4d4d4d; }
+    .faq-list li p {
+      margin-top: 20px; }
+
+.faq-answer {
+  margin: 108px auto 110px;
+  max-width: 800px; }
