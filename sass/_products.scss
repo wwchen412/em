@@ -247,6 +247,7 @@
         width: calc(50% - (40px / 2));
         &.specTitle {
             text-align: right;
+            font-weight: bolder;
         }
         &.specList {
             margin-left: 40px;

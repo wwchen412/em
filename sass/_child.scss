@@ -1,10 +1,9 @@
 @import "_color.scss";
 @import "_mixin.scss";
-
 .childpage {
   .row {
     .em-4 {
-      @include range-width(769px,0) {
+      @include range-width(769px, 0) {
         &:nth-child(3) {
           position: relative;
           z-index: 1;
@@ -28,12 +27,12 @@
     }
   }
   .content {
-    @include range-width(300px,768px) {
+    @include range-width(300px, 768px) {
       padding: 0 20px;
     }
   }
   h3 {
-    @include range-width(300px,768px) {
+    @include range-width(300px, 768px) {
       font-weight: lighter;
       font-size: 22px;
       margin: 10px 0 20px;
@@ -53,7 +52,6 @@ article {
   .container {
     max-width: 1260px;
   }
-
   h4 {
     margin-bottom: 18px;
   }
@@ -63,7 +61,7 @@ article {
   p.date {
     font-size: 14px;
     margin: 90px 0 45px;
-    @include range-width(300px,768px) {
+    @include range-width(300px, 768px) {
       margin: 20px 0;
     }
   }
@@ -78,42 +76,99 @@ article {
 }
 
 // get help
-
 .faq-list {
   font-size: 0;
   max-width: 800px;
   margin: 0 auto;
-
+  @include range-width(300px, 768px) {
+    margin: 64px auto;
+  }
   li {
     display: inline-block;
     width: calc(100% / 5);
-    &:hover {
-        svg{
-.cls-1 {
-    fill: #c3312f;
-}
-        }
-        p{
-            color:#c3312f;
-        }
-        
+    overflow: hidden;
+    @include range-width(300px, 768px) {
+      width: 100%;
     }
-    svg{
-        max-width: 78px;
-        width: 100%;
-        cursor: pointer;
-        .cls-1{
-            fill:#4d4d4d;
+    .faq-title {
+      position: relative;
+      z-index: 1;
+      &:hover {
+        svg {
+          .cls-1 {
+            fill: #c3312f;
+          }
         }
-        
+        p {
+          color: #c3312f;
+        }
+      }
+      &.active {
+        svg {
+          .cls-1 {
+            fill: #c3312f;
+          }
+        }
+        p {
+          color: #fff;
+        }
+      }
     }
-    p{
-        margin-top: 20px;
+
+    .svg-wrap {
+      display: inline-block;
+      background: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      position: relative;
+      z-index: 1;
+    }
+    svg {
+      max-width: 78px;
+      width: 100%;
+      cursor: pointer;
+      .cls-1 {
+        fill: #4d4d4d;
+      }
+      @include range-width(300px, 768px) {
+        max-width: 60px;
+      }
+    }
+    p {
+      margin-top: 20px;
+      font-size: 12px;
+      line-height: 150%;
+      @include range-width(300px, 768px) {
+        margin: 10px 0 32px;
+      }
+    }
+
+    .faq-content {
+      display: none;
+      @include range-width(300px,768px) {
+        background: #252525;
+        color: #fff;
+        padding: 80px 20px 26px;
+        transform: translateY(-100px);
+        display: none;
+        margin-bottom: -60px;
+        transform-origin: top;
+      }
     }
   }
 }
-.faq-answer{
-    margin: 108px auto 110px;
-    max-width: 800px;
-   
+
+.faq-answer {
+  margin: 108px auto 110px;
+  max-width: 800px;
+  p{
+    line-height: 180%;
+    display: none;
+    &.active{
+      display: block;
+    }
+  }
+  @include range-width(300px,768px){
+    display: none;
+  }
 }

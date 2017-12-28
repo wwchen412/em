@@ -94,7 +94,7 @@
         text-decoration: none;
         max-width: 292px;
         font-size: 16px;
-        font-weight: lighter;
+        font-weight: normal;
         @include range-width(300px, 768px) {
             font-size: 14px;
             max-width: 200px;
@@ -110,7 +110,7 @@
     h4 {
         margin: 120px 0 55px;
         font-size: 36px;
-        font-weight: normal;
+        // font-weight: normal;
     }
     p {
         margin: 52px 0 70px;

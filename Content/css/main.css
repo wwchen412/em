@@ -23,8 +23,8 @@ body {
 h1,
 h2,
 h3,
-h4 {
-  font-weight: normal; }
+h4, p {
+  font-weight: lighter; }
 
 h3 {
   font-size: 42px; }
@@ -33,7 +33,6 @@ h4 {
   font-size: 20px; }
 
 p {
-  letter-spacing: 1px;
   font-size: 1rem; }
 
 .row {
@@ -137,8 +136,7 @@ p {
   -ms-flex-align: center;
   align-items: center; }
   .section h2 {
-    font-size: 72px;
-    font-weight: 400; }
+    font-size: 72px; }
 
 header {
   position: fixed;
@@ -516,7 +514,7 @@ header {
     text-decoration: none;
     max-width: 292px;
     font-size: 16px;
-    font-weight: lighter; }
+    font-weight: normal; }
     @media screen and (max-width: 768px) and (min-width: 300px) {
       .content a {
         font-size: 14px;
@@ -527,8 +525,7 @@ header {
 
 .main-content h4 {
   margin: 120px 0 55px;
-  font-size: 36px;
-  font-weight: normal; }
+  font-size: 36px; }
 
 .main-content p {
   margin: 52px 0 70px; }
@@ -699,7 +696,7 @@ footer {
             margin-bottom: 30px; } }
       footer > ul > li li {
         margin-bottom: 27px;
-        font-size: 21px;
+        font-size: 20px;
         font-weight: 100; }
         @media screen and (max-width: 576px) and (min-width: 300px) {
           footer > ul > li li {
@@ -932,7 +929,8 @@ footer {
     vertical-align: top;
     width: calc(50% - (40px / 2)); }
     .specForm > div.specTitle {
-      text-align: right; }
+      text-align: right;
+      font-weight: bolder; }
     .specForm > div.specList {
       margin-left: 40px;
       text-align: left; }
@@ -1105,6 +1103,26 @@ footer {
     -webkit-transform: translate(0%, 0%);
     transform: translate(0%, 0%); } }
 
+@-webkit-keyframes slideDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-10%) scaleY(0);
+    transform: translateY(-10%) scaleY(0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%) scaleY(1);
+    transform: translateY(0%) scaleY(1); } }
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-10%) scaleY(0);
+    transform: translateY(-10%) scaleY(0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%) scaleY(1);
+    transform: translateY(0%) scaleY(1); } }
+
 @media screen and (min-width: 769px) {
   .childpage .row .em-4:nth-child(3) {
     position: relative;
@@ -1165,22 +1183,74 @@ article {
   font-size: 0;
   max-width: 800px;
   margin: 0 auto; }
+  @media screen and (max-width: 768px) and (min-width: 300px) {
+    .faq-list {
+      margin: 64px auto; } }
   .faq-list li {
     display: inline-block;
-    width: calc(100% / 5); }
-    .faq-list li:hover svg .cls-1 {
-      fill: #c3312f; }
-    .faq-list li:hover p {
-      color: #c3312f; }
+    width: calc(100% / 5);
+    overflow: hidden; }
+    @media screen and (max-width: 768px) and (min-width: 300px) {
+      .faq-list li {
+        width: 100%; } }
+    .faq-list li .faq-title {
+      position: relative;
+      z-index: 1; }
+      .faq-list li .faq-title:hover svg .cls-1 {
+        fill: #c3312f; }
+      .faq-list li .faq-title:hover p {
+        color: #c3312f; }
+      .faq-list li .faq-title.active svg .cls-1 {
+        fill: #c3312f; }
+      .faq-list li .faq-title.active p {
+        color: #fff; }
+    .faq-list li .svg-wrap {
+      display: inline-block;
+      background: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      position: relative;
+      z-index: 1; }
     .faq-list li svg {
       max-width: 78px;
       width: 100%;
       cursor: pointer; }
       .faq-list li svg .cls-1 {
         fill: #4d4d4d; }
+      @media screen and (max-width: 768px) and (min-width: 300px) {
+        .faq-list li svg {
+          max-width: 60px; } }
     .faq-list li p {
-      margin-top: 20px; }
+      margin-top: 20px;
+      font-size: 12px;
+      line-height: 150%; }
+      @media screen and (max-width: 768px) and (min-width: 300px) {
+        .faq-list li p {
+          margin: 10px 0 32px; } }
+    .faq-list li .faq-content {
+      display: none; }
+      @media screen and (max-width: 768px) and (min-width: 300px) {
+        .faq-list li .faq-content {
+          background: #252525;
+          color: #fff;
+          padding: 80px 20px 26px;
+          -webkit-transform: translateY(-100px);
+          -ms-transform: translateY(-100px);
+          transform: translateY(-100px);
+          display: none;
+          margin-bottom: -60px;
+          -webkit-transform-origin: top;
+          -ms-transform-origin: top;
+          transform-origin: top; } }
 
 .faq-answer {
   margin: 108px auto 110px;
   max-width: 800px; }
+  .faq-answer p {
+    line-height: 180%;
+    display: none; }
+    .faq-answer p.active {
+      display: block; }
+  @media screen and (max-width: 768px) and (min-width: 300px) {
+    .faq-answer {
+      display: none; } }
