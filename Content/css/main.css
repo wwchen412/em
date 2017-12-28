@@ -1293,3 +1293,6 @@ article {
     .faq .faq-list li p {
       font-size: 20px;
       margin-bottom: 32px; }
+
+.warranty.container {
+  max-width: 800px; }
