@@ -144,7 +144,7 @@ header {
   left: 0;
   z-index: 100;
   width: 100%;
-  padding: 20px;
+  padding: 15px 20px 20px;
   color: #787878; }
   header #menu {
     position: relative;
@@ -174,7 +174,8 @@ header {
       margin-right: 13px;
       -webkit-transition: .3s;
       -o-transition: .3s;
-      transition: .3s; }
+      transition: .3s;
+      margin-top: 3px; }
       @media screen and (max-width: 768px) and (min-width: 300px) {
         header li .menu-line {
           width: 26px; } }
@@ -287,6 +288,8 @@ header {
         position: relative;
         z-index: 101;
         margin-bottom: 60px; }
+        .menu-list .lists ul li:last-child {
+          margin-bottom: 100px; }
         .menu-list .lists ul li:nth-child(2) {
           margin: 168px 0; }
           @media screen and (max-width: 768px) and (min-width: 300px) {
@@ -531,7 +534,8 @@ header {
   font-size: 36px; }
 
 .main-content p {
-  margin: 52px 0 70px; }
+  margin: 52px 0 70px;
+  font-weight: normal; }
   @media screen and (max-width: 768px) and (min-width: 300px) {
     .main-content p {
       margin-top: 17px;
@@ -745,18 +749,22 @@ footer {
     @media screen and (max-width: 768px) and (min-width: 300px) {
       .products .content .animation-text li {
         width: 100%;
-        padding: 20px 0; }
+        padding: 10vh 0; }
+        .products .content .animation-text li:nth-child(2) {
+          padding: 0; }
         .products .content .animation-text li img {
           width: 102px; } }
     .products .content .animation-text li img {
       max-width: 254px; }
     .products .content .animation-text li:nth-child(3) {
       text-align: left; }
-      @media screen and (max-width: 768px) and (min-width: 300px) {
-        .products .content .animation-text li:nth-child(3) {
-          text-align: center; } }
       .products .content .animation-text li:nth-child(3) h3 {
         margin-bottom: 52px; }
+      @media screen and (max-width: 768px) and (min-width: 300px) {
+        .products .content .animation-text li:nth-child(3) {
+          text-align: center; }
+          .products .content .animation-text li:nth-child(3) h3 {
+            margin-bottom: 22px; } }
   .products .content .animation-text h3 {
     font-size: 36px;
     margin-bottom: 52px; }
@@ -961,6 +969,8 @@ footer {
           font-size: 16px; }
           .specForm > div.specList li p:first-child {
             margin-bottom: 8px; }
+          .specForm > div.specList li p:nth-child(2) {
+            font-weight: lighter; }
           @media screen and (max-width: 768px) and (min-width: 300px) {
             .specForm > div.specList li p {
               font-size: 10px;
@@ -1275,3 +1285,11 @@ article {
   @media screen and (max-width: 768px) and (min-width: 300px) {
     .faq-answer {
       display: none; } }
+
+.faq .faq-list {
+  margin: auto; }
+  .faq .faq-list li {
+    width: 100%; }
+    .faq .faq-list li p {
+      font-size: 20px;
+      margin-bottom: 32px; }

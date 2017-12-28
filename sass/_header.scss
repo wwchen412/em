@@ -7,7 +7,7 @@ header {
   left: 0;
   z-index: 100;
   width: 100%;
-  padding: 20px;
+  padding: 15px 20px 20px;
   color: $navcolor; // background-color: #f00;
   #menu {
     position: relative;
@@ -36,6 +36,7 @@ header {
       position: relative;
       margin-right: 13px;
       transition: .3s;
+      margin-top: 3px;
       @include range-width(300px, 768px) {
         width: 26px;
       }
@@ -152,6 +153,9 @@ header {
         position: relative;
         z-index: 101;
         margin-bottom: 60px;
+        &:last-child{
+          margin-bottom: 100px;
+        }
         &:nth-child(2) {
           margin: 168px 0;
           @include range-width(300px, 768px) {
