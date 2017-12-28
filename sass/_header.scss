@@ -36,7 +36,7 @@ header {
       position: relative;
       margin-right: 13px;
       transition: .3s;
-      margin-top: 3px;
+      margin-top: 7px;
       @include range-width(300px, 768px) {
         width: 26px;
       }

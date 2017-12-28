@@ -175,7 +175,7 @@ header {
       -webkit-transition: .3s;
       -o-transition: .3s;
       transition: .3s;
-      margin-top: 3px; }
+      margin-top: 7px; }
       @media screen and (max-width: 768px) and (min-width: 300px) {
         header li .menu-line {
           width: 26px; } }
