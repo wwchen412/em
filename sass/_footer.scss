@@ -10,6 +10,20 @@
     padding: 0px 40px 40px;
     @include range-width(300px, 768px) {
         position: fixed;
+        padding:0 20px 15px;
+        &.active{
+            z-index: 100;
+            .arrow{
+                display: none;
+            }
+            ul li.contact{
+                display: flex !important;
+               justify-content: space-between;
+               p{
+                   margin-right: auto;
+               }
+            }
+        }
     }
     p {
         color: $navcolor;

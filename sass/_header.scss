@@ -124,7 +124,7 @@ header {
     text-align: center;
     opacity: 0;
     @include range-width(300px, 768px) {
-      padding: 80px 0 20px;
+      padding: 60px 0 20px;
     }
     img {
       max-width: 200px;
@@ -135,7 +135,7 @@ header {
     flex-wrap: wrap;
     height: 100%;
     @include range-width(300px, 768px) {
-      height: calc(100% - 174px);
+      height: calc(100% - 154px);
     }
     &>* {
       display: inline-block;
@@ -183,7 +183,8 @@ header {
       object-fit: cover;
       object-position: 50% 0%;
       @include range-width(300px, 768px) {
-        height: calc(100% - 174px);
+        // height: calc(100% - 154px);
+        height: auto;
         width: 100vw;
         margin-left: -50%;
       }
@@ -212,6 +213,7 @@ header {
   .back {
     width: 30px;
     height: 30px;
+    padding: 5px;
     position: absolute;
     top: 70px;
     left: 70px;
