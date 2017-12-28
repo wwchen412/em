@@ -229,7 +229,7 @@
                                     </svg>
                                     <div>
                                         <h4>
-                                            <span>80</span>
+                                            <span>80%</span>
                                         </h4>
                                         <h4>in 35 min</h4>
 
@@ -547,11 +547,15 @@
     <!-- 一頁式js -->
     <script src="scripts/jquery.fullpage.min.js"></script>
     <script src="scripts/jquery.fullpage.extensions.min.js"></script>
+    <script src="scripts/scrolloverflow.min.js"></script>
     <!-- 檢查背景圖片顏色 -->
     <script src="scripts/bgcheck.js"></script>
     <!-- 動畫效果 -->
     <script src="scripts/velocity.min.js"></script>
     <script src="scripts/siriwave.js"></script>
+
+    <!-- layout -->
+    <script src="scripts/layout.js"></script>
 
     <script type="text/javascript">
         BackgroundCheck.init({
@@ -567,7 +571,7 @@
                     menu: '#dots',
                     keyboardScrolling: true,
                     animateAnchor: true,
-                    // scrollOverflow: true,
+                    scrollOverflow: true,
                     responsiveWidth: 769,
 
                     onLeave: function (index, nextIndex, direction) {
@@ -614,7 +618,8 @@
                 var path = $('.circle svg').find('path');
                 var pathLength = path[0].getTotalLength();
                 var speed = 1.5;
-                var percent = parseInt($('.figure span').html()) * 0.01;
+                var percentspan = parseInt($('.figure span').html());
+                var percent =  1;
 
                 path.css({
                     'stroke-dasharray': pathLength + ' ' + pathLength,
@@ -623,12 +628,13 @@
 
                 if (!isIE()) {
                     $('.path').velocity({
-                        'stroke-dashoffset': pathLength * (1 - percent)
+                        'stroke-dashoffset': 0
                     }, {
                             duration: speed * 1000,
                             progress: function () {
-                                var percentText = 100 - Math.round(parseFloat($(this).css(
-                                    'stroke-dashoffset')) / pathLength * 100);
+                                var percentText = percentspan - Math.round(parseFloat($(this).css(
+                                    'stroke-dashoffset')) / pathLength * percentspan); 
+                                console.log(percentText);
                                 $('.figure span').html(percentText + '%');
                             }
 
@@ -644,7 +650,7 @@
                             return;
                         }
 
-                        var percentText = 100 - Math.round(parseFloat(currentPathLength) / pathLength * 100);
+                        var percentText = percentspan - Math.round(parseFloat(currentPathLength) / pathLength * percentspan);
                         $('.figure h4 span').html(percentText + '%');
 
                         $('.path').css({

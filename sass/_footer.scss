@@ -86,7 +86,7 @@ footer {
             }
             h4 {
                 margin-bottom: 45px;
-                font-size: 20px;
+                font-size: 16px;
                 font-weight: bold;
                 @include range-width(300px, 576px) {
                     margin-bottom: 30px;
@@ -94,7 +94,7 @@ footer {
             }
             li {
                 margin-bottom: 27px;
-                font-size: 20px;
+                font-size: 15px;
                 font-weight: 100;
                 @include range-width(300px, 576px) {
                     margin-bottom: 30px;

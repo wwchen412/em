@@ -300,7 +300,8 @@ header {
           color: #787878;
           text-decoration: none;
           display: inline-block;
-          width: 100%; }
+          width: 100%;
+          font-weight: lighter; }
           @media screen and (max-width: 768px) and (min-width: 300px) {
             .menu-list .lists ul li a {
               font-size: 16px; } }
@@ -689,14 +690,14 @@ footer {
           margin-bottom: 16px; }
       footer > ul > li h4 {
         margin-bottom: 45px;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: bold; }
         @media screen and (max-width: 576px) and (min-width: 300px) {
           footer > ul > li h4 {
             margin-bottom: 30px; } }
       footer > ul > li li {
         margin-bottom: 27px;
-        font-size: 20px;
+        font-size: 15px;
         font-weight: 100; }
         @media screen and (max-width: 576px) and (min-width: 300px) {
           footer > ul > li li {
@@ -794,7 +795,10 @@ footer {
     display: flex;
     -webkit-box-flex: wrap;
     -ms-flex: wrap;
-    flex: wrap; }
+    flex: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
     @media screen and (max-width: 768px) and (min-width: 300px) {
       .products .content.half-block .half {
         -webkit-box-orient: vertical;
@@ -938,8 +942,9 @@ footer {
         margin-bottom: 18px; }
         .specForm > div.specList li p {
           margin: 0;
-          margin-bottom: 8px;
           font-size: 16px; }
+          .specForm > div.specList li p:first-child {
+            margin-bottom: 8px; }
           @media screen and (max-width: 768px) and (min-width: 300px) {
             .specForm > div.specList li p {
               font-size: 10px;
@@ -967,7 +972,7 @@ footer {
     width: 100% !important;
     height: auto !important; }
   #wave:before, #wave:after {
-    content: '';
+    content: "";
     position: absolute;
     width: 10px;
     height: 10px;

@@ -167,6 +167,7 @@ header {
           text-decoration: none;
           display: inline-block;
           width: 100%;
+          font-weight: lighter;
           @include range-width(300px, 768px) {
             font-size: 16px;
           }
