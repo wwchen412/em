@@ -95,6 +95,7 @@
         max-width: 292px;
         font-size: 16px;
         font-weight: normal;
+        margin-bottom: 20px;
         @include range-width(300px, 768px) {
             font-size: 14px;
             max-width: 200px;
