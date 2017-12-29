@@ -1300,6 +1300,8 @@ article {
   max-width: 100%; }
   .faq .faq-list li {
     width: 100%; }
+    .faq .faq-list li .faq-title.active p {
+      color: #fff; }
     .faq .faq-list li p {
       font-size: 20px;
       margin-bottom: 32px; }
