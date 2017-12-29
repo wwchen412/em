@@ -394,6 +394,8 @@
                    })
                }else {
                    $('.faq-list li').click(function(){
+                       $(this).find('.faq-title').addClass('active');
+                       $(this).siblings().find('.faq-title').removeClass('active');
                      var a = $(this).index();
                        $('.faq-answer p').eq(a).addClass('active').siblings().removeClass();
                    })

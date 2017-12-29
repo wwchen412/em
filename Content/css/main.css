@@ -1240,7 +1240,10 @@ article {
       .faq-list li .faq-title.active svg .cls-1 {
         fill: #c3312f; }
       .faq-list li .faq-title.active p {
-        color: #fff; }
+        color: #c3312f; }
+        @media screen and (max-width: 768px) and (min-width: 300px) {
+          .faq-list li .faq-title.active p {
+            color: #fff; } }
     .faq-list li .svg-wrap {
       display: inline-block;
       background: #fff;
@@ -1293,12 +1296,25 @@ article {
       display: none; } }
 
 .faq .faq-list {
-  margin: auto; }
+  margin: auto;
+  max-width: 100%; }
   .faq .faq-list li {
     width: 100%; }
     .faq .faq-list li p {
       font-size: 20px;
       margin-bottom: 32px; }
+
+.faq .faq-content {
+  background: #252525;
+  color: #fff;
+  padding: 80px 20px 26px;
+  -webkit-transform: translateY(-130px);
+  -ms-transform: translateY(-130px);
+  transform: translateY(-130px);
+  margin-bottom: -60px;
+  -webkit-transform-origin: top;
+  -ms-transform-origin: top;
+  transform-origin: top; }
 
 .warranty {
   padding: 52px 0; }

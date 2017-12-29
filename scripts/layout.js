@@ -3,7 +3,7 @@ $(function() {
   $("footer").load("index.html footer > ul");
   // $(".slider-footer").load(".slider-footer footer");
   $(window).bind("load", function()  {
-   
+    console.log('load');
     // 展開選單
     $("#menu").click(function() {
       event.preventDefault();
