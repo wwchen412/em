@@ -224,7 +224,8 @@
   @include range-width(300px, 768px) {
     h3 {
       font-size: 26px;
-      margin: 118px 0 40px;
+      // margin: 118px 0 40px;
+      margin: 0 0 40px;
     }
     ul {
       padding: 0 58px;
@@ -249,6 +250,9 @@
   margin: 0 auto;
   font-size: 0;
   letter-spacing: 0;
+  @include range-width(300px,768px){
+    margin: 20px auto 0;
+  }
   & > div {
     display: inline-block;
     vertical-align: top;
@@ -294,7 +298,9 @@
 
 .section-spec {
   @include range-width(300px, 768px) {
-    padding: 124px 0 40px;
+    // padding: 124px 0 40px;
+    padding: 0;
+   
   }
 }
 

@@ -941,7 +941,7 @@ footer {
 @media screen and (max-width: 768px) and (min-width: 300px) {
   .certsLabel h3 {
     font-size: 26px;
-    margin: 118px 0 40px; }
+    margin: 0 0 40px; }
   .certsLabel ul {
     padding: 0 58px; }
     .certsLabel ul li {
@@ -961,6 +961,9 @@ footer {
   margin: 0 auto;
   font-size: 0;
   letter-spacing: 0; }
+  @media screen and (max-width: 768px) and (min-width: 300px) {
+    .specForm {
+      margin: 20px auto 0; } }
   .specForm > div {
     display: inline-block;
     vertical-align: top;
@@ -997,7 +1000,7 @@ footer {
 
 @media screen and (max-width: 768px) and (min-width: 300px) {
   .section-spec {
-    padding: 124px 0 40px; } }
+    padding: 0; } }
 
 #wave {
   position: relative;
