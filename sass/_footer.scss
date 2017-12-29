@@ -112,7 +112,7 @@ footer {
                 margin-bottom: 27px;
                 font-size: 15px;
                 font-weight: 100;
-                @include range-width(300px,768px){
+                @include range-width(769px,0){
                     &:last-child{
                         margin-bottom: 0;
                 }
