@@ -1294,5 +1294,124 @@ article {
       font-size: 20px;
       margin-bottom: 32px; }
 
-.warranty.container {
-  max-width: 800px; }
+.warranty {
+  padding: 52px 0; }
+  .warranty .em-6:nth-child(2) {
+    padding: 0 0 0 30px; }
+    @media screen and (max-width: 768px) and (min-width: 300px) {
+      .warranty .em-6:nth-child(2) {
+        padding: 0; } }
+  .warranty .warranty-info {
+    margin: 52px 0 144px;
+    text-align: justify; }
+    @media screen and (max-width: 768px) and (min-width: 300px) {
+      .warranty .warranty-info {
+        margin: 20px 0 32px; } }
+    .warranty .warranty-info p {
+      margin-bottom: 40px;
+      line-height: 180%; }
+      @media screen and (max-width: 768px) and (min-width: 300px) {
+        .warranty .warranty-info p {
+          margin-bottom: 32px; } }
+  .warranty.container {
+    max-width: 800px; }
+    @media screen and (max-width: 768px) and (min-width: 300px) {
+      .warranty.container {
+        padding: 0 20px; } }
+  .warranty form {
+    text-align: left; }
+    .warranty form h4 {
+      margin-bottom: 24px; }
+      @media screen and (max-width: 768px) and (min-width: 300px) {
+        .warranty form h4 {
+          margin: 20px 0 36px; } }
+  .warranty .input-group input, .warranty .input-group textarea {
+    margin: 12px 0 36px;
+    font-size: 20px; }
+    @media screen and (max-width: 768px) and (min-width: 300px) {
+      .warranty .input-group input, .warranty .input-group textarea {
+        margin: 12px 0; } }
+  .warranty .input-group input[type="radio"] {
+    margin-top: 24px; }
+    @media screen and (max-width: 768px) and (min-width: 300px) {
+      .warranty .input-group input[type="radio"] {
+        margin: 20px 0 20px; } }
+  .warranty .input-group.list {
+    font-size: 0; }
+    .warranty .input-group.list label {
+      font-size: 1rem;
+      display: inline-block;
+      width: calc(100% / 5); }
+      @media screen and (max-width: 768px) and (min-width: 300px) {
+        .warranty .input-group.list label {
+          width: calc(100% /3); } }
+      .warranty .input-group.list label p {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 24px 0 36px;
+        word-break: break-all; }
+        @media screen and (max-width: 768px) and (min-width: 300px) {
+          .warranty .input-group.list label p {
+            margin: 20px 0 20px; } }
+  .warranty .upload-block {
+    border: 1px solid #ddd;
+    color: #ddd;
+    display: inline-block;
+    width: 84px;
+    height: 84px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 72px;
+    font-size: 42px;
+    cursor: pointer;
+    margin-top: 12px; }
+  .warranty input[type="text"], .warranty textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    height: 42px;
+    border-radius: 21px; }
+    @media screen and (max-width: 768px) and (min-width: 300px) {
+      .warranty input[type="text"], .warranty textarea {
+        height: 26px;
+        padding: 0 10px; } }
+  .warranty input[type="file"] {
+    width: 100%; }
+  .warranty input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #ddd; }
+    .warranty input[type="radio"]:checked {
+      background-color: #252525; }
+  .warranty textarea {
+    height: 84px; }
+  .warranty .buttons {
+    margin: 54px 0; }
+    @media screen and (max-width: 768px) and (min-width: 300px) {
+      .warranty .buttons {
+        margin: 36px 0; } }
+  .warranty button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 10px;
+    background-color: #ddd;
+    display: inline-block;
+    width: 100%;
+    border: 0px;
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 12px; }
+    .warranty button.btn-red {
+      background: #c3312f;
+      color: #fff; }

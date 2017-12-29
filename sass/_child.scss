@@ -189,7 +189,144 @@ article {
 
 // warranty
 .warranty{
+  padding: 52px 0;
+  .em-6:nth-child(2){
+    padding: 0 0 0 30px;
+    @include range-width(300px,768px){
+      padding: 0;
+    }
+  }
+  .warranty-info{
+    margin: 52px 0 144px;
+    text-align: justify;
+    @include range-width(300px,768px){
+      margin: 20px 0 32px;
+    }
+   p{
+     margin-bottom: 40px;
+      line-height: 180%;
+      @include range-width(300px,768px){
+        margin-bottom: 32px;
+      }
+   }
+  }
   &.container{
     max-width: 800px;
+    @include range-width(300px,768px){
+      padding: 0 20px;
+    }
+  }
+  form{
+ text-align: left;
+ h4{
+   margin-bottom: 24px;
+   @include range-width(300px,768px){
+     margin: 20px 0 36px;
+   }
+ }
+  }
+  .input-group{
+   
+    input,textarea{
+      margin: 12px 0 36px;
+      font-size: 20px;
+      @include range-width(300px,768px){
+        margin: 12px 0;
+      }
+    }
+     input[type="radio"] {
+       margin-top: 24px;
+       @include range-width(300px,768px){
+         margin: 20px 0 20px;
+       }
+     }
+
+     &.list{
+       font-size: 0;
+       label{
+         font-size: 1rem;
+         display: inline-block;
+         width: calc(100% / 5);
+         @include range-width(300px,768px){
+           width: calc(100% /3);
+         }
+         
+         p {
+           display: inline-block;
+           vertical-align: middle;
+          margin: 24px 0 36px;
+          @include range-width(300px, 768px) {
+             margin: 20px 0 20px;
+          }
+          word-break: break-all;
+          }
+       }
+       
+     }
+  }
+  .upload-block{
+    border: 1px solid $maincolor;
+    color: $maincolor;
+    display: inline-block;
+    width: 84px;
+    height: 84px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 72px;
+    font-size: 42px;
+    cursor: pointer;
+    margin-top: 12px;
+  }
+ 
+  input[type="text"],textarea{
+    appearance: none;
+    width: 100%;
+    border: 1px solid $maincolor;
+    padding: 10px ;
+    height: 42px;
+    border-radius: 21px;
+    @include range-width(300px,768px){
+      height: 26px;
+      padding: 0 10px;
+    }
+  }
+  input[type="file"]{
+    width: 100%;
+  }
+  input[type="radio"]{
+    appearance: none;
+    display: inline-block;
+    vertical-align:middle;
+    width: 15px;
+    height: 15px;border-radius: 50%;
+    border: 1px solid $maincolor;
+  &:checked{
+    background-color: #252525;
+  }
+  }
+  textarea{
+    height: 84px;
+  }
+  .buttons{
+    margin: 54px 0;
+    @include range-width(300px,768px){
+      margin: 36px 0;
+    }
+  }
+  button{
+    appearance: none;
+    padding: 10px;
+   background-color: $maincolor;
+    display: inline-block;
+    width: 100%;
+    border:0px;
+    font-size: 1rem;
+ border-radius: 20px;
+ cursor: pointer;
+ margin-bottom: 12px;
+    &.btn-red{
+  background: #c3312f;
+  color:#fff;
+    }
   }
 }
