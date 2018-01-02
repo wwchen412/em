@@ -74,89 +74,7 @@
                     <img src="Content/img/back.svg" alt="" class="img-fluid">
                 </div>
                 <!-- 次選單商品列表 -->
-                <ul>
-                    <!-- <li>
-                            <img src="Content/img/shop.png" class="img-fluid" alt="">
-                            <p>3 Port Travel Charger
-                                <span>60W with Type-C Port</span>
-                            </p>
-                            <ul class="dots">
-                                <li style="background:#000;" data-src="Content/img/shop.png"></li>
-                                <li style="background:#eee;" data-src="Content/img/shop_1.png"></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <img src="Content/img/shop.png" class="img-fluid" alt="">
-                            <p>3 Port Travel Charger
-                                <span>60W with Type-C Port</span>
-                            </p>
-                            <ul class="dots">
-                                <li style="background:#000;" data-src="Content/img/shop_1.png"></li>
-                                <li style="background:#fee;" data-src="Content/img/shop_2.png"></li>
-                                <li style="background:#f00;" data-src="Content/img/shop_3.png"></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <img src="Content/img/shop_1.png" class="img-fluid" alt="">
-                            <p>3 Port Travel Charger
-                                <span>60W with Type-C Port</span>
-                            </p>
-                            <ul class="dots">
-                                <li style="background:#000;"></li>
-                                <li></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <img src="Content/img/shop_2.png" class="img-fluid" alt="">
-                            <p>3 Port Travel Charger
-                                <span>60W with Type-C Port</span>
-                            </p>
-                            <ul class="dots">
-                                <li style="background:#000;"></li>
-                                <li></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <img src="Content/img/shop_3.png" class="img-fluid" alt="">
-                            <p>3 Port Travel Charger
-                                <span>60W with Type-C Port</span>
-                            </p>
-                            <ul class="dots">
-                                <li style="background:#000;"></li>
-                                <li></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <img src="Content/img/shop.png" class="img-fluid" alt="">
-                            <p>3 Port Travel Charger
-                                <span>60W with Type-C Port</span>
-                            </p>
-                            <ul class="dots">
-                                <li style="background:#000;"></li>
-                                <li></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <img src="Content/img/shop_1.png" class="img-fluid" alt="">
-                            <p>3 Port Travel Charger
-                                <span>60W with Type-C Port</span>
-                            </p>
-                            <ul class="dots">
-                                <li style="background:#000;"></li>
-                                <li style="background:#000;"></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <img src="Content/img/shop_2.png" class="img-fluid" alt="">
-                            <p>3 Port Travel Charger
-                                <span>60W with Type-C Port</span>
-                            </p>
-                            <ul class="dots">
-                                <li style="background:#000;"></li>
-                                <li style="background:#eee;"></li>
-                            </ul>
-                        </li> -->
-                </ul>
+                <ul></ul>
             </div>
         </nav>
     </header>
@@ -177,10 +95,10 @@
 
                         <a href="" class="bg-red">Buy on Amazon</a>
                         <ul class="product-select">
-                            <li>
-                                <span style="background-color:#FFFFFF"></span>
+                            <li data-img="Content/img/item.png" data-bg="Content/img/section2.jpg">
+                                <span style="background-color:#FFFFFF" ></span>
                             </li>
-                            <li>
+                            <li data-img="Content/img/item_black.png" data-bg="Content/img/section2_black.jpg">
                                 <span style="background-color:#808080"></span>
                             </li>
                             <li>
@@ -677,7 +595,18 @@
                 container: document.getElementById('wave'),
                 autostart: true,
             });
+            // 選擇商品
 
+            $('.product-select li').each(function(){
+                $(this).click(function(){
+                    var img = $(this).data('img');
+                    var bg = $(this).data('bg');
+                    console.log(bg);
+                   $(this).parents().find('.bgimg').attr('src',img);
+                    $(this).parents().find('.section').css('background-image',"url("+bg+")");
+                    BackgroundCheck.refresh();
+                })
+            })
         });
     </script>
 

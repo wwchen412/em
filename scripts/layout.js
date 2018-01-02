@@ -54,7 +54,6 @@ $(function() {
       $(this).hover(function () {
 
           var hoverSrc = $(this).data('hoversrc');
-          
           $('.showImg img').attr('src', hoverSrc);
       })
 
@@ -62,15 +61,20 @@ $(function() {
         var list = $(".sibling-menu-list ul");
         var jsonLink = $(this).attr("href");
         event.preventDefault();
+        $(this)
+          .parents(".menu-list")
+          .addClass("sibActive");
+        $(this).addClass("sibActive").parent().siblings().children().removeClass('sibActive');
         list.html("");
         $(".sibling-menu-list").addClass("active");
         $(".slider-footer").removeClass("active");
         $(".back").click(function() {
+          $(this).parents(".sibling-menu-list").removeClass("active");
           $(this)
-            .parents(".sibling-menu-list")
-            .removeClass("active");
-          $(".slider-footer").add;
-          Class("active");
+            .parents()
+            .find(".menu-list")
+            .removeClass("sibActive");
+          $(".slider-footer").addClass("active");
         });
         // 讀取次選單商品列表
         $.ajax({

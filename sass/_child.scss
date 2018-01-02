@@ -32,6 +32,7 @@
     }
   }
   h3 {
+  
     @include range-width(300px, 768px) {
       font-weight: lighter;
       font-size: 22px;

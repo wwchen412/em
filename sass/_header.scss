@@ -118,6 +118,9 @@ header {
       animation: fadeUp .5s .8s forwards;
     }
   }
+  &.sibActive{
+    background:#252525;
+  }
   .logo-area {
     display: block;
     width: 100%;
@@ -175,6 +178,9 @@ header {
           position: relative;
           padding:10px;
           overflow: hidden;
+          &.sibActive{
+            color:#B13F3D;
+          }
           &:after{
             content: '';
             display: block;
@@ -222,7 +228,7 @@ header {
   width: 75%;
   height: 100%;
   z-index: 102;
-  background: #252525;
+ background: #fff;
   left: 125%;
   transition: .5s;
   &.active {
@@ -250,19 +256,21 @@ header {
       transform: translate(-50%, -50%);
     }
   }
-  ul {
+  &>ul {
     font-size: 0;
     padding: 140px; // overflow: scroll;
     @include range-width(300px, 768px) {
       padding: 80px 40px;
     }
-    li {
+    &>li {
       display: inline-block;
       width: calc(50% - 34px / 2);
       margin-bottom: 34px;
       background: #fff;
       height: 320px;
       animation: fadeUp .5s backwards;
+      box-shadow: 0px 0px 15px 0px rgba($navcolor,.8);
+      background-color: #252525;
       &:nth-child(1) {
         animation-delay: .5s;
       }
@@ -289,6 +297,7 @@ header {
       img {
         object-fit: cover;
         height: 230px;
+        background-color: #fff;
         @include range-width(300px, 768px) {
           height: 140px;
         }
@@ -299,7 +308,7 @@ header {
         width: 100%;
         font-size: 11px;
         transform: scale(0.95);
-        color: #000;
+        color: $navcolor;
         span {
           color: $navcolor;
           display: block;
@@ -319,10 +328,12 @@ header {
       li {
         display: inline-block;
         margin: 0 8px;
-        width: 8px;
-        height: 8px;
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
         cursor: pointer;
+        border: 1px solid #fff;
+       
       }
     }
   }
