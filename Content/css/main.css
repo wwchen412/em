@@ -473,8 +473,8 @@ header {
       .section .bgimg {
         max-width: 100%; } }
   .section.active .bgimg {
-    -webkit-animation: fadeIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
-    animation: fadeIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards; }
+    -webkit-animation: fadeIndex 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    animation: fadeIndex 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards; }
   @media screen and (max-width: 768px) and (min-width: 300px) {
     .section.active .bgimg-big {
       -webkit-animation: fadeInBig 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
@@ -1165,6 +1165,26 @@ footer {
     opacity: 1;
     -webkit-transform: translateY(0%) scaleY(1);
     transform: translateY(0%) scaleY(1); } }
+
+@-webkit-keyframes fadeIndex {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, 20px);
+    transform: translate(-50%, 20px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); } }
+
+@keyframes fadeIndex {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, 20px);
+    transform: translate(-50%, 20px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0); } }
 
 @media screen and (min-width: 769px) {
   .childpage .row .em-4:nth-child(3) {

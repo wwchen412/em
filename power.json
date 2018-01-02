@@ -3,8 +3,8 @@
         "itemSrc": "Content/img/shop.png",
         "itemName": "3 Port Travel Charger ",
          "itemInfo": "60W with Type-C Port",
-        "imgSelect:": {
-             "color": ["#000", "#eee"],
+        "imgSelect": {
+             "color": ["#f00", "#eee"],
              "src": ["Content/img/shop.png", "Content/img/shop_1.png"]
         }
     
@@ -14,8 +14,8 @@
         "itemSrc": "Content/img/shop_3.png",
         "itemName": "2 Port Travel Charger ",
         "itemInfo": "60W with Type-C Port",
-        "imgSelect:": {
-            "color": ["#000", "#eee"],
+        "imgSelect": {
+            "color": ["#0ff", "#666"],
             "src": ["Content/img/shop.png", "Content/img/shop_1.png"]
         }
    
@@ -25,8 +25,8 @@
         "itemSrc": "Content/img/shop_2.png",
         "itemName": "1 Port Travel Charger ",
         "itemInfo": "40W with Type-C Port",
-        "imgSelect:": {
-                "color": ["#000", "#eee"],
+        "imgSelect": {
+                "color": ["#333", "#eee"],
                 "src": ["Content/img/shop.png", "Content/img/shop_1.png"]
         }
 
@@ -36,8 +36,8 @@
         "itemSrc": "Content/img/shop_1.png",
         "itemName": "3 Port Travel Charger ",
         "itemInfo": "60W with Type-C Port",
-        "imgSelect:": {
-                "color": ["#000", "#eee"],
+        "imgSelect": {
+                "color": ["#999", "#eee"],
                 "src": ["Content/img/shop.png", "Content/img/shop_1.png"]
         }
 
@@ -47,7 +47,7 @@
         "itemSrc": "Content/img/shop_3.png",
         "itemName": "3 Port Travel Charger ",
         "itemInfo": "60W with Type-C Port",
-        "imgSelect:": {
+        "imgSelect": {
                 "color": ["#000", "#eee"],
                 "src": ["Content/img/shop.png", "Content/img/shop_1.png"]
         }

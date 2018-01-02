@@ -40,14 +40,14 @@
     }
     &.active {
         .bgimg {
-            animation: fadeIn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+            animation: fadeIndex 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
         }
         @include range-width(300px, 768px) {
             .bgimg-big {
                 animation: fadeInBig 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
             }
         }
-        // fadein
+       
         .fadeLeft {
             animation: fadeLeft 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
         }

@@ -2,8 +2,11 @@ $(function() {
   $("#header").load("index.html #header nav");
   $("footer").load("index.html footer > ul");
   // $(".slider-footer").load(".slider-footer footer");
+
+
+
   $(window).bind("load", function()  {
-    console.log('load');
+    // console.log('load');
     // 展開選單
     $("#menu").click(function() {
       event.preventDefault();
@@ -74,7 +77,14 @@ $(function() {
           type: "GET",
           url: jsonLink,
           success: function(data) {
+          
             for (i = 0; i < data.length; i++) {
+                // 內容顏色及圖片
+                 var color = "";
+                 for (a = 0; a < data[i].imgSelect["color"].length; a++) {
+                   color += '<li style="background:' + data[i].imgSelect["color"][a] + '" data-src="' + data[i].imgSelect["src"][a] + '"></li>';
+                 }
+               
               list.append(
                 '<li><img src="' +
                   data[i].itemSrc +
@@ -82,13 +92,14 @@ $(function() {
                   data[i].itemName +
                   "<span>" +
                   data[i].itemInfo +
-                  '</span></p><ul class="dots"><li style="background:#000;" data-src="Content/img/shop.png"></li><li style="background:#eee;" data-src="Content/img/shop_1.png"></li></ul></li>'
+                  '</span></p><ul class="dots">'+
+                  color+
+                  '</ul></li>'
               );
             }
             // 點擊li點 切換圖片attr
             $(".sibling-menu-list .dots li").each(function() {
               var img_link = $(this).data("src");
-
               $(this).click(function() {
                 $(this)
                   .parent()
