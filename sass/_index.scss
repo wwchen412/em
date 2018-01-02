@@ -50,21 +50,26 @@
        
         .fadeLeft {
             animation: fadeLeft 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+            animation-timing-function: ease;
         }
         .fadeRight {
             animation: fadeRight 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+             animation-timing-function: ease;
         }
         // fadein
         .fadeLeft {
             animation: fadeLeft 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+             animation-timing-function: ease;
         }
         .fadeDown {
             opacity: 0;
             animation: fadeDown 2s 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+             animation-timing-function: ease;
         }
         .fadeUp {
             opacity: 0;
             animation: fadeUp 2s 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+             animation-timing-function: ease;
         }
     }
 }
@@ -92,7 +97,7 @@
         // background-color: #f00;
         border-radius: 30px;
         text-decoration: none;
-        max-width: 292px;
+        max-width: 252px;
         font-size: 16px;
         font-weight: normal;
         margin-bottom: 20px;
@@ -177,8 +182,8 @@
         margin: 10px 0;
         transition: .2s;
         a {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8slider-footerpx;
             border-radius: 50%;
             display: block;
             background-color: lighten($navcolor, 5%);

@@ -27,6 +27,7 @@
     }
     p {
         color: $navcolor;
+        font-weight: 200;
     }
     ul {
         font-size: 0;
@@ -45,17 +46,18 @@
                 a {
                    
                     img {
-                        margin-left: 28px;
-                        width: 28px;
-                        height: 28px;
+                        margin-left: 20px;
+                        width: 20px;
+                        height: 20px;
                     }
                 }
             }
         }
     }
     .arrow {
-        width: 40px;
+        width: 30px;
         margin-right: 22px;
+        animation: arrowInfinite 1s infinite alternate linear;
         @include range-width(300px, 768px) {
             margin-right: 0;
         }

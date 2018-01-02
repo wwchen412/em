@@ -37,11 +37,11 @@
 // 從右邊出現
 @keyframes fadeRight {
     0% {
-        opacity: 0;
+        
         transform: translate(-50%, 0%);
     }
     100% {
-        opacity: 1;
+       
         transform: translate(0%, 0%);
     }
 }
@@ -92,5 +92,15 @@
     100% {
         opacity: 1;
         transform: translate(-50%, 0);
+    }
+}
+@keyframes arrowInfinite {
+    0% {
+       
+        transform: translate(0, 5px);
+    }
+    100% {
+       
+        transform: translate(0, 0);
     }
 }

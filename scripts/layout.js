@@ -51,12 +51,12 @@ $(function() {
     });
     // 次級選單
     $(".lists .sub").each(function() {
-      // $(this).hover(function () {
+      $(this).hover(function () {
 
-      //     var hoverSrc = $(this).data('hoversrc');
-      //     console.log(hoverSrc);
-      //     $('.showImg img').attr('src', hoverSrc);
-      // })
+          var hoverSrc = $(this).data('hoversrc');
+          
+          $('.showImg img').attr('src', hoverSrc);
+      })
 
       $(this).on("click", function() {
         var list = $(".sibling-menu-list ul");
