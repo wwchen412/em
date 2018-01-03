@@ -89,19 +89,19 @@
                         <!-- 圖文編輯器內容 -->
                         <div class="main-content">
                             <h2 class="target">400QC</h2>
-                            <p class="target" >4 –Port Travel Charger 40W with Quick Charge 3.0</p>
+                            <p class="target">4 –Port Travel Charger 40W with Quick Charge 3.0</p>
                             <h4 class="target">USD 19.99</h4>
                         </div>
 
                         <a href="" class="bg-red">Buy on Amazon</a>
                         <ul class="product-select">
                             <li data-img="Content/img/item.png" data-bg="Content/img/section2.jpg">
-                                <span style="background-color:#FFFFFF" ></span>
+                                <span style="background-color:#FFFFFF"></span>
                             </li>
                             <li data-img="Content/img/item_black.png" data-bg="Content/img/section2_black.jpg">
                                 <span style="background-color:#808080"></span>
                             </li>
-                            <li>
+                            <li data-img="Content/img/item_black.png" data-bg="Content/img/section2_black.jpg">
                                 <span style="background-color:#000"></span>
                             </li>
                         </ul>
@@ -519,7 +519,7 @@
                         }
                     },
                     afterRender: function () {
-                        BackgroundCheck.refresh();
+                        // BackgroundCheck.refresh();
                     }
                 });
             }
@@ -537,7 +537,7 @@
                 var pathLength = path[0].getTotalLength();
                 var speed = 1.5;
                 var percentspan = parseInt($('.figure span').html());
-                var percent =  1;
+                var percent = 1;
 
                 path.css({
                     'stroke-dasharray': pathLength + ' ' + pathLength,
@@ -548,15 +548,15 @@
                     $('.path').velocity({
                         'stroke-dashoffset': 0
                     }, {
-                            duration: speed * 1000,
-                            progress: function () {
-                                var percentText = percentspan - Math.round(parseFloat($(this).css(
-                                    'stroke-dashoffset')) / pathLength * percentspan); 
-                                console.log(percentText);
-                                $('.figure span').html(percentText + '%');
-                            }
+                        duration: speed * 1000,
+                        progress: function () {
+                            var percentText = percentspan - Math.round(parseFloat($(this).css(
+                                'stroke-dashoffset')) / pathLength * percentspan);
+                            console.log(percentText);
+                            $('.figure span').html(percentText + '%');
+                        }
 
-                        });
+                    });
 
                 } else {
                     var currentPathLength = pathLength;
@@ -568,7 +568,8 @@
                             return;
                         }
 
-                        var percentText = percentspan - Math.round(parseFloat(currentPathLength) / pathLength * percentspan);
+                        var percentText = percentspan - Math.round(parseFloat(currentPathLength) / pathLength *
+                            percentspan);
                         $('.figure h4 span').html(percentText + '%');
 
                         $('.path').css({
@@ -596,17 +597,19 @@
                 autostart: true,
             });
             // 選擇商品
-
-            $('.product-select li').each(function(){
-                $(this).click(function(){
+            var productSelect = document.querySelectorAll('.product-select li');
+            for (i = 0; i < productSelect.length; i++) {
+                productSelect[i].addEventListener('click', function () {
                     var img = $(this).data('img');
                     var bg = $(this).data('bg');
-                    console.log(bg);
-                   $(this).parents('.content').siblings('.bgimg').attr('src',img);
-                    $(this).parents('.section').css('background-image',"url("+bg+")");
-                    BackgroundCheck.refresh();
+                    $(this).parents('.content').siblings('.bgimg').attr('src', img);
+                    $(this).parents('.section').css('background-image', "url(" + bg + ")");
+                  
                 })
-            })
+
+            }
+
+
         });
     </script>
 
