@@ -149,7 +149,7 @@ article {
     .faq-content {
       display: none;
       @include range-width(300px,768px) {
-        background: #252525;
+        background: $darken;
         color: #fff;
         padding: 80px 20px 26px;
         transform: translateY(-100px);
@@ -202,7 +202,7 @@ article {
     }
   }
   .faq-content {
-    background: #252525;
+    background: $darken;
     color: #fff;
     padding: 120px 20px 26px;
     transform: translateY(-130px);
@@ -333,7 +333,7 @@ article {
     border-radius: 50%;
     border: 1px solid $maincolor;
     &:checked {
-      background-color: #252525;
+      background-color: $darken;
     }
   }
   textarea {

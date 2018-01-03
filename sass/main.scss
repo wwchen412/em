@@ -145,7 +145,7 @@ p {
 }
 
 .background--light {
-    color: #252525 !important;
+    color: $darken !important;
 }
 
 .background--dark {
@@ -166,7 +166,7 @@ p {
     }
 }
 .bg-darken{
-    background-color: #252525;
+    background-color: $darken;
 }
 
 @import '_header.scss';
