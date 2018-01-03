@@ -115,6 +115,7 @@ p {
 // 按鈕顏色
 .bg-red {
     background: #B43D37;
+    border-color:transparent !important;
     &:hover {
         background: darken(#B43D37, 5%);
     }

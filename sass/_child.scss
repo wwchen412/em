@@ -365,11 +365,16 @@ article {
 
 // 條款頁
 .text-only {
-  margin: 176px 0;
-  @include range-width(300px,768px) {
-    margin: 112px 0;
-    padding: 0 20px;
-  }
+//  padding: 176px 0;
+.container{
+   padding: 176px 0;
+   @include range-width(300px, 768px) {
+     // margin: 112px 0;
+     padding: 112px 20px;
+   }
+}
+
+  
   h3 {
     margin-bottom: 64px;
     @include range-width(300px, 768px) {

@@ -23,7 +23,7 @@
             <!-- 內頁區塊首頁 -->
 
             <div class="section text-only">
-                <div class="container text-jus" style="max-width:800px;">
+                <div class="container text-left" style="max-width:800px;">
                     <h3>Terms And Conditions</h3>
                     <h4>Terms And Conditions</h4>
 
@@ -193,7 +193,7 @@
         <div class="slider-footer">
             <ul>
                 <li class="d-sm-none">
-                    <a href="">
+                    <a href="index.html">
                         <img src="Content/img/logo.svg" alt="" width="150px" style="margin:30px 0;">
                     </a>
                     <p style="font-size:18px" class="">2017 All Right Reserved</p>
@@ -233,7 +233,45 @@
 
     <!-- layout -->
     <script src="scripts/layout.js"></script>
+<script>
+    $(document).ready(function () {
+        function initialization() {
+            $('#fullpage').fullpage({
+                anchors: ['firstPage', 'footer'],
+                menu: '#dots',
+                keyboardScrolling: true,
+                animateAnchor: true,
+                scrollOverflow: true,
+                // responsiveWidth: 769,
 
+                onLeave: function (index, nextIndex, direction) {
+
+
+                },
+                afterLoad: function (anchorLink, index) {
+
+                    if (anchorLink == 'footer') {
+                        $('.slider-footer').fadeOut(100);
+                        $('#dots').fadeOut(100);
+
+                    } else {
+                        $('.slider-footer').fadeIn();
+                        $('#dots').fadeIn();
+                    }
+                }
+            });
+        }
+        initialization();
+
+        $('#moveSectionDown').click(function (e) {
+            e.preventDefault();
+            $.fn.fullpage.moveSectionDown();
+        });
+
+
+
+    });
+</script>
 
 
 </body>

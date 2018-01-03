@@ -58,7 +58,8 @@
                         to receive e-mail newsletters, you will not receive these e-mails. Visitors who register or participate
                         in other site features such as marketing programs and &#39;members-only&#39; content will be given
                         a choice whether they would like to be on our e-mail list and receive e-mail communications from
-                        us.</p>
+                        us.
+                    </p>
 
                     <h4>How do we protect visitor information?</h4>
 
@@ -257,7 +258,45 @@
     <!-- layout -->
     <script src="scripts/layout.js"></script>
 
+    <script>
+        $(document).ready(function () {
+            function initialization() {
+                $('#fullpage').fullpage({
+                    anchors: ['firstPage', 'footer'],
+                    menu: '#dots',
+                    keyboardScrolling: true,
+                    animateAnchor: true,
+                    scrollOverflow: true,
+                    // responsiveWidth: 769,
 
+                    onLeave: function (index, nextIndex, direction) {
+
+
+                    },
+                    afterLoad: function (anchorLink, index) {
+
+                        if (anchorLink == 'footer') {
+                            $('.slider-footer').fadeOut(100);
+                            $('#dots').fadeOut(100);
+
+                        } else {
+                            $('.slider-footer').fadeIn();
+                            $('#dots').fadeIn();
+                        }
+                    }
+                });
+            }
+            initialization();
+
+            $('#moveSectionDown').click(function (e) {
+                e.preventDefault();
+                $.fn.fullpage.moveSectionDown();
+            });
+
+
+
+        });
+    </script>
 
 </body>
 

@@ -524,7 +524,7 @@
                 });
             }
             initialization();
-
+            // 箭頭典籍往下
             $('#moveSectionDown').click(function (e) {
                 e.preventDefault();
                 $.fn.fullpage.moveSectionDown();
@@ -602,8 +602,8 @@
                     var img = $(this).data('img');
                     var bg = $(this).data('bg');
                     console.log(bg);
-                   $(this).parents().find('.bgimg').attr('src',img);
-                    $(this).parents().find('.section').css('background-image',"url("+bg+")");
+                   $(this).parents('.content').siblings('.bgimg').attr('src',img);
+                    $(this).parents('.section').css('background-image',"url("+bg+")");
                     BackgroundCheck.refresh();
                 })
             })
