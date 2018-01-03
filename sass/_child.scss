@@ -32,7 +32,6 @@
     }
   }
   h3 {
-  
     @include range-width(300px, 768px) {
       font-weight: lighter;
       font-size: 22px;
@@ -111,7 +110,7 @@ article {
           }
         }
         p {
-        color:#c3312f;
+          color: #c3312f;
           @include range-width(300px,768px) {
             color: #fff;
           }
@@ -177,20 +176,27 @@ article {
   }
 }
 
+// faq
 .faq {
   .faq-list {
     margin: auto;
     max-width: 100%;
     li {
       width: 100%;
-      .faq-title.active{
-        p{
-            color:#fff;
+      .faq-title {
+        p {
+          font-size: 20px;
         }
-        
+
+        &.active {
+          p {
+            color: #fff;
+          }
+        }
       }
+
       p {
-        font-size: 20px;
+        font-size: 14px;
         margin-bottom: 32px;
       }
     }
@@ -198,10 +204,17 @@ article {
   .faq-content {
     background: #252525;
     color: #fff;
-    padding: 80px 20px 26px;
+    padding: 120px 20px 26px;
     transform: translateY(-130px);
     margin-bottom: -60px;
     transform-origin: top;
+    .content-text{
+      max-width: 800px;
+      margin: auto;
+      p{
+        margin-bottom: 10px;
+      }
+    }
   }
 }
 
@@ -353,14 +366,14 @@ article {
 // 條款頁
 .text-only {
   margin: 176px 0;
-  @include range-width(300px,768px){
+  @include range-width(300px,768px) {
     margin: 112px 0;
     padding: 0 20px;
   }
   h3 {
     margin-bottom: 64px;
     @include range-width(300px, 768px) {
-     margin-bottom: 48px;
+      margin-bottom: 48px;
     }
   }
   p {

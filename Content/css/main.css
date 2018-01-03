@@ -1380,16 +1380,18 @@ article {
   max-width: 100%; }
   .faq .faq-list li {
     width: 100%; }
+    .faq .faq-list li .faq-title p {
+      font-size: 20px; }
     .faq .faq-list li .faq-title.active p {
       color: #fff; }
     .faq .faq-list li p {
-      font-size: 20px;
+      font-size: 14px;
       margin-bottom: 32px; }
 
 .faq .faq-content {
   background: #252525;
   color: #fff;
-  padding: 80px 20px 26px;
+  padding: 120px 20px 26px;
   -webkit-transform: translateY(-130px);
   -ms-transform: translateY(-130px);
   transform: translateY(-130px);
@@ -1397,6 +1399,11 @@ article {
   -webkit-transform-origin: top;
   -ms-transform-origin: top;
   transform-origin: top; }
+  .faq .faq-content .content-text {
+    max-width: 800px;
+    margin: auto; }
+    .faq .faq-content .content-text p {
+      margin-bottom: 10px; }
 
 .warranty {
   padding: 52px 0; }
