@@ -139,6 +139,9 @@ p {
     font-size: 72px;
     font-weight: 200; }
 
+.bg-darken {
+  background-color: #252525; }
+
 header {
   position: fixed;
   top: 0;
@@ -1546,4 +1549,5 @@ article {
     line-height: 180%;
     margin-bottom: 40px; }
   .text-only h4 {
-    margin-bottom: 15px; }
+    margin-bottom: 15px;
+    font-weight: 300; }
