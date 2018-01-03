@@ -347,6 +347,9 @@ header {
           height: auto;
           width: 100vw;
           margin-left: -50%; } }
+    @media screen and (max-width: 768px) and (min-width: 300px) {
+      .menu-list .showImg + ul li {
+        text-align: right; } }
 
 .sibling-menu-list {
   position: fixed;
@@ -439,10 +442,11 @@ header {
         margin: 14px 0 18px;
         width: 100%;
         font-size: 11px;
+        font-weight: 200;
         -webkit-transform: scale(0.95);
         -ms-transform: scale(0.95);
         transform: scale(0.95);
-        color: #787878; }
+        color: #fff; }
         .sibling-menu-list > ul > li p span {
           color: #787878;
           display: block; }
@@ -476,7 +480,8 @@ header {
 .section {
   background-size: cover;
   background-repeat: no-repeat;
-  position: relative; }
+  position: relative;
+  background-position: 50% 50%; }
   .section .bgimg {
     max-width: 600px;
     height: 100%;
@@ -634,13 +639,13 @@ header {
   #dots .dot-active {
     background-color: #787878; }
   #dots .dot {
-    margin: 10px 0;
+    margin: 14px 0;
     -webkit-transition: .2s;
     -o-transition: .2s;
     transition: .2s; }
     #dots .dot a {
-      width: 8px;
-      height: 8slider-footerpx;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       display: block;
       background-color: #858585; }
@@ -666,7 +671,8 @@ header {
       position: fixed;
       padding: 0 20px 40px; }
       .slider-footer.active {
-        z-index: 100; }
+        z-index: 100;
+        padding: 0 30px 40px; }
         .slider-footer.active .arrow {
           display: none; }
         .slider-footer.active ul li.contact {
@@ -692,7 +698,7 @@ header {
           width: 100%;
           text-align: center; } }
       .slider-footer ul li.contact p {
-        font-size: 18px; }
+        font-size: 16px; }
       .slider-footer ul li.contact a img {
         margin-left: 20px;
         width: 20px;

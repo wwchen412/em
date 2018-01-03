@@ -202,6 +202,7 @@ header {
           }
         }
       }
+      
     }
   }
   .showImg {
@@ -217,6 +218,14 @@ header {
         width: 100vw;
         margin-left: -50%;
       }
+    }
+    &+ul{
+      @include range-width(300px,768px){
+li {
+  text-align: right;
+}
+      }
+      
     }
   }
 }
@@ -307,8 +316,9 @@ header {
         margin: 14px 0 18px;
         width: 100%;
         font-size: 11px;
+        font-weight: 200;
         transform: scale(0.95);
-        color: $navcolor;
+        color: #fff;
         span {
           color: $navcolor;
           display: block;
