@@ -14,6 +14,7 @@ $(function() {
       $(".menu-list").toggleClass("active");
       $(".mainSlider").toggleClass("unscroll");
       $(".slider-footer").toggleClass("active");
+      $(".menu-list.sibActive").removeClass("sibActive");
       // 點開選單
       if ($(".menu-list").hasClass("active")) {
         $.fn.fullpage.destroy("all");
@@ -52,13 +53,21 @@ $(function() {
     // 次級選單
     $(".lists .sub").each(function() {
       $(this).hover(function () {
-
           var hoverSrc = $(this).data('hoversrc');
-          $('.showImg img').attr('src', hoverSrc);
+          $(".showImg img")
+            .stop(true, true)
+            .animate({ opacity: "0" })
+            .attr("src", hoverSrc);
+            
+          $(".showImg img")
+            .stop(true, true)
+            .animate({ opacity: "1" }, 1000);
+            
       })
-
+      // 讀取商品內容
       $(this).on("click", function() {
         var list = $(".sibling-menu-list ul");
+        // json來源
         var jsonLink = $(this).attr("href");
         event.preventDefault();
         $(this)
