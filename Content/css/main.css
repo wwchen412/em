@@ -1025,25 +1025,31 @@ footer {
       font-weight: bolder; }
     .specForm > div.specList {
       margin-left: 40px;
-      text-align: left; }
-      .specForm > div.specList li {
-        margin-bottom: 18px; }
-        .specForm > div.specList li p {
-          margin: 0;
-          font-size: 16px; }
-          .specForm > div.specList li p:first-child {
-            margin-bottom: 8px; }
-          .specForm > div.specList li p:nth-child(2) {
-            font-weight: lighter; }
-          @media screen and (max-width: 768px) and (min-width: 300px) {
-            .specForm > div.specList li p {
-              font-size: 10px;
-              -webkit-transform: scale(0.9);
-              -ms-transform: scale(0.9);
-              transform: scale(0.9); } }
+      text-align: left;
+      margin-bottom: 18px; }
+      .specForm > div.specList h5 {
+        font-weight: normal;
+        font-size: 16px; }
         @media screen and (max-width: 768px) and (min-width: 300px) {
-          .specForm > div.specList li {
-            margin-bottom: 14px; } }
+          .specForm > div.specList h5 {
+            font-size: 10px;
+            -webkit-transform: scale(0.9);
+            -ms-transform: scale(0.9);
+            transform: scale(0.9); } }
+      .specForm > div.specList p {
+        margin: 0;
+        font-size: 16px;
+        font-weight: lighter;
+        margin: 8px 0 16px; }
+        @media screen and (max-width: 768px) and (min-width: 300px) {
+          .specForm > div.specList p {
+            font-size: 10px;
+            -webkit-transform: scale(0.9);
+            -ms-transform: scale(0.9);
+            transform: scale(0.9); } }
+      @media screen and (max-width: 768px) and (min-width: 300px) {
+        .specForm > div.specList {
+          margin-bottom: 14px; } }
   @media screen and (max-width: 768px) and (min-width: 300px) {
     .specForm h3 {
       font-size: 28px; } }

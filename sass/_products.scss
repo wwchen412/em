@@ -35,7 +35,7 @@
         @include range-width(300px, 768px) {
           width: 100%;
           padding: 10vh 0;
-          &:nth-child(2){
+          &:nth-child(2) {
             padding: 0;
           }
           img {
@@ -55,11 +55,10 @@
           }
           @include range-width(300px, 768px) {
             text-align: center;
-            h3{
+            h3 {
               margin-bottom: 22px;
             }
           }
-          
         }
       }
       h3 {
@@ -250,7 +249,7 @@
   margin: 0 auto;
   font-size: 0;
   letter-spacing: 0;
-  @include range-width(300px,768px){
+  @include range-width(300px,768px) {
     margin: 20px auto 0;
   }
   & > div {
@@ -264,25 +263,28 @@
     &.specList {
       margin-left: 40px;
       text-align: left;
-      li {
-        p {
-          margin: 0;
-          font-size: 16px;
-          &:first-child {
-            margin-bottom: 8px;
-          }
-          &:nth-child(2){
-            font-weight: lighter;
-          }
-          @include range-width(300px, 768px) {
-            font-size: 10px;
-            transform: scale(0.9);
-          }
-        }
-        margin-bottom: 18px;
+      h5 {
+        font-weight: normal;
+        font-size: 16px;
+
         @include range-width(300px, 768px) {
-          margin-bottom: 14px;
+          font-size: 10px;
+          transform: scale(0.9);
         }
+      }
+      p {
+        margin: 0;
+        font-size: 16px;
+        font-weight: lighter;
+        margin: 8px 0 16px;
+        @include range-width(300px, 768px) {
+          font-size: 10px;
+          transform: scale(0.9);
+        }
+      }
+      margin-bottom: 18px;
+      @include range-width(300px, 768px) {
+        margin-bottom: 14px;
       }
     }
   }
@@ -300,7 +302,6 @@
   @include range-width(300px, 768px) {
     // padding: 124px 0 40px;
     padding: 0;
-   
   }
 }
 
