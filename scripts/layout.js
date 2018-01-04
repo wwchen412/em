@@ -99,9 +99,9 @@ $(function() {
                  }
                
               list.append(
-                '<li><img src="' +
+                '<li><a href="product.html"><img src="' +
                   data[i].itemSrc +
-                  '" class="img-fluid" alt=""><p>' +
+                  '" class="img-fluid" alt=""></a><p>' +
                   data[i].itemName +
                   "<span>" +
                   data[i].itemInfo +
@@ -122,7 +122,7 @@ $(function() {
             });
           },
           error: function() {
-            $(".sibling-menu-list").html("<p>目前沒有資料</p>");
+            $(".sibling-menu-list").html("<p>商品建構中</p>");
           },
           dataType: "json"
         });
