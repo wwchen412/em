@@ -1387,7 +1387,8 @@ article {
 
 .faq .faq-list {
   margin: auto;
-  max-width: 100%; }
+  max-width: 100%;
+  padding: 40px 0; }
   .faq .faq-list li {
     width: 100%; }
     .faq .faq-list li .faq-title p {
