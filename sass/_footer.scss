@@ -28,7 +28,8 @@
     }
     p {
         color: $navcolor;
-        font-weight: 200;
+        font-weight: 400;
+        font-size: 12px;
     }
     ul {
         font-size: 0;
@@ -41,9 +42,9 @@
                 text-align: center;
             }
             &.contact {
-                p {
-                    font-size: 16px;
-                }
+                // p {
+                //     font-size: 16px;
+                // }
                 a {
                    
                     img {
@@ -61,13 +62,14 @@
         animation: arrowInfinite 1s infinite alternate linear;
         @include range-width(300px, 768px) {
             margin-right: 0;
+            width: 40px;
         }
     }
 }
 
 footer {
     background-color: $darken;
-    padding: 48px 40px 200px;
+    padding: 48px 40px 160px;
     color: $maincolor;
     width: 100%;
     @include range-width(300px, 576px) {
@@ -133,6 +135,7 @@ footer {
     a{
          color:$navcolor;
          text-decoration: none;
+         font-weight: 200;
          &:visited,
          &:hover,
          &:active {

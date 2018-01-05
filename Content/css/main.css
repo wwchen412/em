@@ -605,6 +605,9 @@ header {
 
 .product-select {
   margin-top: 44px; }
+  @media screen and (max-width: 768px) and (min-width: 300px) {
+    .product-select {
+      margin-top: 26px; } }
   .product-select li {
     display: inline-block;
     width: 20px;
@@ -615,6 +618,11 @@ header {
     margin: 0 10px;
     cursor: pointer;
     position: relative; }
+    @media screen and (max-width: 768px) and (min-width: 300px) {
+      .product-select li {
+        padding: 2px;
+        width: 12px;
+        height: 12px; } }
     .product-select li span {
       display: block;
       width: 15px;
@@ -626,6 +634,10 @@ header {
       -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%); }
+      @media screen and (max-width: 768px) and (min-width: 300px) {
+        .product-select li span {
+          width: 5px;
+          height: 5px; } }
 
 #dots {
   position: absolute;
@@ -686,7 +698,8 @@ header {
             margin-right: auto; } }
   .slider-footer p {
     color: #787878;
-    font-weight: 200; }
+    font-weight: 400;
+    font-size: 12px; }
   .slider-footer ul {
     font-size: 0; }
     .slider-footer ul li {
@@ -697,8 +710,6 @@ header {
         .slider-footer ul li {
           width: 100%;
           text-align: center; } }
-      .slider-footer ul li.contact p {
-        font-size: 16px; }
       .slider-footer ul li.contact a img {
         margin-left: 20px;
         width: 20px;
@@ -710,11 +721,12 @@ header {
     animation: arrowInfinite 1s infinite alternate linear; }
     @media screen and (max-width: 768px) and (min-width: 300px) {
       .slider-footer .arrow {
-        margin-right: 0; } }
+        margin-right: 0;
+        width: 40px; } }
 
 footer {
   background-color: #252525;
-  padding: 48px 40px 200px;
+  padding: 48px 40px 160px;
   color: #ddd;
   width: 100%; }
   @media screen and (max-width: 576px) and (min-width: 300px) {
@@ -783,7 +795,8 @@ footer {
               margin-bottom: 55px; } }
   footer a {
     color: #787878;
-    text-decoration: none; }
+    text-decoration: none;
+    font-weight: 200; }
     footer a:visited, footer a:hover, footer a:active {
       color: #787878; }
 
@@ -898,7 +911,7 @@ footer {
       vertical-align: top; }
     .products .content.half-block .half .text {
       width: 37%;
-      word-break: break-all;
+      word-break: word-break;
       text-align: left;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;

@@ -148,6 +148,9 @@
 
 .product-select {
     margin-top: 44px;
+    @include range-width(300px,768px){
+        margin-top: 26px;
+    }
     li {
         display: inline-block;
         // background-color: #f00;
@@ -159,6 +162,11 @@
         margin: 0 10px;
         cursor: pointer;
         position: relative;
+        @include range-width(300px, 768px) {
+            padding: 2px;
+            width: 12px;
+            height: 12px;
+        }
         span {
             display: block;
             width: 15px;
@@ -168,6 +176,10 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
+             @include range-width(300px, 768px) {
+                 width: 5px;
+                 height: 5px;
+             }
         }
     }
 }
