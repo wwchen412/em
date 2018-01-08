@@ -412,6 +412,7 @@
         });
         $(document).ready(function () {
             function initialization() {
+                
                 $('#fullpage').fullpage({
                     anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage',
                         '7thPage', 'footer'
@@ -420,9 +421,11 @@
                     keyboardScrolling: true,
                     animateAnchor: true,
                     scrollOverflow: true,
+                    
                     // responsiveWidth: 769,
 
                     onLeave: function (index, nextIndex, direction) {
+                      
                         var leavingSection = $(this);
                         console.log(index);
                         //after leaving section 2
@@ -449,11 +452,12 @@
                         }
                     },
                     afterRender: function () {
-                        // BackgroundCheck.refresh();
+                          $.fn.fullpage.setRecordHistory(false);
                     }
                 });
             }
             initialization();
+
             // 箭頭典籍往下
             $('#moveSectionDown').click(function (e) {
                 e.preventDefault();

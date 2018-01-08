@@ -206,13 +206,13 @@
             <ul>
                 <li class="d-sm-none">
                     <a href="">
-                       
+                        <img src="Content/img/logo.svg" alt="" width="150px" style="margin:20px 0;">
                     </a>
                     <p style="font-size:18px" class="">2017 All Right Reserved</p>
                 </li>
                 <li class="text-center">
                     <img id="moveSectionDown" src="Content/img/arrow.svg" alt="" class="inlineBlock  arrow ">
-                    <p class="inlineBlock d-sm-none ">Scroll Down</p>
+                    
                 </li>
                 <li class="text-right contact d-sm-none">
                     <p class="inlineBlock ">EN / CN</p>
@@ -259,14 +259,16 @@
 
                     onLeave: function (index, nextIndex, direction) {
                         var leavingSection = $(this);
-
+                        $.fn.fullpage.setRecordHistory(false);
                         //after leaving section 2
                         if (index >= 1 && direction == 'down') {
                             $('.arrow').fadeOut();
                             $('.arrow+p').fadeOut();
+                            
                         } else {
                             $('.arrow').fadeIn();
                             $('.arrow+p').fadeIn();
+                            
                         }
                     },
                     afterLoad: function (anchorLink, index) {
@@ -274,12 +276,16 @@
                         if (anchorLink == 'footer') {
                             $('.slider-footer').fadeOut(100);
                             $('#dots').fadeOut(100);
+                             $.fn.fullpage.reBuild();
                             // $('#header').fadeOut(100);
                         } else {
                             $('.slider-footer').fadeIn();
                             $('#dots').fadeIn();
                             //  $('#header').fadeIn();
                         }
+                    },
+                    afterRender: function () {
+                        $.fn.fullpage.setRecordHistory(false);
                     }
                 });
             }
@@ -289,18 +295,13 @@
                 e.preventDefault();
                 $.fn.fullpage.moveSectionDown();
             });
-
-            function faqcontact() {
-
-                $('.faq-title').click(function () {
+            $('.faq-title').click(function () {
+                 $.fn.fullpage.reBuild();
                     $(this).toggleClass('active').parents().siblings('li').children('.faq-title').removeClass(
                         'active');
                     $(this).siblings('.faq-content').slideToggle().parents().siblings('li').children(
                         '.faq-content').slideUp();
-                    // $(this).siblings('.faq-content').toggleClass('active');
-                })
-            }
-            faqcontact();
+             })
 
         });
     </script>

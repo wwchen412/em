@@ -3,14 +3,14 @@ $(function() {
   $("footer").load("index.html footer > ul");
   // $(".slider-footer").load(".slider-footer footer");
 
-
-
-  $(window).bind("load", function()  {
+  $(window).bind("load", function() {
     // console.log('load');
     // 展開選單
     $("#menu").click(function() {
       event.preventDefault();
-      $(this).find(".menu-line").toggleClass("active");
+      $(this)
+        .find(".menu-line")
+        .toggleClass("active");
       $(".menu-list").toggleClass("active");
       $(".mainSlider").toggleClass("unscroll");
       $(".slider-footer").toggleClass("active");
@@ -50,20 +50,26 @@ $(function() {
         $(".sibling-menu-list").removeClass("active");
       }
     });
-    // 次級選單
+    // 次級選單 hover
     $(".lists .sub").each(function() {
-      $(this).hover(function () {
-          var hoverSrc = $(this).data('hoversrc');
-          $(".showImg img")
-            .stop(true, true)
-            .animate({ opacity: "0" })
-            .attr("src", hoverSrc);
-            
-          $(".showImg img")
-            .stop(true, true)
-            .animate({ opacity: "1" }, 1000);
-            
-      })
+        var hoverSrc = $(this).data("hoversrc");
+     
+        $(this).hover(
+          function() {
+             if (hoverSrc !== $(".showImg img").attr("src")) {
+            $(".showImg img")
+              .stop(true, true)
+              .addClass("showImgAni");
+            setTimeout(() => {
+              $(".showImg img").attr("src", hoverSrc);
+            }, 200);}
+          },
+          function() {
+            $(".showImg img").removeClass("showImgAni");
+          }
+        );
+      
+
       // 讀取商品內容
       $(this).on("click", function() {
         var list = $(".sibling-menu-list ul");
@@ -73,12 +79,19 @@ $(function() {
         $(this)
           .parents(".menu-list")
           .addClass("sibActive");
-        $(this).addClass("sibActive").parent().siblings().children().removeClass('sibActive');
+        $(this)
+          .addClass("sibActive")
+          .parent()
+          .siblings()
+          .children()
+          .removeClass("sibActive");
         list.html("");
         $(".sibling-menu-list").addClass("active");
         $(".slider-footer").removeClass("active");
         $(".back").click(function() {
-          $(this).parents(".sibling-menu-list").removeClass("active");
+          $(this)
+            .parents(".sibling-menu-list")
+            .removeClass("active");
           $(this)
             .parents()
             .find(".menu-list")
@@ -90,14 +103,18 @@ $(function() {
           type: "GET",
           url: jsonLink,
           success: function(data) {
-          
             for (i = 0; i < data.length; i++) {
-                // 內容顏色及圖片
-                 var color = "";
-                 for (a = 0; a < data[i].imgSelect["color"].length; a++) {
-                   color += '<li style="background:' + data[i].imgSelect["color"][a] + '" data-src="' + data[i].imgSelect["src"][a] + '"></li>';
-                 }
-               
+              // 內容顏色及圖片
+              var color = "";
+              for (a = 0; a < data[i].imgSelect["color"].length; a++) {
+                color +=
+                  '<li style="background:' +
+                  data[i].imgSelect["color"][a] +
+                  '" data-src="' +
+                  data[i].imgSelect["src"][a] +
+                  '"></li>';
+              }
+
               list.append(
                 '<li><a href="product.html"><img src="' +
                   data[i].itemSrc +
@@ -105,9 +122,9 @@ $(function() {
                   data[i].itemName +
                   "<span>" +
                   data[i].itemInfo +
-                  '</span></p><ul class="dots">'+
-                  color+
-                  '</ul></li>'
+                  '</span></p><ul class="dots">' +
+                  color +
+                  "</ul></li>"
               );
             }
             // 點擊li點 切換圖片attr
