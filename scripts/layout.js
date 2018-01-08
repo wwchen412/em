@@ -130,10 +130,13 @@ $(function() {
             // 點擊li點 切換圖片attr
             $(".sibling-menu-list .dots li").each(function() {
               var img_link = $(this).data("src");
+            
               $(this).click(function() {
+                  console.log(img_link);
                 $(this)
                   .parent()
-                  .siblings("img")
+                  .siblings("a")
+                  .children('img')
                   .attr("src", img_link);
               });
             });

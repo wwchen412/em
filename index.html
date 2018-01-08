@@ -253,7 +253,7 @@
             images: '.thumbnail'
         });
         $(document).ready(function () {
-
+            var winWidth=$(window).width();
             // fullpage 螢幕高
             $('#fullpage').fullpage({
                 anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'footer'],
@@ -273,8 +273,15 @@
                         $('.slider-footer').fadeIn();
                         $('#dots').fadeIn();
                     }
+                    
+                    
                 },
                 afterLoad: function (anchorLink, index) {
+                    if (winWidth <= 768 && anchorLink == 'footer') {
+                         $('header').fadeOut(100);
+                    }else{
+                        $('header').fadeIn(100);
+                    }
                     BackgroundCheck.refresh();
                 },
                 afterRender: function () {
