@@ -1416,7 +1416,8 @@ article {
           margin-bottom: -60px;
           -webkit-transform-origin: top;
           -ms-transform-origin: top;
-          transform-origin: top; } }
+          transform-origin: top;
+          text-align: left; } }
 
 .faq-answer {
   margin: 108px auto 110px;
@@ -1443,6 +1444,9 @@ article {
     .faq .faq-list li p {
       font-size: 14px;
       margin-bottom: 32px; }
+      @media screen and (max-width: 768px) and (min-width: 300px) {
+        .faq .faq-list li p {
+          font-size: 12px; } }
 
 .faq .faq-content {
   background: #252525;
@@ -1455,6 +1459,9 @@ article {
   -webkit-transform-origin: top;
   -ms-transform-origin: top;
   transform-origin: top; }
+  .faq .faq-content h5 {
+    font-size: 14px;
+    font-weight: 400; }
   .faq .faq-content .content-text {
     max-width: 800px;
     margin: auto; }
