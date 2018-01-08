@@ -194,7 +194,7 @@
             <ul>
                 <li class="d-sm-none">
                     <a href="index.html">
-                       
+                        <img src="Content/img/logo.svg" alt="" width="150px" style="margin:20px 0;">
                     </a>
                     <p style="font-size:18px" class="">2017 All Right Reserved</p>
                 </li>
@@ -245,7 +245,18 @@
                 // responsiveWidth: 769,
 
                 onLeave: function (index, nextIndex, direction) {
-
+                    var leavingSection = $(this);
+                    console.log(index);
+                    //after leaving section 2
+                    if (index >= 1 && direction == 'down') {
+                        $('.arrow').fadeOut();
+                        $('.arrow+p').fadeOut();
+                        $('header').fadeOut(100);
+                    } else {
+                        $('.arrow').fadeIn();
+                        $('.arrow+p').fadeIn();
+                        $('header').fadeIn(100);
+                    }
 
                 },
                 afterLoad: function (anchorLink, index) {
@@ -258,6 +269,9 @@
                         $('.slider-footer').fadeIn();
                         $('#dots').fadeIn();
                     }
+                },
+                afterRender: function () {
+                    $.fn.fullpage.setRecordHistory(false);
                 }
             });
         }
