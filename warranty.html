@@ -27,18 +27,19 @@
                         <!-- 圖文編輯器內容 -->
                         <div class="row vertical-mid">
                             <div class="em-4 vertical-mid">
-                                <h3 class="text-left">News</h3>
+                                <h3 class="text-left">Warranty</h3>
                             </div>
                             <div class="em-4 vertical-mid">
                                 <div class="squareImg">
-                                    <img src="Content/img/news.png" alt="" class="img-fluid">
+                                    <img src="Content/img/warranty.png" alt="" class="img-fluid">
                                 </div>
 
                             </div>
                             <div class="em-4 vertical-mid text-left">
-                                <h3>Don't miss out
+                                <h3>Get Help
+
                                 </h3>
-                                <p>New release and exclusive offers all over here.
+                                <p>Our customer care team will contact you with instructions on how to complete your warranty claim.
                                 </p>
                             </div>
                         </div>
@@ -61,7 +62,7 @@
 
                     <form action="">
                         <div class="input-group list">
-                            <p>Amazon Purchase Site</p>
+                            <h4>Amazon Purchase Site</h4>
                             <label for="amazon1">
                                 <input type="radio" id="amazon1" name="amazon" value="amazon1">
                                 <p>Amazon</p>
@@ -131,11 +132,11 @@
                         </div>
                         <div class="input-group ">
                             <p>Image</p>
-                            <label for="image">
+                            <label for="uploadImg">
                                 <div class="upload-block">
-                                    +
+                                    <img src="Content/img/plus.png" alt="">
                                 </div>
-                                <input type="file" name="" id="image">
+                                <input type="file" name="" id="uploadImg" style="display:none">
                             </label>
                         </div>
 
@@ -210,15 +211,7 @@
             <div data-menuanchor="secondPage" class="dot">
                 <a href="#secondPage"></a>
             </div>
-            <!-- <div data-menuanchor="3rdPage" class="dot">
-                <a href="#3rdPage"></a>
-            </div>
-            <div data-menuanchor="4thPage" class="dot">
-                <a href="#4thPage"></a>
-            </div>
-            <div data-menuanchor="5thPage" class="dot">
-                <a href="#5thPage"></a>
-            </div> -->
+         
 
         </div>
 
@@ -227,13 +220,13 @@
             <ul>
                 <li class="d-sm-none">
                     <a href="">
-                       
+                    <img src="Content/img/logo.svg" alt="" width="150px" style="margin:20px 0;">
                     </a>
                     <p style="font-size:18px" class="">2017 All Right Reserved</p>
                 </li>
                 <li class="text-center">
                     <img id="moveSectionDown" src="Content/img/arrow.svg" alt="" class="inlineBlock  arrow ">
-                    <p class="inlineBlock d-sm-none ">Scroll Down</p>
+                   
                 </li>
                 <li class="text-right contact d-sm-none">
                     <p class="inlineBlock ">EN / CN</p>
@@ -300,6 +293,9 @@
                             $('.slider-footer').fadeIn();
                             $('#dots').fadeIn();
                         }
+                    },
+                    afterRender: function () {
+                        $.fn.fullpage.setRecordHistory(false);
                     }
                 });
             }
@@ -309,9 +305,24 @@
                 e.preventDefault();
                 $.fn.fullpage.moveSectionDown();
             });
+        });
 
+      function readURL(input) {
 
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
 
+                reader.onload = function (e) {
+                    console.log(e.target.result);
+                    $('.upload-block img').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#uploadImg").change(function () {
+            readURL(this);
         });
     </script>
 

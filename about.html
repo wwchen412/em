@@ -60,7 +60,7 @@
                                 <div class="squareImg">
                                     <img src="Content/img/about_1.png" alt="" class="img-fluid">
                                 </div>
-            
+
                             </div>
                             <div class="em-4 vertical-mid text-left">
                                 <h3>Our mission
@@ -69,10 +69,10 @@
                                 </p>
                             </div>
                         </div>
-            
+
                     </div>
                 </div>
-            
+
             </div>
             <!-- 內頁區塊首頁 -->
             <div class="section childpage" style="background:#252525;">
@@ -87,7 +87,7 @@
                                 <div class="squareImg">
                                     <img src="Content/img/about_2.png" alt="" class="img-fluid">
                                 </div>
-            
+
                             </div>
                             <div class="em-4 vertical-mid text-left">
                                 <h3>Our mission
@@ -96,10 +96,10 @@
                                 </p>
                             </div>
                         </div>
-            
+
                     </div>
                 </div>
-            
+
             </div>
             <!-- 內頁區塊首頁 -->
             <div class="section childpage" style="background:#fff;">
@@ -114,7 +114,7 @@
                                 <div class="squareImg">
                                     <img src="Content/img/about_3.png" alt="" class="img-fluid">
                                 </div>
-            
+
                             </div>
                             <div class="em-4 vertical-mid text-left">
                                 <h3>Our mission
@@ -123,13 +123,13 @@
                                 </p>
                             </div>
                         </div>
-            
+
                     </div>
                 </div>
-            
+
             </div>
 
-         
+
 
 
             <!-- footer -->
@@ -200,13 +200,13 @@
             <ul>
                 <li class="d-sm-none">
                     <a href="">
-                       
+                        <img src="Content/img/logo.svg" alt="" width="150px" style="margin:20px 0;">
                     </a>
                     <p style="font-size:18px" class="">2017 All Right Reserved</p>
                 </li>
                 <li class="text-center">
                     <img id="moveSectionDown" src="Content/img/arrow.svg" alt="" class="inlineBlock  arrow ">
-                    <p class="inlineBlock d-sm-none ">Scroll Down</p>
+
                 </li>
                 <li class="text-right contact d-sm-none">
                     <p class="inlineBlock ">EN / CN</p>
@@ -244,8 +244,7 @@
         $(document).ready(function () {
             function initialization() {
                 $('#fullpage').fullpage({
-                    anchors: ['firstPage', 'secondPage','3rdPage','4thPage', 'footer'
-                    ],
+                    anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'footer'],
                     menu: '#dots',
                     keyboardScrolling: true,
                     animateAnchor: true,
@@ -274,6 +273,9 @@
                             $('.slider-footer').fadeIn();
                             $('#dots').fadeIn();
                         }
+                    },
+                    afterRender: function () {
+                        $.fn.fullpage.setRecordHistory(false);
                     }
                 });
             }

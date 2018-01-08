@@ -3,7 +3,12 @@
 .childpage {
   .row {
     .em-4 {
+     
       @include range-width(769px, 0) {
+         width: 27.5%;
+         &:nth-child(2){
+           width: 45%;
+         }
         &:nth-child(3) {
           position: relative;
           z-index: 1;
@@ -252,6 +257,7 @@ article {
     text-align: left;
     h4 {
       margin-bottom: 24px;
+      font-weight: 400;
       @include range-width(300px,768px) {
         margin: 20px 0 36px;
       }
@@ -305,8 +311,13 @@ article {
     text-align: center;
     line-height: 72px;
     font-size: 42px;
+    overflow: hidden;
     cursor: pointer;
     margin-top: 12px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
   }
 
   input[type="text"],
