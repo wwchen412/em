@@ -11,10 +11,10 @@ body {
   position: relative;
   height: 100%;
   font-size: 18px;
-  font-family: 'MicrosoftJhengHei', '微軟正黑體', Arial, Helvetica, sans-serif; }
+  font-family: sans-serif, "MicrosoftJhengHei", "微軟正黑體", Arial, Helvetica; }
 
 body {
-  font-family: 'MicrosoftJhengHeiLight', 'MicrosoftJhengHei', '微軟正黑體', Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: sans-serif, "MicrosoftJhengHeiLight", "MicrosoftJhengHei", "微軟正黑體", Helvetica Neue, Helvetica, Arial;
   font-size: 14px;
   color: #000;
   margin: 0;
@@ -23,7 +23,8 @@ body {
 h1,
 h2,
 h3,
-h4, p {
+h4,
+p {
   font-weight: lighter; }
 
 h3 {
@@ -92,7 +93,7 @@ p {
   display: block; }
 
 .bg-red {
-  background: #B43D37;
+  background: #b43d37;
   border-color: transparent !important; }
   .bg-red:hover {
     background: #a03631; }
@@ -113,9 +114,9 @@ p {
     display: block !important; } }
 
 .target {
-  -webkit-transition: .1s;
-  -o-transition: .1s;
-  transition: .1s; }
+  -webkit-transition: 0.1s;
+  -o-transition: 0.1s;
+  transition: 0.1s; }
 
 .background--light {
   color: #252525 !important; }

@@ -1,177 +1,177 @@
-@import '_color.scss';
-@import '_mixin.scss';
+@import "_color.scss";
+@import "_mixin.scss";
 // 共用設定
 * {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    position: relative;
-    height: 100%;
-    font-size: 18px;
-    font-family: 'MicrosoftJhengHei', '微軟正黑體', Arial, Helvetica, sans-serif;
+  position: relative;
+  height: 100%;
+  font-size: 18px;
+  font-family: sans-serif, "MicrosoftJhengHei", "微軟正黑體", Arial, Helvetica;
 }
 
 body {
-    font-family: 'MicrosoftJhengHeiLight', 'MicrosoftJhengHei', '微軟正黑體', Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color: #000;
-    margin: 0;
-    padding: 0;
+  font-family: sans-serif, "MicrosoftJhengHeiLight", "MicrosoftJhengHei",
+    "微軟正黑體", Helvetica Neue, Helvetica, Arial;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
 }
 
 h1,
 h2,
 h3,
-h4 ,p{
-    font-weight:lighter;
+h4,
+p {
+  font-weight: lighter;
 }
 
 h3 {
-    font-size: 42px;
+  font-size: 42px;
 }
-h4{
-    font-size: 20px;
+h4 {
+  font-size: 20px;
 }
 
 p {
-    // letter-spacing: 1px;
-    font-size: 1rem;
+  // letter-spacing: 1px;
+  font-size: 1rem;
 }
-.row{
-    font-size: 0;   
-    
+.row {
+  font-size: 0;
 }
-.vertical-mid{
-    vertical-align: middle;
+.vertical-mid {
+  vertical-align: middle;
 }
-.vertical-top{
-    vertical-align: top;
+.vertical-top {
+  vertical-align: top;
 }
-.em-4{
-    display: inline-block;
-    width: calc(100% / 3);
-    @include range-width(300px,768px){
-        width: 100%;
-    }
-  
+.em-4 {
+  display: inline-block;
+  width: calc(100% / 3);
+  @include range-width(300px,768px) {
+    width: 100%;
+  }
 }
 
 // news左右區塊使用
-.em-6{
-    display: inline-block;
-    width: calc(100% / 2 );
-        &:nth-child(2n){
-            padding:0 30px;
-        }
-     @include range-width(300px, 768px) {
-         width: 100%;
-     }
+.em-6 {
+  display: inline-block;
+  width: calc(100% / 2);
+  &:nth-child(2n) {
+    padding: 0 30px;
+  }
+  @include range-width(300px, 768px) {
+    width: 100%;
+  }
 }
 
 .color-black {
-    color: #000;
+  color: #000;
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
 }
-.text-jus{
-    text-align: justify;
+.text-jus {
+  text-align: justify;
 }
 .text-left {
-    text-align: left;
+  text-align: left;
 }
 
 .text-right {
-    text-align: right;
+  text-align: right;
 }
 
 .inlineBlock {
-    display: inline-block;
-    vertical-align: middle;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .marginL {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .d-sm-none {
-    @include range-width(300px, 768px) {
-        display: none !important;
-    }
+  @include range-width(300px, 768px) {
+    display: none !important;
+  }
 }
 
 .img-fluid {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 // 按鈕顏色
 .bg-red {
-    background: #B43D37;
-    border-color:transparent !important;
-    &:hover {
-        background: darken(#B43D37, 5%);
-    }
+  background: #b43d37;
+  border-color: transparent !important;
+  &:hover {
+    background: darken(#b43d37, 5%);
+  }
 }
 
 .bg-blur {
-    filter: blur(10px);
+  filter: blur(10px);
 }
 
 .container {
-    max-width: 1680px;
-    margin: 0 auto;
-    @include range-width(300px, 768px) {
-        width: 100%;
-    }
+  max-width: 1680px;
+  margin: 0 auto;
+  @include range-width(300px, 768px) {
+    width: 100%;
+  }
 }
 
 .d-md-block {
-    @include range-width(769px, 0) {
-        display: block !important;
-    }
+  @include range-width(769px, 0) {
+    display: block !important;
+  }
 }
 
 // 偵測背景變色
 .target {
-    transition: .1s;
+  transition: 0.1s;
 }
 
 .background--light {
-    color: $darken !important;
+  color: $darken !important;
 }
 
 .background--dark {
-    color: $maincolor !important;
+  color: $maincolor !important;
 }
 
 .section {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    h2 {
-        font-size: 72px;
-        // max-width: 40px;
-        font-weight: 200;
-    }
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    font-size: 72px;
+    // max-width: 40px;
+    font-weight: 200;
+  }
 }
-.bg-darken{
-    background-color: $darken;
+.bg-darken {
+  background-color: $darken;
 }
 
-@import '_header.scss';
-@import '_index.scss';
-@import '_footer.scss';
-@import '_products.scss';
-@import '_animation.scss';
-@import '_child.scss';
+@import "_header.scss";
+@import "_index.scss";
+@import "_footer.scss";
+@import "_products.scss";
+@import "_animation.scss";
+@import "_child.scss";
