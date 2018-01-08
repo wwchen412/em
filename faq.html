@@ -213,7 +213,7 @@
                     <p style="font-size:18px" class="">2017 All Right Reserved</p>
                 </li>
                 <li class="text-center">
-                    <img id="moveSectionDown" src="Content/img/arrow.svg" alt="" class="inlineBlock  arrow ">
+                    <img id="moveSectionDown" src="Content/img/arrow.svg" alt="" class="inlineBlock  arrow d-sm-none">
 
                 </li>
                 <li class="text-right contact d-sm-none">
@@ -280,12 +280,12 @@
                         if (anchorLink == 'footer') {
                             $('.slider-footer').fadeOut(100);
                             $('#dots').fadeOut(100);
+                            $('header').fadeOut(100);
                             $.fn.fullpage.reBuild();
-                            // $('#header').fadeOut(100);
                         } else {
                             $('.slider-footer').fadeIn();
                             $('#dots').fadeIn();
-                            //  $('#header').fadeIn();
+                           
                         }
                     },
                     afterRender: function () {
@@ -300,7 +300,7 @@
                 $.fn.fullpage.moveSectionDown();
             });
             $('.faq-title').click(function () {
-                $.fn.fullpage.reBuild();
+
                 $(this).toggleClass('active').parents().siblings('li').children('.faq-title').removeClass(
                     'active');
                 $(this).siblings('.faq-content').slideToggle().parents().siblings('li').children(
