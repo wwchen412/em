@@ -250,7 +250,7 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-           
+
             function initialization() {
                 $('#fullpage').fullpage({
                     anchors: ['firstPage', 'footer'],
@@ -258,19 +258,19 @@
                     keyboardScrolling: true,
                     animateAnchor: true,
                     scrollOverflow: true,
-                    // responsiveWidth: 768,
+                    responsiveWidth: 768,
 
                     onLeave: function (index, nextIndex, direction) {
                         var leavingSection = $(this);
-                       
-                       
+
+
                         if (index >= 1 && direction == 'down') {
                             $('.arrow').fadeOut();
                             $('.arrow+p').fadeOut();
                             $('header').fadeOut(100);
-                            
-                             
-                        } else  if ((index >= 1 && direction == 'up')){
+
+
+                        } else if ((index >= 1 && direction == 'up')) {
                             $('.arrow').fadeIn();
                             $('.arrow+p').fadeIn();
                             $('header').fadeIn(100);
@@ -283,20 +283,20 @@
                             $('.slider-footer').fadeOut(100);
                             $('#dots').fadeOut(100);
                             $('header').fadeOut(100);
-                          
-                           
+
+
                         } else {
                             $('.slider-footer').fadeIn();
                             $('#dots').fadeIn();
                             $('header').fadeIn(100);
-                           
+
                         }
 
                     },
                     afterRender: function () {
                         $.fn.fullpage.setRecordHistory(false);
-                      
-                         
+
+
                     }
                 });
             }
@@ -309,17 +309,17 @@
             var faqTitle = $('.faq-title');
             faqTitle.on('click', function (e) {
 
-                 faqTitle.not(this).removeClass('active');
-                  faqTitle.not(this).siblings('.faq-content').slideUp();
-                 $(this).toggleClass('active');
-                  $(this).siblings('.faq-content').slideDown();
-                  setTimeout(function () {
+                faqTitle.not(this).removeClass('active');
+                faqTitle.not(this).siblings('.faq-content').slideUp();
+                $(this).toggleClass('active');
+                $(this).siblings('.faq-content').slideToggle();
+                setTimeout(function () {
                     $(window).resize();
-                }, 150);
-            	});
+                }, 500);
+            });
 
-           
-          
+
+
 
         });
     </script>
