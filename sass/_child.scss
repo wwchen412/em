@@ -144,7 +144,8 @@ article {
     }
     p {
       margin-top: 20px;
-      font-size: 12px;
+      font-size: 18px;
+      font-weight: bold;
       line-height: 150%;
       @include range-width(300px, 768px) {
         margin: 10px 0 32px;

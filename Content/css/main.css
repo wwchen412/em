@@ -1402,7 +1402,8 @@ article {
           max-width: 60px; } }
     .faq-list li p {
       margin-top: 20px;
-      font-size: 12px;
+      font-size: 18px;
+      font-weight: bold;
       line-height: 150%; }
       @media screen and (max-width: 768px) and (min-width: 300px) {
         .faq-list li p {
