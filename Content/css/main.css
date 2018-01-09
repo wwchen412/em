@@ -1435,6 +1435,10 @@ article {
     display: none; }
     .faq-answer p.active {
       display: block; }
+  .faq-answer a {
+    color: #B43D37; }
+    .faq-answer a:hover, .faq-answer a:visited {
+      color: #B43D37; }
   @media screen and (max-width: 768px) and (min-width: 300px) {
     .faq-answer {
       display: none; } }

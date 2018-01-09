@@ -183,6 +183,13 @@ article {
       display: block;
     }
   }
+  a {
+    color: $red;
+    &:hover,
+    &:visited {
+      color: $red;
+    }
+  }
   @include range-width(300px,768px) {
     display: none;
   }
