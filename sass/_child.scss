@@ -163,6 +163,12 @@ article {
         transform-origin: top;
         text-align: left;
       }
+      a{
+        color:$red;
+        &:hover,&:visited{
+           color:$red;
+        }
+      }
     }
   }
 }
@@ -189,6 +195,7 @@ article {
       text-align: left;
       font-size: 22px;
       padding: 112px 20px 8px;
+      font-weight: normal;
     }
   }
   .faq-list {

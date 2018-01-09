@@ -1422,6 +1422,10 @@ article {
           -ms-transform-origin: top;
           transform-origin: top;
           text-align: left; } }
+      .faq-list li .faq-content a {
+        color: #B43D37; }
+        .faq-list li .faq-content a:hover, .faq-list li .faq-content a:visited {
+          color: #B43D37; }
 
 .faq-answer {
   margin: 108px auto 110px;
@@ -1439,7 +1443,8 @@ article {
   .faq .faq-h3 {
     text-align: left;
     font-size: 22px;
-    padding: 112px 20px 8px; } }
+    padding: 112px 20px 8px;
+    font-weight: normal; } }
 
 .faq .faq-list {
   margin: auto;

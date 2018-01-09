@@ -205,7 +205,7 @@
                     <p style="" class="">© 2017 EnergieMAX Design Corp. All Rights Reserved</p>
                 </li>
                 <li class="text-center">
-                    <img id="moveSectionDown" src="Content/img/arrow.svg" alt="" class="inlineBlock  arrow ">
+                    <img id="moveSectionDown" src="Content/img/arrow.svg" alt="" class="inlineBlock  arrow d-sm-none">
 
                 </li>
                 <li class="text-right contact d-sm-none">
@@ -268,10 +268,12 @@
                         if (anchorLink == 'footer') {
                             $('.slider-footer').fadeOut(100);
                             $('#dots').fadeOut(100);
+                            $('#header').fadeOut(100);
 
                         } else {
                             $('.slider-footer').fadeIn();
                             $('#dots').fadeIn();
+                            $('#header').fadeIn(100);
                         }
                     },
                     afterRender: function () {
