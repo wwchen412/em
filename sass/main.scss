@@ -13,11 +13,18 @@ body {
   position: relative;
   height: 100%;
   font-size: 18px;
-  font-family: sans-serif, "MicrosoftJhengHei", "微軟正黑體", Arial, Helvetica;
+  font-family: "SF Pro TC", "SF Pro Text", "PingFang TC", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
 }
 
 body {
-  font-family: sans-serif, "MicrosoftJhengHeiLight", "MicrosoftJhengHei","微軟正黑體", Helvetica Neue, Helvetica, Arial;
+   font-family: "SF Pro TC",
+   "SF Pro Text",
+   "PingFang TC",
+   "Helvetica Neue",
+   "Helvetica",
+   "Arial",
+   sans-serif;
   font-size: 14px;
   color: #000;
   margin: 0;
@@ -42,7 +49,7 @@ h4 {
 p {
   // letter-spacing: 1px;
   font-size: 1rem;
-  @include range-width(300px,768px){
+  @include range-width(300px,768px) {
     font-size: 12px;
   }
 }
