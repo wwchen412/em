@@ -136,7 +136,8 @@
                                 <div class="upload-block">
                                     <img src="Content/img/plus.png" alt="" style="display:inline-block;">
                                 </div>
-                                <input type="file" name="uploadImg" id="uploadImg" style="display:none" accept="image/*">
+                               
+                                <input type="file" name="uploadImg" id="uploadImg" accept="image/*;capture=camera" style="display:none">
                             </label>
                         </div>
 
@@ -225,7 +226,7 @@
                     <p style="" class="">© 2017 EnergieMAX Design Corp. All Rights Reserved</p>
                 </li>
                 <li class="text-center">
-                    <img id="moveSectionDown" src="Content/img/arrow.svg" alt="" class="inlineBlock  arrow ">
+                    <img id="moveSectionDown" src="Content/img/arrow.svg" alt="" class="inlineBlock  arrow d-sm-none">
                    
                 </li>
                 <li class="text-right contact d-sm-none">
@@ -269,7 +270,7 @@
                     keyboardScrolling: true,
                     animateAnchor: true,
                     scrollOverflow: true,
-                    // responsiveWidth: 769,
+                    responsiveWidth: 768,
 
                     onLeave: function (index, nextIndex, direction) {
                         var leavingSection = $(this);
