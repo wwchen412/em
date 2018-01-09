@@ -98,6 +98,10 @@ article {
     .faq-title {
       position: relative;
       z-index: 1;
+      p{
+        font-size: 18px;
+        font-weight: bold;
+      }
       &:hover {
         svg {
           .cls-1 {
@@ -144,8 +148,7 @@ article {
     }
     p {
       margin-top: 20px;
-      font-size: 18px;
-      font-weight: bold;
+      
       line-height: 150%;
       @include range-width(300px, 768px) {
         margin: 10px 0 32px;

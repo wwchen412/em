@@ -739,11 +739,11 @@ footer {
   padding: 48px 40px 160px;
   color: #ddd;
   width: 100%; }
+  footer p {
+    font-size: 12px; }
   @media screen and (max-width: 576px) and (min-width: 300px) {
     footer {
-      padding: 50px 25px; }
-      footer p {
-        font-size: 12px; } }
+      padding: 50px 25px; } }
   footer > ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1373,6 +1373,9 @@ article {
     .faq-list li .faq-title {
       position: relative;
       z-index: 1; }
+      .faq-list li .faq-title p {
+        font-size: 18px;
+        font-weight: bold; }
       .faq-list li .faq-title:hover svg .cls-1 {
         fill: #c3312f; }
       .faq-list li .faq-title:hover p {
@@ -1402,8 +1405,6 @@ article {
           max-width: 60px; } }
     .faq-list li p {
       margin-top: 20px;
-      font-size: 18px;
-      font-weight: bold;
       line-height: 150%; }
       @media screen and (max-width: 768px) and (min-width: 300px) {
         .faq-list li p {

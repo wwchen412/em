@@ -72,11 +72,12 @@ footer {
     padding: 48px 40px 160px;
     color: $maincolor;
     width: 100%;
+    p {
+        font-size: 12px;
+    }
     @include range-width(300px, 576px) {
         padding: 50px 25px;
-        p {
-            font-size: 12px;
-        }
+        
     }
     &>ul {
         display: flex;

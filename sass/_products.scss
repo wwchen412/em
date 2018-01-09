@@ -1,5 +1,7 @@
 @import "_color.scss";
 @import "_mixin.scss";
+
+
 .products {
   .mainpage {
     @include range-width(300px, 768px) {
