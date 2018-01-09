@@ -42,6 +42,9 @@ h4 {
 p {
   // letter-spacing: 1px;
   font-size: 1rem;
+  @include range-width(300px,768px){
+    font-size: 12px;
+  }
 }
 .row {
   font-size: 0;

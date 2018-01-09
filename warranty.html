@@ -132,11 +132,11 @@
                         </div>
                         <div class="input-group ">
                             <p>Image</p>
-                            <label for="uploadImg">
+                            <label for="uploadImg" style="">
                                 <div class="upload-block">
-                                    <img src="Content/img/plus.png" alt="">
+                                    <img src="Content/img/plus.png" alt="" style="display:inline-block;">
                                 </div>
-                                <input type="file" name="" id="uploadImg" style="display:none">
+                                <input type="file" name="uploadImg" id="uploadImg" style="display:none" accept="image/*">
                             </label>
                         </div>
 
@@ -310,7 +310,6 @@
         });
 
       function readURL(input) {
-
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
 
@@ -324,6 +323,7 @@
         }
 
         $("#uploadImg").change(function () {
+            console.log('read');
             readURL(this);
         });
     </script>
