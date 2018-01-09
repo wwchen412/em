@@ -563,7 +563,8 @@ header {
     .content {
       padding: 0 40px; }
       .content h2 {
-        font-size: 48px; } }
+        font-size: 48px;
+        line-height: 1; } }
   .content a {
     display: block;
     margin: 0 auto;
