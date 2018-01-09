@@ -3,12 +3,11 @@
 .childpage {
   .row {
     .em-4 {
-     
       @include range-width(769px, 0) {
-         width: 27.5%;
-         &:nth-child(2){
-           width: 45%;
-         }
+        width: 27.5%;
+        &:nth-child(2) {
+          width: 45%;
+        }
         &:nth-child(3) {
           position: relative;
           z-index: 1;
@@ -148,12 +147,12 @@ article {
       line-height: 150%;
       @include range-width(300px, 768px) {
         margin: 10px 0 32px;
-
       }
     }
 
     .faq-content {
       display: none;
+   
       @include range-width(300px,768px) {
         background: $darken;
         color: #fff;
@@ -185,6 +184,13 @@ article {
 
 // faq
 .faq {
+  .faq-h3 {
+    @include range-width(300px,768px) {
+      text-align: left;
+      font-size: 22px;
+      padding: 112px 20px 8px;
+    }
+  }
   .faq-list {
     margin: auto;
     max-width: 100%;
@@ -206,11 +212,15 @@ article {
       p {
         font-size: 14px;
         margin-bottom: 32px;
-        @include range-width(300px,768px){
+        @include range-width(300px,768px) {
           font-size: 12px;
         }
       }
     }
+  }
+  .faq-title.active + .faq-content {
+   
+   
   }
   .faq-content {
     background: $darken;
@@ -219,14 +229,14 @@ article {
     transform: translateY(-130px);
     margin-bottom: -60px;
     transform-origin: top;
-    h5{
+    h5 {
       font-size: 14px;
       font-weight: 400;
     }
-    .content-text{
+    .content-text {
       max-width: 800px;
       margin: auto;
-      p{
+      p {
         margin-bottom: 10px;
       }
     }
@@ -323,7 +333,7 @@ article {
     overflow: hidden;
     cursor: pointer;
     margin-top: 12px;
-    img{
+    img {
       width: 100%;
       height: 100%;
     }
@@ -386,16 +396,15 @@ article {
 
 // 條款頁
 .text-only {
-//  padding: 176px 0;
-.container{
-   padding: 176px 0;
-   @include range-width(300px, 768px) {
-     // margin: 112px 0;
-     padding: 112px 20px;
-   }
-}
+  //  padding: 176px 0;
+  .container {
+    padding: 176px 0;
+    @include range-width(300px, 768px) {
+      // margin: 112px 0;
+      padding: 112px 20px;
+    }
+  }
 
-  
   h3 {
     margin-bottom: 64px;
     @include range-width(300px, 768px) {

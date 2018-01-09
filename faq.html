@@ -23,7 +23,7 @@
             <!-- 內頁區塊首頁 -->
 
             <div class="section faq">
-                <h3>FAQS</h3>
+                <h3 class="faq-h3">FAQS</h3>
                 <!-- 聯絡faq -->
                 <ul class="faq-list">
                     <li>
@@ -250,6 +250,7 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+           
             function initialization() {
                 $('#fullpage').fullpage({
                     anchors: ['firstPage', 'footer'],
@@ -257,22 +258,23 @@
                     keyboardScrolling: true,
                     animateAnchor: true,
                     scrollOverflow: true,
-                    responsiveWidth: 769,
+                    // responsiveWidth: 768,
 
                     onLeave: function (index, nextIndex, direction) {
                         var leavingSection = $(this);
-                        $.fn.fullpage.setRecordHistory(false);
-                        //after leaving section 2
+                       
+                       
                         if (index >= 1 && direction == 'down') {
                             $('.arrow').fadeOut();
                             $('.arrow+p').fadeOut();
                             $('header').fadeOut(100);
-
-                        } else {
+                            
+                             
+                        } else  if ((index >= 1 && direction == 'up')){
                             $('.arrow').fadeIn();
                             $('.arrow+p').fadeIn();
                             $('header').fadeIn(100);
-
+                            // $.fn.fullpage.reBuild();
                         }
                     },
                     afterLoad: function (anchorLink, index) {
@@ -281,15 +283,20 @@
                             $('.slider-footer').fadeOut(100);
                             $('#dots').fadeOut(100);
                             $('header').fadeOut(100);
-                            $.fn.fullpage.reBuild();
+                          
+                           
                         } else {
                             $('.slider-footer').fadeIn();
                             $('#dots').fadeIn();
+                            $('header').fadeIn(100);
                            
                         }
+
                     },
                     afterRender: function () {
                         $.fn.fullpage.setRecordHistory(false);
+                      
+                         
                     }
                 });
             }
@@ -299,13 +306,29 @@
                 e.preventDefault();
                 $.fn.fullpage.moveSectionDown();
             });
-            $('.faq-title').click(function () {
+            var faqTitle = $('.faq-title');
+            faqTitle.on('click', function (e) {
 
-                $(this).toggleClass('active').parents().siblings('li').children('.faq-title').removeClass(
-                    'active');
-                $(this).siblings('.faq-content').slideToggle().parents().siblings('li').children(
-                    '.faq-content').slideUp();
-            })
+                 faqTitle.not(this).removeClass('active');
+                  faqTitle.not(this).siblings('.faq-content').slideUp();
+                 $(this).toggleClass('active');
+                  $(this).siblings('.faq-content').slideDown();
+                  setTimeout(function () {
+                    $(window).resize();
+                }, 150);
+            	});
+
+            // $('.faq-title').click(function () {
+                
+               
+            //     $(this).toggleClass('active').parents().siblings('li').children('.faq-title').removeClass(
+            //         'active');
+            //     $(this).siblings('.faq-content').slideToggle().parents().siblings('li').children(
+            //         '.faq-content').slideUp();
+            //           $(window).resize();
+
+            // });
+          
 
         });
     </script>

@@ -1432,6 +1432,12 @@ article {
     .faq-answer {
       display: none; } }
 
+@media screen and (max-width: 768px) and (min-width: 300px) {
+  .faq .faq-h3 {
+    text-align: left;
+    font-size: 22px;
+    padding: 112px 20px 8px; } }
+
 .faq .faq-list {
   margin: auto;
   max-width: 100%;
