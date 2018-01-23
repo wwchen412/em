@@ -12,19 +12,14 @@ html,
 body {
   position: relative;
   height: 100%;
-  font-size: 18px;
-  font-family: "SF Pro TC", "SF Pro Text", "PingFang TC", "Helvetica Neue",
-    "Helvetica", "Arial", sans-serif;
+  font-size: 14px;
+  // font-family: "SF Pro TC", "SF Pro Text", "PingFang TC", "Helvetica Neue",
+  //   "Helvetica", "Arial", sans-serif;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"微軟正黑體";
 }
 
 body {
-   font-family: "SF Pro TC",
-   "SF Pro Text",
-   "PingFang TC",
-   "Helvetica Neue",
-   "Helvetica",
-   "Arial",
-   sans-serif;
+  
   font-size: 14px;
   color: #000;
   margin: 0;
@@ -36,19 +31,25 @@ h2,
 h3,
 h4,
 p {
-  font-weight: lighter;
+  // font-weight: lighter;
 }
 
 h3 {
-  font-size: 42px;
+  font-size: 30px;
+  font-weight: 500;
+  @include range-width(300px,768px){
+    font-size: 24px;
+  }
 }
 h4 {
   font-size: 20px;
+  font-weight: 500;
 }
 
 p {
   // letter-spacing: 1px;
   font-size: 1rem;
+  font-weight: 400;
   @include range-width(300px,768px) {
     font-size: 12px;
   }
@@ -171,7 +172,7 @@ p {
   h2 {
     font-size: 72px;
     // max-width: 40px;
-    font-weight: 200;
+    font-weight: 500;
   }
 }
 .bg-darken {

@@ -58,7 +58,7 @@
     }
     .arrow {
         width: 30px;
-        margin-right: 22px;
+        // margin-right: 22px;
         animation: arrowInfinite 1s infinite alternate linear;
         @include range-width(300px, 768px) {
             margin-right: 0;
@@ -96,6 +96,7 @@ footer {
                     order: 4;
                     img {
                         margin-bottom: 20px;
+                       
                     }
                 }
                 &>* {
@@ -104,11 +105,12 @@ footer {
                 }
                 img {
                     margin-bottom: 16px;
+                     max-width: 106px;
                 }
             }
             h4 {
                 margin-bottom: 45px;
-                font-size: 16px;
+                font-size: 12px;
                 font-weight: bold;
                 @include range-width(300px, 576px) {
                     margin-bottom: 30px;
@@ -116,7 +118,7 @@ footer {
             }
             li {
                 margin-bottom: 27px;
-                font-size: 15px;
+                font-size: 12px;
                 font-weight: 100;
                 @include range-width(769px,0){
                     &:last-child{

@@ -5,10 +5,16 @@
 .products {
   .mainpage {
     @include range-width(300px, 768px) {
+       .mobile-mb{
+        margin-top: 60px;
+       }
       .main-content {
+         
         p {
-          margin: 30px 0 78px;
+          margin: 30px 0 50px;
+          line-height: 120%;
         }
+        
         h4 {
           margin-top: 0;
           margin-bottom: 32px;
@@ -33,7 +39,7 @@
         display: inline-block;
         vertical-align: middle;
         width: calc(100% / 3);
-        padding: 0 40px;
+        padding: 0 10px;
         @include range-width(300px, 768px) {
           width: 100%;
           padding: 10vh 0;
@@ -45,16 +51,16 @@
           }
         }
         img {
-          max-width: 254px;
+          max-width: 150px;
         }
         // p {
         //     text-align: left;
         // }
         &:nth-child(3) {
           text-align: left;
-          h3 {
-            margin-bottom: 52px;
-          }
+          // h3 {
+          //   margin-bottom: 52px;
+          // }
           @include range-width(300px, 768px) {
             text-align: center;
             h3 {
@@ -64,8 +70,8 @@
         }
       }
       h3 {
-        font-size: 36px;
-        margin-bottom: 52px;
+        font-size: 32px;
+        margin-bottom: 18px;
         @include range-width(300px, 768px) {
           font-size: 26px;
           margin-bottom: 10px;
@@ -132,7 +138,7 @@
           align-items: center;
           padding: 0 100px;
           h3 {
-            margin-bottom: 50px;
+            margin-bottom: 18px;
           }
           @include range-width(300px, 768px) {
             width: 100%;
@@ -203,7 +209,10 @@
 .certsLabel {
   h3 {
     // font-size: 42px;
-    margin-bottom: 54px;
+    margin-bottom: 42px;
+  }
+  p{
+    font-weight: 200;
   }
   ul {
     font-size: 0;
@@ -216,10 +225,10 @@
       padding: 20px;
       text-align: center;
       vertical-align: top;
-      margin-bottom: 50px;
+      margin-bottom: 16px;
       img {
-        max-width: 70px;
-        margin: 0 auto 32px;
+        max-width: 46px;
+        margin: 0 auto 24px;
       }
     }
   }
@@ -278,7 +287,7 @@
       p {
         margin: 0;
         font-size: 16px;
-        font-weight: lighter;
+        // font-weight: lighter;
         margin: 8px 0 16px;
         @include range-width(300px, 768px) {
           font-size: 10px;

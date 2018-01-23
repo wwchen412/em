@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -9,31 +10,29 @@ html,
 body {
   position: relative;
   height: 100%;
-  font-size: 18px;
-  font-family: "SF Pro TC", "SF Pro Text", "PingFang TC", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
+  font-size: 14px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,"微軟正黑體"; }
 
 body {
-  font-family: "SF Pro TC", "SF Pro Text", "PingFang TC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 14px;
   color: #000;
   margin: 0;
   padding: 0; }
 
-h1,
-h2,
-h3,
-h4,
-p {
-  font-weight: lighter; }
-
 h3 {
-  font-size: 42px; }
+  font-size: 30px;
+  font-weight: 500; }
+  @media screen and (max-width: 768px) and (min-width: 300px) {
+    h3 {
+      font-size: 24px; } }
 
 h4 {
-  font-size: 20px; }
+  font-size: 20px;
+  font-weight: 500; }
 
 p {
-  font-size: 1rem; }
+  font-size: 1rem;
+  font-weight: 400; }
   @media screen and (max-width: 768px) and (min-width: 300px) {
     p {
       font-size: 12px; } }
@@ -141,7 +140,7 @@ p {
   align-items: center; }
   .section h2 {
     font-size: 72px;
-    font-weight: 200; }
+    font-weight: 500; }
 
 .bg-darken {
   background-color: #252525; }
@@ -173,10 +172,11 @@ header {
       display: inline-block;
       vertical-align: middle; }
     header li p {
-      color: #787878; }
+      color: #787878;
+      font-size: 12px; }
     header li .menu-line {
-      width: 32px;
-      height: 2px;
+      width: 24px;
+      height: 1px;
       background: #787878;
       position: relative;
       margin-right: 13px;
@@ -195,12 +195,12 @@ header {
         -o-transition: .3s;
         transition: .3s;
         width: 100%;
-        height: 2px;
+        height: 1px;
         background: #787878; }
       header li .menu-line:before {
-        top: -13px; }
+        top: -10px; }
       header li .menu-line:after {
-        bottom: -13px; }
+        bottom: -10px; }
       header li .menu-line.active {
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
@@ -278,7 +278,7 @@ header {
       .menu-list .logo-area {
         padding: 60px 0 20px; } }
     .menu-list .logo-area img {
-      max-width: 200px; }
+      max-width: 132px; }
   .menu-list .lists {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -320,7 +320,7 @@ header {
           color: #787878;
           text-decoration: none;
           display: inline-block;
-          font-weight: 200;
+          font-weight: 500;
           position: relative;
           overflow: hidden; }
           .menu-list .lists ul li a.sibActive {
@@ -568,15 +568,17 @@ header {
   .content a {
     display: block;
     margin: 0 auto;
-    padding: 15px;
+    padding: 8px 10px;
     border: 1px solid #ddd;
     color: #ddd;
     border-radius: 30px;
     text-decoration: none;
-    max-width: 252px;
-    font-size: 16px;
+    max-width: 200px;
+    font-size: 12px;
     font-weight: normal;
     margin-bottom: 20px; }
+    .content a.bg-red {
+      max-width: 252px; }
     @media screen and (max-width: 768px) and (min-width: 300px) {
       .content a {
         font-size: 14px;
@@ -585,7 +587,9 @@ header {
     .content a.background--light {
       border: 1px solid #252525; }
   .content h3 {
-    font-weight: 200; }
+    font-weight: 500; }
+  .content p {
+    line-height: 200%; }
 
 .main-content h4 {
   margin: 120px 0 55px;
@@ -594,6 +598,14 @@ header {
 .main-content p {
   margin: 52px 0 70px;
   font-weight: normal; }
+  .main-content p.buyText {
+    margin: 6px 0 28px;
+    font-size: 16px;
+    font-weight: 200; }
+    @media screen and (max-width: 768px) and (min-width: 300px) {
+      .main-content p.buyText {
+        margin-bottom: 18px;
+        line-height: 100%; } }
   @media screen and (max-width: 768px) and (min-width: 300px) {
     .main-content p {
       margin-top: 17px;
@@ -653,7 +665,7 @@ header {
   position: absolute;
   right: auto !important;
   left: 40px;
-  bottom: 140px;
+  bottom: 110px;
   top: auto;
   -webkit-transform: translate(0);
   -ms-transform: translate(0);
@@ -726,7 +738,6 @@ header {
         height: 20px; }
   .slider-footer .arrow {
     width: 30px;
-    margin-right: 22px;
     -webkit-animation: arrowInfinite 1s infinite alternate linear;
     animation: arrowInfinite 1s infinite alternate linear; }
     @media screen and (max-width: 768px) and (min-width: 300px) {
@@ -782,17 +793,18 @@ footer {
           -ms-flex-item-align: end;
           align-self: flex-end; }
         footer > ul > li:nth-child(1) img {
-          margin-bottom: 16px; }
+          margin-bottom: 16px;
+          max-width: 106px; }
       footer > ul > li h4 {
         margin-bottom: 45px;
-        font-size: 16px;
+        font-size: 12px;
         font-weight: bold; }
         @media screen and (max-width: 576px) and (min-width: 300px) {
           footer > ul > li h4 {
             margin-bottom: 30px; } }
       footer > ul > li li {
         margin-bottom: 27px;
-        font-size: 15px;
+        font-size: 12px;
         font-weight: 100; }
         @media screen and (min-width: 769px) {
           footer > ul > li li:last-child {
@@ -811,8 +823,11 @@ footer {
       color: #787878; }
 
 @media screen and (max-width: 768px) and (min-width: 300px) {
+  .products .mainpage .mobile-mb {
+    margin-top: 60px; }
   .products .mainpage .main-content p {
-    margin: 30px 0 78px; }
+    margin: 30px 0 50px;
+    line-height: 120%; }
   .products .mainpage .main-content h4 {
     margin-top: 0;
     margin-bottom: 32px; } }
@@ -829,7 +844,7 @@ footer {
     display: inline-block;
     vertical-align: middle;
     width: calc(100% / 3);
-    padding: 0 40px; }
+    padding: 0 10px; }
     @media screen and (max-width: 768px) and (min-width: 300px) {
       .products .content .animation-text li {
         width: 100%;
@@ -839,19 +854,17 @@ footer {
         .products .content .animation-text li img {
           width: 102px; } }
     .products .content .animation-text li img {
-      max-width: 254px; }
+      max-width: 150px; }
     .products .content .animation-text li:nth-child(3) {
       text-align: left; }
-      .products .content .animation-text li:nth-child(3) h3 {
-        margin-bottom: 52px; }
       @media screen and (max-width: 768px) and (min-width: 300px) {
         .products .content .animation-text li:nth-child(3) {
           text-align: center; }
           .products .content .animation-text li:nth-child(3) h3 {
             margin-bottom: 22px; } }
   .products .content .animation-text h3 {
-    font-size: 36px;
-    margin-bottom: 52px; }
+    font-size: 32px;
+    margin-bottom: 18px; }
     @media screen and (max-width: 768px) and (min-width: 300px) {
       .products .content .animation-text h3 {
         font-size: 26px;
@@ -930,7 +943,7 @@ footer {
       align-items: center;
       padding: 0 100px; }
       .products .content.half-block .half .text h3 {
-        margin-bottom: 50px; }
+        margin-bottom: 18px; }
       @media screen and (max-width: 768px) and (min-width: 300px) {
         .products .content.half-block .half .text {
           width: 100%;
@@ -995,7 +1008,10 @@ footer {
           margin: 12px 0 16px; } }
 
 .certsLabel h3 {
-  margin-bottom: 54px; }
+  margin-bottom: 42px; }
+
+.certsLabel p {
+  font-weight: 200; }
 
 .certsLabel ul {
   font-size: 0;
@@ -1008,10 +1024,10 @@ footer {
     padding: 20px;
     text-align: center;
     vertical-align: top;
-    margin-bottom: 50px; }
+    margin-bottom: 16px; }
     .certsLabel ul li img {
-      max-width: 70px;
-      margin: 0 auto 32px; }
+      max-width: 46px;
+      margin: 0 auto 24px; }
 
 @media screen and (max-width: 768px) and (min-width: 300px) {
   .certsLabel h3 {
@@ -1062,7 +1078,6 @@ footer {
       .specForm > div.specList p {
         margin: 0;
         font-size: 16px;
-        font-weight: lighter;
         margin: 8px 0 16px; }
         @media screen and (max-width: 768px) and (min-width: 300px) {
           .specForm > div.specList p {
@@ -1297,19 +1312,26 @@ footer {
 
 @media screen and (min-width: 769px) {
   .childpage .row .em-4 {
-    width: 27.5%; }
+    width: 27.5%;
+    padding: 0 40px; }
     .childpage .row .em-4:nth-child(2) {
-      width: 45%; }
+      width: 45%;
+      padding: 0; }
     .childpage .row .em-4:nth-child(3) {
       position: relative;
       z-index: 1;
-      margin-left: -80px;
+      -webkit-transform: translateX(-80px);
+      -ms-transform: translateX(-80px);
+      transform: translateX(-80px);
       padding-right: 10px; } }
 
 .childpage .squareImg {
   width: 100%;
   position: relative;
   padding-bottom: 100%; }
+  @media screen and (max-width: 768px) and (min-width: 300px) {
+    .childpage .squareImg {
+      margin: 20px 0; } }
   .childpage .squareImg img {
     position: absolute;
     top: 0;
@@ -1325,28 +1347,23 @@ footer {
     padding: 0 20px; } }
 
 @media screen and (max-width: 768px) and (min-width: 300px) {
-  .childpage h3 {
-    font-weight: lighter;
-    font-size: 22px;
-    margin: 10px 0 20px; } }
-
-@media screen and (max-width: 768px) and (min-width: 300px) {
   .childpage p {
-    font-size: 12px;
-    font-weight: lighter; } }
+    font-size: 12px; } }
 
 article {
   color: #000;
   margin-bottom: 40px; }
   article .container {
-    max-width: 1260px; }
+    max-width: 800px; }
   article h4 {
     margin-bottom: 18px; }
   article p {
     line-height: 180%; }
   article p.date {
-    font-size: 14px;
-    margin: 90px 0 45px; }
+    font-size: 12px;
+    color: #B43D37;
+    margin: 90px 0 45px;
+    font-weight: 200; }
     @media screen and (max-width: 768px) and (min-width: 300px) {
       article p.date {
         margin: 20px 0; } }
@@ -1374,8 +1391,7 @@ article {
       position: relative;
       z-index: 1; }
       .faq-list li .faq-title p {
-        font-size: 18px;
-        font-weight: bold; }
+        font-size: 14px; }
       .faq-list li .faq-title:hover svg .cls-1 {
         fill: #c3312f; }
       .faq-list li .faq-title:hover p {
@@ -1395,7 +1411,7 @@ article {
       position: relative;
       z-index: 1; }
     .faq-list li svg {
-      max-width: 78px;
+      max-width: 52px;
       width: 100%;
       cursor: pointer; }
       .faq-list li svg .cls-1 {
@@ -1408,7 +1424,9 @@ article {
       line-height: 150%; }
       @media screen and (max-width: 768px) and (min-width: 300px) {
         .faq-list li p {
-          margin: 10px 0 32px; } }
+          margin: 0px 0 32px;
+          text-align: center;
+          line-height: 200%; } }
     .faq-list li .faq-content {
       display: none; }
       @media screen and (max-width: 768px) and (min-width: 300px) {
@@ -1451,7 +1469,7 @@ article {
     text-align: left;
     font-size: 22px;
     padding: 112px 20px 8px;
-    font-weight: normal; } }
+    text-align: center; } }
 
 .faq .faq-list {
   margin: auto;
@@ -1459,24 +1477,24 @@ article {
   padding: 40px 0; }
   .faq .faq-list li {
     width: 100%; }
-    .faq .faq-list li .faq-title p {
-      font-size: 20px; }
     .faq .faq-list li .faq-title.active p {
       color: #fff; }
     .faq .faq-list li p {
       font-size: 14px;
-      margin-bottom: 32px; }
+      margin-bottom: 32px;
+      margin-top: 10px; }
       @media screen and (max-width: 768px) and (min-width: 300px) {
         .faq .faq-list li p {
-          font-size: 12px; } }
+          font-size: 12px;
+          margin-top: 0; } }
 
 .faq .faq-content {
   background: #252525;
   color: #fff;
   padding: 120px 20px 26px;
-  -webkit-transform: translateY(-130px);
-  -ms-transform: translateY(-130px);
-  transform: translateY(-130px);
+  -webkit-transform: translateY(-100px);
+  -ms-transform: translateY(-100px);
+  transform: translateY(-100px);
   margin-bottom: -60px;
   -webkit-transform-origin: top;
   -ms-transform-origin: top;
@@ -1484,6 +1502,9 @@ article {
   .faq .faq-content h5 {
     font-size: 14px;
     font-weight: 400; }
+    @media screen and (max-width: 768px) and (min-width: 300px) {
+      .faq .faq-content h5 {
+        font-size: 12px; } }
   .faq .faq-content .content-text {
     max-width: 800px;
     margin: auto; }
@@ -1510,32 +1531,40 @@ article {
         .warranty .warranty-info p {
           margin-bottom: 32px; } }
   .warranty.container {
-    max-width: 800px; }
+    max-width: 540px; }
     @media screen and (max-width: 768px) and (min-width: 300px) {
       .warranty.container {
         padding: 0 20px; } }
   .warranty form {
     text-align: left; }
     .warranty form h4 {
-      margin-bottom: 24px;
-      font-weight: 400; }
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 12px; }
+      .warranty form h4.AmazonP {
+        margin-bottom: 0; }
+        @media screen and (max-width: 768px) and (min-width: 300px) {
+          .warranty form h4.AmazonP {
+            margin-bottom: 10px; } }
       @media screen and (max-width: 768px) and (min-width: 300px) {
         .warranty form h4 {
           margin: 20px 0 22px;
           font-size: 12px; } }
+    .warranty form p {
+      font-size: 12px; }
   .warranty .input-group input,
   .warranty .input-group textarea {
-    margin: 12px 0 36px;
-    font-size: 20px; }
+    margin: 8px 0 16px;
+    font-size: 12px; }
     @media screen and (max-width: 768px) and (min-width: 300px) {
       .warranty .input-group input,
       .warranty .input-group textarea {
         margin: 12px 0; } }
   .warranty .input-group input[type="radio"] {
-    margin-top: 24px; }
+    margin: 12px 0 18px; }
     @media screen and (max-width: 768px) and (min-width: 300px) {
       .warranty .input-group input[type="radio"] {
-        margin: 0px 0 20px; } }
+        margin: 12px 0 6px; } }
   .warranty .input-group.list {
     font-size: 0; }
     .warranty .input-group.list label {
@@ -1548,11 +1577,12 @@ article {
       .warranty .input-group.list label p {
         display: inline-block;
         vertical-align: middle;
-        margin: 24px 0 36px;
+        margin: 12px 0 18px;
+        font-size: 12px;
         word-break: break-all; }
         @media screen and (max-width: 768px) and (min-width: 300px) {
           .warranty .input-group.list label p {
-            margin: 0px 0 20px; } }
+            margin: 12px 0 6px; } }
   .warranty .upload-block {
     border: 1px solid #ddd;
     color: #ddd;
@@ -1577,7 +1607,7 @@ article {
     width: 100%;
     border: 1px solid #ddd;
     padding: 10px;
-    height: 42px;
+    height: 28px;
     border-radius: 21px; }
     @media screen and (max-width: 768px) and (min-width: 300px) {
       .warranty input[type="text"],
@@ -1599,7 +1629,7 @@ article {
     .warranty input[type="radio"]:checked {
       background-color: #252525; }
   .warranty textarea {
-    height: 84px; }
+    height: 80px; }
   .warranty .buttons {
     margin: 54px 0; }
     @media screen and (max-width: 768px) and (min-width: 300px) {
@@ -1634,7 +1664,7 @@ article {
     .text-only h3 {
       margin-bottom: 48px;
       font-size: 22px;
-      font-weight: normal; } }
+      font-weight: 500; } }
 
 .text-only p {
   line-height: 180%;
@@ -1645,7 +1675,8 @@ article {
 
 .text-only h4 {
   margin-bottom: 15px;
-  font-weight: 300; }
+  font-weight: 500;
+  font-size: 14px; }
   @media screen and (max-width: 768px) and (min-width: 300px) {
     .text-only h4 {
       font-size: 12px; } }
