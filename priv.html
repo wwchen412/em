@@ -224,7 +224,7 @@
                 </li>
                 <li class="text-center" style="opacity:0">
                     <img id="moveSectionDown" src="Content/img/arrow.svg" alt="" class="inlineBlock  arrow ">
-                    <p class="inlineBlock d-sm-none ">Scroll Down</p>
+                    <p class="inlineBlock d-sm-none " style="margin-left:20px">Scroll Down</p>
                 </li>
                 <li class="text-right contact d-sm-none">
                     <p class="inlineBlock ">EN / CN</p>
@@ -266,7 +266,8 @@
                     menu: '#dots',
                     keyboardScrolling: true,
                     animateAnchor: true,
-                    scrollOverflow: true,
+                    // scrollOverflow: true, 
+                    autoScrolling: false,
                     // responsiveWidth: 769,
 
                     onLeave: function (index, nextIndex, direction) {

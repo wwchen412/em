@@ -48,7 +48,7 @@
 
             </div>
 
-            <div class="section">
+            <div class="section" style="padding:40px 0 0">
 
                 <!-- 單篇文章 -->
                 <article>
@@ -193,7 +193,7 @@
                 </li>
                 <li class="text-center">
                     <img id="moveSectionDown" src="Content/img/arrow.svg" alt="" class="inlineBlock  arrow ">
-                    <p class="inlineBlock d-sm-none ">Scroll Down</p>
+                    <p class="inlineBlock d-sm-none " style="margin-left:20px">Scroll Down</p>
                 </li>
                 <li class="text-right contact d-sm-none">
                     <p class="inlineBlock ">EN / CN</p>
@@ -232,10 +232,11 @@
             function initialization() {
                 $('#fullpage').fullpage({
                     anchors: ['firstPage', 'secondPage', 'footer'],
+                   autoScrolling: false,
                     menu: '#dots',
                     keyboardScrolling: true,
                     animateAnchor: true,
-                    scrollOverflow: true,
+                    // scrollOverflow: true,
                     // responsiveWidth: 769,
 
                     onLeave: function (index, nextIndex, direction) {
@@ -246,18 +247,19 @@
                             $('.arrow').fadeOut();
                             $('.arrow+p').fadeOut();
                             $('header').fadeOut(100);
-                        } else {
+                        }else if(index >= 2 && direction == 'down'){
+                             $('.slider-footer').fadeOut(100);
+                            $('#dots').fadeOut(100);
+                        }else {
                             $('.arrow').fadeIn();
                             $('.arrow+p').fadeIn();
                             $('header').fadeIn(100);
                         }
                     },
                     afterLoad: function (anchorLink, index) {
-
                         if (anchorLink == 'footer') {
                             $('.slider-footer').fadeOut(100);
                             $('#dots').fadeOut(100);
-
 
                         } else {
                             $('.slider-footer').fadeIn();
