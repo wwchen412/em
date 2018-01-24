@@ -211,14 +211,14 @@ header {
           transform: translate(-100%, 0);
           opacity: 0; }
         header li .menu-line.active:after {
-          -webkit-transform: rotate(90deg) translate(-12px, 0);
-          -ms-transform: rotate(90deg) translate(-12px, 0);
-          transform: rotate(90deg) translate(-12px, 0); }
+          -webkit-transform: rotate(90deg) translate(-10px, 0);
+          -ms-transform: rotate(90deg) translate(-10px, 0);
+          transform: rotate(90deg) translate(-10px, 0); }
           @media screen and (max-width: 768px) and (min-width: 300px) {
             header li .menu-line.active:after {
-              -webkit-transform: rotate(90deg) translate(-50%, 0);
-              -ms-transform: rotate(90deg) translate(-50%, 0);
-              transform: rotate(90deg) translate(-50%, 0); } }
+              -webkit-transform: rotate(90deg) translate(-40%, 0);
+              -ms-transform: rotate(90deg) translate(-40%, 0);
+              transform: rotate(90deg) translate(-40%, 0); } }
     header li img,
     header li svg {
       width: 30px; }
@@ -297,7 +297,10 @@ header {
       @media screen and (max-width: 768px) and (min-width: 300px) {
         .menu-list .lists ul {
           -ms-flex-item-align: end;
-          align-self: flex-end; } }
+          align-self: flex-end;
+          width: 40%; }
+          .menu-list .lists ul:first-child li {
+            text-align: left; } }
       .menu-list .lists ul li {
         display: block;
         text-align: center;
@@ -314,7 +317,7 @@ header {
               margin: 0; } }
         @media screen and (max-width: 768px) and (min-width: 300px) {
           .menu-list .lists ul li {
-            padding: 20px; } }
+            padding: 20px 30px; } }
         .menu-list .lists ul li a {
           font-size: 20px;
           color: #787878;
@@ -345,6 +348,9 @@ header {
   .menu-list .showImg {
     width: 50%;
     opacity: 0; }
+    @media screen and (max-width: 768px) and (min-width: 300px) {
+      .menu-list .showImg {
+        width: 20%; } }
     .menu-list .showImg img {
       height: calc(100% - 229px);
       -o-object-fit: cover;
@@ -355,7 +361,7 @@ header {
         .menu-list .showImg img {
           height: auto;
           width: 100vw;
-          margin-left: -50%; } }
+          margin-left: -200%; } }
     @media screen and (max-width: 768px) and (min-width: 300px) {
       .menu-list .showImg + ul li {
         text-align: right; } }
