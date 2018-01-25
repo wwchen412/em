@@ -239,16 +239,18 @@
 
     <!-- layout -->
     <script src="scripts/layout.js"></script>
+    <script src="scripts/notfullpage.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
 
             function initialization() {
                 $('#fullpage').fullpage({
-                    anchors: ['firstPage', 'footer'],
+                    // anchors: ['firstPage', 'footer'],
                     menu: '#dots',
                     keyboardScrolling: true,
-                    animateAnchor: true,
+                    animateAnchor: false,
+                    fitToSection: false,
                     // scrollOverflow: true,
                     autoScrolling: false,
                     responsiveWidth: 768,
@@ -311,8 +313,8 @@
                 }, 500);
             });
 
-
-
+           
+            
 
         });
     </script>
