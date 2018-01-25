@@ -24,7 +24,8 @@
         left: 50%;
         transform: translate(-50%, 0);
         z-index: 0;
-        opacity: 0;
+       
+        // opacity: 0;
         &.bgimg-big {
             max-width: 1170px;
             @include range-width(300px, 768px) {
@@ -117,6 +118,7 @@
     }
     h3{
         font-weight: 500;
+        // color: #000;
     }
     p{
         line-height: 200%;
@@ -124,6 +126,7 @@
 }
 
 .main-content {
+    color:#000;
     h4 {
         margin: 120px 0 55px;
         font-size: 36px;

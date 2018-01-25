@@ -440,10 +440,12 @@
                             $('.arrow+p').fadeIn();
 
                         }
+                      
                     },
+
                     afterLoad: function (anchorLink, index) {
 
-                        // console.log(winWㄋidth);
+                        // console.log(winWidth);
 
                         if (anchorLink == '3rdPage') {
                             svgCircle();
@@ -463,6 +465,8 @@
                     },
                     afterRender: function () {
                         $.fn.fullpage.setRecordHistory(false);
+                        
+
                     }
                 });
             }
