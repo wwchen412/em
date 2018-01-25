@@ -292,6 +292,7 @@
         text-align: right;
         padding-right: 20px;
         width: calc(50% - 20px);
+        font-weight: 500;
         @include range-width(300px, 768px) {
           font-size: 10px;
           transform: scale(0.9);
