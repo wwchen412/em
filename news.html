@@ -237,6 +237,7 @@
                     menu: '#dots',
                     keyboardScrolling: true,
                     animateAnchor: true,
+                     fitToSection: false,
                     // scrollOverflow: true,
                     // responsiveWidth: 769,
 
@@ -262,11 +263,7 @@
                             $('.slider-footer').fadeOut(100);
                             $('#dots').fadeOut(100);
 
-                        } else {
-                            $('.slider-footer').fadeIn();
-                            $('#dots').fadeIn();
-
-                        }
+                        } 
                     },
                     afterRender: function () {
                         $.fn.fullpage.setRecordHistory(false);

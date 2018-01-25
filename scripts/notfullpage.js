@@ -1,13 +1,13 @@
 $(window).scroll(function() {
-  // var footerTop = $('footer').offset().top;
+  var windowHeight = $(window).height();
   var footerHeight = $("footer").height();
   var scrollHeight = $(window).scrollTop();
-  var bodyH = $("body").height() / 2;
+  var bodyH = $("body").height();
 //   console.log(bodyH);
 //   console.log(footerHeight);
-//   console.log(scrollHeight);
-  var a = (bodyH - footerHeight) / 2;
-//   console.log(a);
+  // console.log(scrollHeight);
+  var a = bodyH - footerHeight - windowHeight;
+  // console.log(a);
   if (scrollHeight >= a) {
     $(".slider-footer").fadeOut();
     $("#dots").fadeOut();
