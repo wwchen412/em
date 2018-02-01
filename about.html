@@ -204,7 +204,7 @@
             <ul>
                 <li class="d-sm-none">
                     <a href="">
-                        <img src="Content/img/logo.svg" alt="" width="150px" style="margin:20px 0;">
+                        <img src="Content/img/logo.svg" alt="" width="106px" style="margin:20px 0;">
                     </a>
                     <p style="" class="">© 2017 EnergieMAX Design Corp. All Rights Reserved</p>
                 </li>
@@ -243,6 +243,7 @@
 
     <!-- layout -->
     <script src="scripts/layout.js"></script>
+    <script src="scripts/notfullpage.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -252,7 +253,9 @@
                     menu: '#dots',
                     keyboardScrolling: true,
                     animateAnchor: true,
-                    scrollOverflow: true,
+                    // scrollOverflow: true,
+                    autoScrolling: false,
+                     fitToSection: false,
                     // responsiveWidth: 769,
 
                     onLeave: function (index, nextIndex, direction) {
@@ -274,11 +277,7 @@
                             $('#dots').fadeOut(100);
                             $('#header').fadeOut(100);
 
-                        } else {
-                            $('.slider-footer').fadeIn();
-                            $('#dots').fadeIn();
-                            $('#header').fadeIn(100);
-                        }
+                        } 
                     },
                     afterRender: function () {
                         $.fn.fullpage.setRecordHistory(false);

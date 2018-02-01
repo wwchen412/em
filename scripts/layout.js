@@ -2,7 +2,7 @@ $(function() {
   $("#header").load("index.html #header nav");
   $("footer").load("index.html footer > ul");
   // $(".slider-footer").load(".slider-footer footer");
-
+  
   $(window).bind("load", function() {
     // console.log('load');
     // 展開選單

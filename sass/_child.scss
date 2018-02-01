@@ -5,13 +5,16 @@
     .em-4 {
       @include range-width(769px, 0) {
         width: 27.5%;
+        padding:0 40px;
         &:nth-child(2) {
           width: 45%;
+          padding: 0;
         }
         &:nth-child(3) {
           position: relative;
           z-index: 1;
-          margin-left: -80px;
+          // margin-left: -80px;
+          transform: translateX(-80px);
           padding-right: 10px;
         }
       }
@@ -21,6 +24,9 @@
     width: 100%;
     position: relative;
     padding-bottom: 100%;
+    @include range-width(300px,768px){
+      margin: 20px 0;
+    }
     img {
       position: absolute;
       top: 0;
@@ -38,15 +44,15 @@
   }
   h3 {
     @include range-width(300px, 768px) {
-      font-weight: lighter;
-      font-size: 22px;
-      margin: 10px 0 20px;
+      // font-weight: lighter;
+      // font-size: 22px;
+      // margin: 10px 0 20px;
     }
   }
   p {
     @include range-width(300px, 768px) {
       font-size: 12px;
-      font-weight: lighter;
+      // font-weight: lighter;
     }
   }
 }
@@ -55,7 +61,7 @@ article {
   color: #000;
   margin-bottom: 40px;
   .container {
-    max-width: 1260px;
+    max-width: 800px;
   }
   h4 {
     margin-bottom: 18px;
@@ -64,8 +70,10 @@ article {
     line-height: 180%;
   }
   p.date {
-    font-size: 14px;
+    font-size: 12px;
+    color: $red;
     margin: 90px 0 45px;
+    font-weight: 200;
     @include range-width(300px, 768px) {
       margin: 20px 0;
     }
@@ -98,6 +106,10 @@ article {
     .faq-title {
       position: relative;
       z-index: 1;
+      p{
+        font-size: 14px;
+        // font-weight: bold;
+      }
       &:hover {
         svg {
           .cls-1 {
@@ -132,7 +144,7 @@ article {
       z-index: 1;
     }
     svg {
-      max-width: 78px;
+      max-width: 52px;
       width: 100%;
       cursor: pointer;
       .cls-1 {
@@ -144,10 +156,12 @@ article {
     }
     p {
       margin-top: 20px;
-      font-size: 12px;
+      
       line-height: 150%;
       @include range-width(300px, 768px) {
-        margin: 10px 0 32px;
+        margin: 0px 0 32px;
+        text-align: center;
+        line-height: 200%;
       }
     }
 
@@ -177,6 +191,7 @@ article {
 .faq-answer {
   margin: 108px auto 110px;
   max-width: 800px;
+ 
   p {
     line-height: 180%;
     display: none;
@@ -203,7 +218,8 @@ article {
       text-align: left;
       font-size: 22px;
       padding: 112px 20px 8px;
-      font-weight: normal;
+      // font-weight: normal;
+      text-align: center;
     }
   }
   .faq-list {
@@ -213,9 +229,9 @@ article {
     li {
       width: 100%;
       .faq-title {
-        p {
-          font-size: 20px;
-        }
+        // p {
+        //   font-size: 20px;
+        // }
 
         &.active {
           p {
@@ -227,8 +243,10 @@ article {
       p {
         font-size: 14px;
         margin-bottom: 32px;
+        margin-top: 10px;
         @include range-width(300px,768px) {
           font-size: 12px;
+          margin-top: 0;
         }
       }
     }
@@ -241,12 +259,15 @@ article {
     background: $darken;
     color: #fff;
     padding: 120px 20px 26px;
-    transform: translateY(-130px);
+    transform: translateY(-100px);
     margin-bottom: -60px;
     transform-origin: top;
     h5 {
       font-size: 14px;
       font-weight: 400;
+      @include range-width(300px,768px){
+        font-size: 12px;
+      }
     }
     .content-text {
       max-width: 800px;
@@ -259,6 +280,7 @@ article {
 }
 
 // warranty
+
 .warranty {
   padding: 52px 0;
   .em-6:nth-child(2) {
@@ -282,7 +304,7 @@ article {
     }
   }
   &.container {
-    max-width: 800px;
+    max-width: 540px;
     @include range-width(300px,768px) {
       padding: 0 20px;
     }
@@ -290,27 +312,38 @@ article {
   form {
     text-align: left;
     h4 {
-      margin-bottom: 24px;
-      font-weight: 400;
+      // margin-bottom: 24px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      &.AmazonP {
+        margin-bottom: 0;
+        @include range-width(300px, 768px) {
+          margin-bottom: 10px;
+        }
+      }
       @include range-width(300px,768px) {
         margin: 20px 0 22px;
         font-size: 12px;
       }
     }
+    p{
+      font-size: 12px;
+    }
   }
   .input-group {
     input,
     textarea {
-      margin: 12px 0 36px;
-      font-size: 20px;
+      margin: 8px 0 16px;
+      font-size: 12px;
       @include range-width(300px,768px) {
         margin: 12px 0;
       }
     }
     input[type="radio"] {
-      margin-top: 24px;
+      margin : 12px 0 18px;
       @include range-width(300px,768px) {
-        margin: 0px 0 20px;
+        margin: 12px 0 6px;
       }
     }
 
@@ -327,9 +360,10 @@ article {
         p {
           display: inline-block;
           vertical-align: middle;
-          margin: 24px 0 36px;
+          margin: 12px 0 18px;
+          font-size: 12px;
           @include range-width(300px, 768px) {
-            margin: 0px 0 20px;
+            margin: 12px 0 6px;
           }
           word-break: break-all;
         }
@@ -361,7 +395,7 @@ article {
     width: 100%;
     border: 1px solid $maincolor;
     padding: 10px;
-    height: 42px;
+    height: 28px;
     border-radius: 21px;
     @include range-width(300px,768px) {
       height: 26px;
@@ -384,7 +418,7 @@ article {
     }
   }
   textarea {
-    height: 84px;
+    height: 80px;
   }
   .buttons {
     margin: 54px 0;
@@ -426,7 +460,7 @@ article {
     @include range-width(300px, 768px) {
       margin-bottom: 48px;
       font-size: 22px;
-      font-weight: normal;
+      font-weight: 500;
     }
   }
   p {
@@ -438,7 +472,8 @@ article {
   }
   h4 {
     margin-bottom: 15px;
-    font-weight: 300;
+    font-weight: 500;
+    font-size: 14px;
     @include range-width(300px,768px){
       font-size: 12px;
     }

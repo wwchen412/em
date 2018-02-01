@@ -145,7 +145,7 @@
                             <p>Sales</p>
                         </div>
                         <div class="faq-content">
-                    <p>If you’d like to do business with EnergieMAX, email us about yourself and what you’re looking for.
+                    <p>If you’d like to do business with EnergieMAX, <br>email us about yourself and what you’re looking for.
                         <br>
                         <a href="mailto:sales@energiemax.com">sales@energiemax.com</a>
                     </p>
@@ -300,7 +300,7 @@
             <ul>
                 <li class="d-sm-none">
                     <a href="">
-                        <img src="Content/img/logo.svg" alt="" width="150px" style="margin:20px 0;">
+                        <img src="Content/img/logo.svg" alt="" width="106px" style="margin:20px 0;">
                     </a>
                     <p style="" class="">© 2017 EnergieMAX Design Corp. All Rights Reserved</p>
                 </li>
@@ -339,6 +339,7 @@
 
     <!-- layout -->
     <script src="scripts/layout.js"></script>
+    <script src="scripts/notfullpage.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -349,14 +350,16 @@
                     menu: '#dots',
                     keyboardScrolling: true,
                     animateAnchor: true,
-                    scrollOverflow: true,
+                    // scrollOverflow: true,
+                     fitToSection: false,
+                    autoScrolling: false,
                     // responsiveWidth: 769,
 
                     onLeave: function (index, nextIndex, direction) {
                         var leavingSection = $(this);
 
                         //after leaving section 2
-                        if (index >= 1 && direction == 'down') {
+                        if (index >= 2 && direction == 'down') {
                             $('.arrow').fadeOut();
                             $('.arrow+p').fadeOut();
                             $('header').fadeOut(100);
@@ -372,9 +375,6 @@
                             $('.slider-footer').fadeOut(100);
                             $('#dots').fadeOut(100);
                              $.fn.fullpage.reBuild();
-                        } else {
-                            $('.slider-footer').fadeIn();
-                            $('#dots').fadeIn();
                         }
                     },
                     afterRender: function () {
@@ -409,8 +409,8 @@
                         $.fn.fullpage.reBuild();
                        $(this).find('.faq-title').addClass('active');
                        $(this).siblings().find('.faq-title').removeClass('active');
-                     var a = $(this).index();
-                       $('.faq-answer p').eq(a).addClass('active').siblings().removeClass();
+                         var a = $(this).index();
+                       $('.faq-answer p').eq(a).fadeIn().siblings().hide();
                    })
                }
            }

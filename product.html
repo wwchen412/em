@@ -27,9 +27,9 @@
                     <div class="container">
                         <!-- 圖文編輯器內容 -->
                         <div class="main-content">
-                            <h2 class="target">400QC</h2>
+                            <h2 class="target mobile-mb">400QC</h2>
                             <p class="target">4 –Port Travel Charger 40W with Quick Charge 3.0</p>
-                            <h4 class="target">USD 19.99</h4>
+                            <h4 class="target" style="font-size: 32px;font-weight: 200;">USD 19.99</h4>
                         </div>
 
                         <a href="" class="bg-red">Buy on Amazon</a>
@@ -54,7 +54,7 @@
                 <div class="content">
                     <!-- 圖文編輯器內容 -->
                     <div class="main-content">
-                        <h3 class="target">Works in more than 150 countries</h3>
+                        <h3 class="target" style="font-size:40px">Works in more than 150 countries</h3>
                     </div>
 
                 </div>
@@ -77,10 +77,12 @@
                             </li>
                             <li>
                                 <div class="figure circle">
+
+
                                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                         width="264px" height="264px" viewBox="0 0 200 200" enable-background="new 0 0 200 200"
                                         xml:space="preserve">
-                                        <path class="path" fill="none" stroke="#B43D37" stroke-width="3" stroke-miterlimit="10" d="M100.416,2.001C154.35,2.225,198,46.015,198,100
+                                        <path class="path" fill="none" stroke="#B43D37" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" d="M100.416,2.001C154.35,2.225,198,46.015,198,100
                                                     c0,54.124-43.876,98-98,98S2,154.124,2,100S45.876,2,100,2" style=" stroke-dasharray:615.423px 615.423px;stroke-dashoffset: 615.423px;"
                                         />
                                     </svg>
@@ -155,7 +157,6 @@
                                     equipment.
                                 </p>
                             </div>
-
                         </div>
                         <div class="img-wrap">
                             <img src="Content/img/certified.jpg" alt="" class="img-fluid fadeDown" style="animation-delay: 0s">
@@ -169,7 +170,7 @@
                             <div class="text-center">
                                 <div>
                                     <h3 class="text-center fadeDown">
-                                        <span>EnergieMax®</span> AIBoost </h3>
+                                        <span style="color:#B43D37">EnergieMax®</span> AIBoost </h3>
                                     <div id="wave">
                                     </div>
                                     <p class="fadeUp">Maintains the fatest speed, whatever cable you use</p>
@@ -242,13 +243,12 @@
                         <div class="main-content color-black">
                             <div class="specForm">
                                 <div class="specTitle">
-                                    <h3>
-                                        <span style="font-weight:400">SPEC.</span>
+                                    <h3 style="font-weight:400">
+                                        <span style="font-weight:500">SPEC.</span>
                                         <br> 400QC
                                     </h3>
                                 </div>
                                 <div class="specList">
-
 
                                     <h5>USB Por</h5>
                                     <p>4*USB-A</p>
@@ -281,8 +281,8 @@
 
                                 </div>
                             </div>
-                            <h4 style="margin:20px 0 0;">USD 19.99</h4>
-                            <p style="margin:12px 0  45px;">18 Months Warranty</p>
+                            <h4 style="margin:20px 0 0;font-size:32px;font-weight:200">USD 19.99</h4>
+                            <p class="buyText">18 Months Warranty</p>
                         </div>
 
                         <a href="" class="bg-red">Buy on Amazon</a>
@@ -365,13 +365,13 @@
             <ul>
                 <li class="d-sm-none">
                     <a href="">
-                        <img src="Content/img/logo.svg" alt="" width="150px" style="margin:20px 0;">
+                        <img src="Content/img/logo.svg" alt="" width="106px" style="margin:20px 0;">
                     </a>
                     <p style="" class="">© 2017 EnergieMAX Design Corp. All Rights Reserved</p>
                 </li>
                 <li class="text-center">
                     <img id="moveSectionDown" src="Content/img/arrow.svg" alt="" class="inlineBlock  arrow ">
-                    <p class="inlineBlock d-sm-none ">Scroll Down</p>
+                    <p class="inlineBlock d-sm-none " style="margin-left:20px">Scroll Down</p>
                 </li>
                 <li class="text-right contact d-sm-none">
                     <p class="inlineBlock ">EN / CN</p>
@@ -406,16 +406,16 @@
     <script src="scripts/layout.js"></script>
 
     <script type="text/javascript">
-        BackgroundCheck.init({
-            targets: '.target',
-            images: '.thumbnail'
-        });
         $(document).ready(function () {
+            BackgroundCheck.init({
+                targets: '.target',
+                images: '.thumbnail'
+            });
 
             var winWidth = $(window).width();
-          
+
             function initialization() {
-                
+
                 $('#fullpage').fullpage({
                     anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage',
                         '7thPage', 'footer'
@@ -424,11 +424,11 @@
                     keyboardScrolling: true,
                     animateAnchor: true,
                     scrollOverflow: true,
-                    
+
                     responsiveWidth: 769,
 
                     onLeave: function (index, nextIndex, direction) {
-                      
+
                         var leavingSection = $(this);
                         // console.log(index);
                         //after leaving section 2
@@ -440,11 +440,13 @@
                             $('.arrow+p').fadeIn();
 
                         }
+                      
                     },
+
                     afterLoad: function (anchorLink, index) {
-                         
-                            console.log(winWidth);
-                        
+
+                        // console.log(winWidth);
+
                         if (anchorLink == '3rdPage') {
                             svgCircle();
                         } else if (anchorLink == 'footer') {
@@ -456,10 +458,15 @@
                             $('#dots').fadeIn();
                             $('header').fadeIn(100);
                         }
+                        BackgroundCheck.get('targets');
+                        BackgroundCheck.set('images', '.thumbnail');
                         BackgroundCheck.refresh();
+
                     },
                     afterRender: function () {
-                          $.fn.fullpage.setRecordHistory(false);
+                        $.fn.fullpage.setRecordHistory(false);
+                        
+
                     }
                 });
             }
@@ -493,7 +500,7 @@
                         progress: function () {
                             var percentText = percentspan - Math.round(parseFloat($(this).css(
                                 'stroke-dashoffset')) / pathLength * percentspan);
-                            console.log(percentText);
+                            // console.log(percentText);
                             $('.figure span').html(percentText + '%');
                         }
 
@@ -538,18 +545,21 @@
                 autostart: true,
             });
             // 選擇商品
+
             var productSelect = document.querySelectorAll('.product-select li');
             for (i = 0; i < productSelect.length; i++) {
-                productSelect[i].addEventListener('click', function () {
-                    var img = $(this).data('img');
-                    var bg = $(this).data('bg');
-                    $(this).parents('.content').siblings('.bgimg').attr('src', img);
-                    $(this).parents('.section').css('background-image', "url(" + bg + ")");
-
-                })
-
+                productSelect[i].addEventListener('click', refreshMain)
             }
 
+            function refreshMain() {
+                var img = $(this).data('img');
+                var bg = $(this).data('bg');
+                $(this).parents('.content').siblings('.bgimg').attr('src', img);
+                $(this).parents('.section').css('background-image', "url(" + bg + ")");
+                BackgroundCheck.get('targets');
+                BackgroundCheck.set('images', '.mainpage')
+                BackgroundCheck.refresh();
+            }
 
         });
     </script>

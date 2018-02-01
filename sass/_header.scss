@@ -28,10 +28,11 @@ header {
     }
     p {
       color: $navcolor;
+      font-size: 12px;
     } // 三明治選單
     .menu-line {
-      width: 32px;
-      height: 2px;
+      width: 24px;
+      height: 1px;
       background: $navcolor;
       position: relative;
       margin-right: 13px;
@@ -47,14 +48,14 @@ header {
         position: absolute;
         transition: .3s;
         width: 100%;
-        height: 2px;
+        height: 1px;
         background: $navcolor;
       }
       &:before {
-        top: -13px;
+        top: -10px;
       }
       &:after {
-        bottom: -13px;
+        bottom: -10px;
       }
       &.active {
         transform: rotate(45deg);
@@ -63,9 +64,9 @@ header {
           opacity: 0;
         }
         &:after {
-          transform: rotate(90deg) translate(-12px, 0);
+          transform: rotate(90deg) translate(-10px, 0);
           @include range-width(300px, 768px) {
-            transform: rotate(90deg) translate(-50%, 0);
+            transform: rotate(90deg) translate(-40%, 0);
           }
         }
       }
@@ -135,7 +136,7 @@ header {
       padding: 60px 0 20px;
     }
     img {
-      max-width: 200px;
+      max-width: 132px;
     }
   }
   .lists {
@@ -144,6 +145,7 @@ header {
     height: 100%;
     @include range-width(300px, 768px) {
       height: calc(100% - 154px);
+      
     }
     &>* {
       display: inline-block;
@@ -153,6 +155,13 @@ header {
       width: 25%;
       @include range-width(300px, 768px) {
         align-self: flex-end;
+        width: 40%;
+        &:first-child{
+          li{
+text-align: left;
+          }
+          
+        }
       }
       li {
         display: block;
@@ -171,7 +180,7 @@ header {
           }
         }
         @include range-width(300px, 768px) {
-          padding: 20px;
+          padding: 20px 30px;
         }
         a {
           font-size: 20px;
@@ -179,7 +188,7 @@ header {
           text-decoration: none;
           display: inline-block;
           // width: 100%;
-          font-weight: 200;
+          font-weight: 500;
           position: relative;
           overflow: hidden;
           &.sibActive{
@@ -212,6 +221,9 @@ header {
   .showImg {
     width: 50%;
     opacity: 0;
+    @include range-width(300px,768px){
+      width: 20%;
+    }
     img {
       height: calc(100% - 229px);
       object-fit: cover;
@@ -220,7 +232,7 @@ header {
         // height: calc(100% - 154px);
         height: auto;
         width: 100vw;
-        margin-left: -50%;
+        margin-left: -200%;
       }
     }
     &+ul{
