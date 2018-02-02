@@ -1,235 +1,243 @@
-@import '_color.scss';
-@import '_mixin.scss';
+@import "_color.scss";
+@import "_mixin.scss";
 .mainSlider {
-    width: 100%;
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  &.unscroll {
     height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    &.unscroll{
-        height: 100%;
-        overflow: hidden;
-    }
+    overflow: hidden;
+  }
 }
 
 .section {
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  background-position: 50% 50%;
+  .bgimg {
+    max-width: 600px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 0;
+
+    // opacity: 0;
+    &.bgimg-big {
+      max-width: 1170px;
+      @include range-width(300px, 768px) {
+        object-fit: cover;
+        height: auto;
+        max-width: 80%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    @include range-width(300px, 768px) {
+      max-width: 100%;
+    }
+  }
+  .fade,.fadeDown,.fadeUp,.bgimg,.fadeLeft,.fadeRight{opacity: 0;}
+  &.active {
     .bgimg {
-        max-width: 600px;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, 0);
-        z-index: 0;
-       
-        // opacity: 0;
-        &.bgimg-big {
-            max-width: 1170px;
-            @include range-width(300px, 768px) {
-                object-fit: cover;
-                height: auto;
-                max-width: 80%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-            }
-        }
-        @include range-width(300px, 768px) {
-            max-width: 100%;
-        }
+      animation: fadeIndex 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     }
-    &.active {
-        .bgimg {
-            animation: fadeIndex 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
-        }
-        @include range-width(300px, 768px) {
-            .bgimg-big {
-                animation: fadeInBig 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
-            }
-        }
-       
-        .fadeLeft {
-            animation: fadeLeft 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
-            animation-timing-function: ease;
-        }
-        .fadeRight {
-            animation: fadeRight 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
-             animation-timing-function: ease;
-        }
-        // fadein
-        .fadeLeft {
-            animation: fadeLeft 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
-             animation-timing-function: ease;
-        }
-        .fadeDown {
-            opacity: 0;
-            animation: fadeDown 2s 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
-             animation-timing-function: ease;
-        }
-        .fadeUp {
-            opacity: 0;
-            animation: fadeUp 2s 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
-             animation-timing-function: ease;
-        }
+    @include range-width(300px, 768px) {
+      .bgimg-big {
+        animation: fadeInBig 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+      }
     }
+
+    .fade {
+      opacity: 0;
+      animation: fade 1s 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+      animation-timing-function: ease;
+    }
+    .fadeLeft {
+      animation: fadeLeft 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+      animation-timing-function: ease;
+    }
+    .fadeRight {
+      animation: fadeRight 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+      animation-timing-function: ease;
+    }
+    // fadein
+    .fadeLeft {
+      animation: fadeLeft 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+      animation-timing-function: ease;
+    }
+    .fadeDown {
+      opacity: 0;
+      animation: fadeDown 2s 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+      animation-timing-function: ease;
+      @include range-width(300px, 768px) {
+          animation: fadeDown 2s 0s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+      }
+    }
+    .fadeUp {
+      opacity: 0;
+      animation: fadeUp 2s 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+      animation-timing-function: ease;
+    }
+  }
 }
 
 // 內容
 .content {
-    color: $maincolor;
-    position: relative;
-    z-index: 1;
+  color: $maincolor;
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin: auto;
+  text-align: center;
+  @include range-width(300px, 768px) {
+    padding: 0 40px;
+    h2 {
+      font-size: 48px;
+      line-height: 1;
+    }
+  }
+  a {
     display: block;
-    margin: auto;
-    text-align: center;
+    margin: 0 auto;
+    padding: 8px 10px;
+    border: 1px solid $maincolor;
+    color: $maincolor;
+    // background-color: #f00;
+    border-radius: 30px;
+    text-decoration: none;
+    max-width: 200px;
+    font-size: 12px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    &.bg-red {
+      max-width: 252px;
+    }
     @include range-width(300px, 768px) {
-        padding: 0 40px;
-        h2 {
-            font-size: 48px;
-            line-height: 1;
-        }
+      font-size: 14px;
+      max-width: 200px;
+      padding: 8px 10px;
     }
-    a {
-        display: block;
-        margin: 0 auto;
-        padding: 8px 10px;
-        border: 1px solid $maincolor;
-        color: $maincolor;
-        // background-color: #f00;
-        border-radius: 30px;
-        text-decoration: none;
-        max-width: 200px;
-        font-size: 12px;
-        font-weight: normal;
-        margin-bottom: 20px;
-        &.bg-red{
-            max-width: 252px;
-        }
-        @include range-width(300px, 768px) {
-            font-size: 14px;
-            max-width: 200px;
-            padding: 8px 10px;
-        }
-        &.background--light {
-            border: 1px solid $darken;
-        }
+    &.background--light {
+      border: 1px solid $darken;
     }
-    h3{
-        font-weight: 500;
-        // color: #000;
-    }
-    p{
-        line-height: 200%;
-    }
+  }
+  h3 {
+    font-weight: 500;
+    // color: #000;
+  }
+  p {
+    line-height: 200%;
+  }
 }
 
 .main-content {
-    color:#000;
-    h4 {
-        margin: 120px 0 55px;
-        font-size: 36px;
-        // font-weight: normal;
+  color: #000;
+  h4 {
+    margin: 120px 0 55px;
+    font-size: 36px;
+    // font-weight: normal;
+  }
+  p {
+    margin: 52px 0 70px;
+    font-weight: normal;
+    &.buyText {
+      margin: 6px 0 28px;
+      font-size: 16px;
+      font-weight: 200;
+      @include range-width(300px,768px) {
+        margin-bottom: 18px;
+        line-height: 100%;
+      }
     }
-    p {
-        margin: 52px 0 70px;
-        font-weight: normal;
-         &.buyText {
-             margin: 6px 0 28px;
-             font-size: 16px;
-             font-weight: 200;
-             @include range-width(300px,768px){
-                 margin-bottom: 18px;
-                 line-height: 100%;
-             }
-         }
-        @include range-width(300px, 768px) {
-            margin-top: 17px;
-            font-size: 14px;
-            
-        }
+    @include range-width(300px, 768px) {
+      margin-top: 17px;
+      font-size: 14px;
     }
+  }
 }
 
 .video-wrap {
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(100%);
+  video {
     width: 100%;
     height: 100%;
-    filter: grayscale(100%);
-    video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+    object-fit: cover;
+  }
 }
 
 .product-select {
-    margin-top: 44px;
-    @include range-width(300px,768px){
-        margin-top: 26px;
+  margin-top: 44px;
+  @include range-width(300px,768px) {
+    margin-top: 26px;
+  }
+  li {
+    display: inline-block;
+    // background-color: #f00;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $navcolor;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+    position: relative;
+    @include range-width(300px, 768px) {
+      padding: 0px;
+      width: 12px;
+      height: 12px;
     }
-    li {
-        display: inline-block;
-        // background-color: #f00;
-        width: 20px;
-        height: 20px;
-        border: 2px solid $navcolor;
-        padding: 10px;
-        border-radius: 50%;
-        margin: 0 10px;
-        cursor: pointer;
-        position: relative;
-        @include range-width(300px, 768px) {
-            padding: 0px;
-            width: 12px;
-            height: 12px;
-        }
-        span {
-            display: block;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-             @include range-width(300px, 768px) {
-                 width: 8px;
-                 height: 8px;
-             }
-        }
+    span {
+      display: block;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      @include range-width(300px, 768px) {
+        width: 8px;
+        height: 8px;
+      }
     }
+  }
 }
 
 #dots {
-    position: fixed;
-    right: auto !important;
-    left: 40px;
-    bottom: 110px;
-    top: auto;
-    transform: translate(0);
-    .dot-active {
+  position: fixed;
+  right: auto !important;
+  left: 40px;
+  bottom: 110px;
+  top: auto;
+  transform: translate(0);
+  .dot-active {
+    background-color: $navcolor;
+  }
+  .dot {
+    margin: 14px 0;
+    transition: 0.2s;
+    a {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      display: block;
+      background-color: lighten($navcolor, 5%);
+    }
+    &.active {
+      a {
         background-color: $navcolor;
+      }
+      transform: scale(1.2);
+      transition: 0.2s;
     }
-    .dot {
-        margin: 14px 0;
-        transition: .2s;
-        a {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            display: block;
-            background-color: lighten($navcolor, 5%);
-        }
-        &.active {
-            a {
-                background-color: $navcolor;
-            }
-            transform: scale(1.2);
-            transition: .2s;
-        }
-    }
+  }
 }

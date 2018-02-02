@@ -115,9 +115,9 @@ p {
     display: block !important; } }
 
 .target {
-  -webkit-transition: 0.1s;
-  -o-transition: 0.1s;
-  transition: 0.1s; }
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
 
 .background--light {
   color: #252525 !important; }
@@ -522,6 +522,8 @@ header {
     @media screen and (max-width: 768px) and (min-width: 300px) {
       .section .bgimg {
         max-width: 100%; } }
+  .section .fade, .section .fadeDown, .section .fadeUp, .section .bgimg, .section .fadeLeft, .section .fadeRight {
+    opacity: 0; }
   .section.active .bgimg {
     -webkit-animation: fadeIndex 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     animation: fadeIndex 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards; }
@@ -529,6 +531,12 @@ header {
     .section.active .bgimg-big {
       -webkit-animation: fadeInBig 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
       animation: fadeInBig 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards; } }
+  .section.active .fade {
+    opacity: 0;
+    -webkit-animation: fade 1s 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    animation: fade 1s 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease; }
   .section.active .fadeLeft {
     -webkit-animation: fadeLeft 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     animation: fadeLeft 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
@@ -550,6 +558,10 @@ header {
     animation: fadeDown 2s 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     -webkit-animation-timing-function: ease;
     animation-timing-function: ease; }
+    @media screen and (max-width: 768px) and (min-width: 300px) {
+      .section.active .fadeDown {
+        -webkit-animation: fadeDown 2s 0s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+        animation: fadeDown 2s 0s cubic-bezier(0.075, 0.82, 0.165, 1) forwards; } }
   .section.active .fadeUp {
     opacity: 0;
     -webkit-animation: fadeUp 2s 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
@@ -680,9 +692,9 @@ header {
     background-color: #787878; }
   #dots .dot {
     margin: 14px 0;
-    -webkit-transition: .2s;
-    -o-transition: .2s;
-    transition: .2s; }
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s; }
     #dots .dot a {
       width: 6px;
       height: 6px;
@@ -693,9 +705,9 @@ header {
       -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
       transform: scale(1.2);
-      -webkit-transition: .2s;
-      -o-transition: .2s;
-      transition: .2s; }
+      -webkit-transition: 0.2s;
+      -o-transition: 0.2s;
+      transition: 0.2s; }
       #dots .dot.active a {
         background-color: #787878; }
 
@@ -1135,6 +1147,18 @@ footer {
   #wave:after {
     right: 0; }
 
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fade {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
@@ -1197,17 +1221,21 @@ footer {
 
 @-webkit-keyframes fadeRight {
   0% {
+    opacity: 0;
     -webkit-transform: translate(-50%, 0%);
     transform: translate(-50%, 0%); }
   100% {
+    opacity: 1;
     -webkit-transform: translate(0%, 0%);
     transform: translate(0%, 0%); } }
 
 @keyframes fadeRight {
   0% {
+    opacity: 0;
     -webkit-transform: translate(-50%, 0%);
     transform: translate(-50%, 0%); }
   100% {
+    opacity: 1;
     -webkit-transform: translate(0%, 0%);
     transform: translate(0%, 0%); } }
 
@@ -1273,7 +1301,7 @@ footer {
 
 @-webkit-keyframes fadeIndex {
   0% {
-    opacity: 1;
+    opacity: 0;
     -webkit-transform: translate(-50%, 20px);
     transform: translate(-50%, 20px); }
   100% {
@@ -1283,7 +1311,7 @@ footer {
 
 @keyframes fadeIndex {
   0% {
-    opacity: 1;
+    opacity: 0;
     -webkit-transform: translate(-50%, 20px);
     transform: translate(-50%, 20px); }
   100% {
