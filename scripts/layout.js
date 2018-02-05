@@ -15,38 +15,40 @@ $(function() {
       $(".mainSlider").toggleClass("unscroll");
       $(".slider-footer").toggleClass("active");
       $(".menu-list.sibActive").removeClass("sibActive");
+    
+      
       // 點開選單
       if ($(".menu-list").hasClass("active")) {
         $.fn.fullpage.destroy("all");
       } else if (!$(".menu-list").hasClass("active")) {
         // 關閉選單
+        initialization();
+        // $("#fullpage").fullpage({
+        //   anchors: ["firstPage", "secondPage", "3rdPage", "4thPage", "footer"],
+        //   menu: "#dots",
+        //   keyboardScrolling: true,
+        //   animateAnchor: true,
+        //   scrollOverflow: true,
+        //   // responsiveWidth: 576,
+        //   onLeave: function(index, nextIndex, direction) {
+        //     var leavingSection = $(this);
 
-        $("#fullpage").fullpage({
-          anchors: ["firstPage", "secondPage", "3rdPage", "4thPage", "footer"],
-          menu: "#dots",
-          keyboardScrolling: true,
-          animateAnchor: true,
-          scrollOverflow: true,
-          // responsiveWidth: 576,
-          onLeave: function(index, nextIndex, direction) {
-            var leavingSection = $(this);
-
-            //after leaving section 2
-            if (index == 4 && direction == "down") {
-              $(".slider-footer").fadeOut();
-              $("#dots").fadeOut();
-            } else {
-              $(".slider-footer").fadeIn();
-              $("#dots").fadeIn();
-            }
-          },
-          afterLoad: function(anchorLink, index) {
-            BackgroundCheck.refresh();
-          },
-          afterRender: function() {
-            BackgroundCheck.refresh();
-          }
-        });
+        //     //after leaving section 2
+        //     if (index == 4 && direction == "down") {
+        //       $(".slider-footer").fadeOut();
+        //       $("#dots").fadeOut();
+        //     } else {
+        //       $(".slider-footer").fadeIn();
+        //       $("#dots").fadeIn();
+        //     }
+        //   },
+        //   afterLoad: function(anchorLink, index) {
+        //     BackgroundCheck.refresh();
+        //   },
+        //   afterRender: function() {
+        //     BackgroundCheck.refresh();
+        //   }
+        // });
         $(".sibling-menu-list").removeClass("active");
       }
     });

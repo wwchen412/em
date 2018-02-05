@@ -148,6 +148,11 @@ p {
     display: block !important;
   }
 }
+.d-md-none{
+   @include range-width(769px, 0) {
+    display: none !important;
+  }
+}
 
 // 偵測背景變色
 .target {

@@ -214,7 +214,7 @@
         </div> -->
 
         <!--  -->
-        <div class="slider-footer">
+        <div class="slider-footer d-md-none">
             <ul>
                 <li class="d-sm-none">
                     <a href="">
@@ -257,7 +257,7 @@
 
     <!-- layout -->
     <script src="scripts/layout.js"></script>
-    <script src="scripts/notfullpage.js"></script>
+    <!-- <script src="scripts/notfullpage.js"></script> -->
 
     <script>
         $(document).ready(function () {
@@ -280,7 +280,7 @@
                             $('.arrow').fadeOut();
                             $('.arrow+p').fadeOut();
                             $('header').fadeOut(100);
-                        } else {
+                         } else {
                             $('.arrow').fadeIn();
                             $('.arrow+p').fadeIn();
                             $('header').fadeIn(100);
@@ -290,11 +290,11 @@
                     afterLoad: function (anchorLink, index) {
 
                         if (anchorLink == 'footer') {
-                            $('.slider-footer').fadeOut(100);
+                            // $('.slider-footer').fadeOut(100);
                             $('#dots').fadeOut(100);
 
                         } else {
-                            $('.slider-footer').fadeIn();
+                            // $('.slider-footer').fadeIn();
                             $('#dots').fadeIn();
                         }
                     },
@@ -304,6 +304,8 @@
                 });
             }
             initialization();
+
+           
 
             $('#moveSectionDown').click(function (e) {
                 e.preventDefault();

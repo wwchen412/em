@@ -230,7 +230,7 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            function initialization() {
+             function initialization() {
                 $('#fullpage').fullpage({
                     anchors: ['firstPage', 'secondPage', 'footer'],
                    autoScrolling: false,
@@ -249,6 +249,7 @@
                             $('.arrow').fadeOut();
                             $('.arrow+p').fadeOut();
                             $('header').fadeOut(100);
+                            $('.slider-footer').fadeOut(100);
                         }else if(index >= 2 && direction == 'down'){
                              $('.slider-footer').fadeOut(100);
                             $('#dots').fadeOut(100);
@@ -256,6 +257,7 @@
                             $('.arrow').fadeIn();
                             $('.arrow+p').fadeIn();
                             $('header').fadeIn(100);
+                              $('.slider-footer').fadeIn(100);
                         }
                     },
                     afterLoad: function (anchorLink, index) {
@@ -271,13 +273,14 @@
                 });
             }
             initialization();
-
+         
+            
             $('#moveSectionDown').click(function (e) {
                 e.preventDefault();
                 $.fn.fullpage.moveSectionDown();
             });
 
-
+           
 
         });
     </script>

@@ -114,6 +114,10 @@ p {
   .d-md-block {
     display: block !important; } }
 
+@media screen and (min-width: 769px) {
+  .d-md-none {
+    display: none !important; } }
+
 .target {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -524,45 +528,45 @@ header {
         max-width: 100%; } }
   .section .fade, .section .fadeDown, .section .fadeUp, .section .bgimg, .section .fadeLeft, .section .fadeRight {
     opacity: 0; }
-  .section.active .bgimg {
+  .section.animated .bgimg {
     -webkit-animation: fadeIndex 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     animation: fadeIndex 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards; }
   @media screen and (max-width: 768px) and (min-width: 300px) {
-    .section.active .bgimg-big {
+    .section.animated .bgimg-big {
       -webkit-animation: fadeInBig 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
       animation: fadeInBig 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards; } }
-  .section.active .fade {
+  .section.animated .fade {
     opacity: 0;
     -webkit-animation: fade 1s 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     animation: fade 1s 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     -webkit-animation-timing-function: ease;
     animation-timing-function: ease; }
-  .section.active .fadeLeft {
+  .section.animated .fadeLeft {
     -webkit-animation: fadeLeft 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     animation: fadeLeft 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     -webkit-animation-timing-function: ease;
     animation-timing-function: ease; }
-  .section.active .fadeRight {
+  .section.animated .fadeRight {
     -webkit-animation: fadeRight 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     animation: fadeRight 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     -webkit-animation-timing-function: ease;
     animation-timing-function: ease; }
-  .section.active .fadeLeft {
+  .section.animated .fadeLeft {
     -webkit-animation: fadeLeft 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     animation: fadeLeft 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     -webkit-animation-timing-function: ease;
     animation-timing-function: ease; }
-  .section.active .fadeDown {
+  .section.animated .fadeDown {
     opacity: 0;
     -webkit-animation: fadeDown 2s 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     animation: fadeDown 2s 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     -webkit-animation-timing-function: ease;
     animation-timing-function: ease; }
     @media screen and (max-width: 768px) and (min-width: 300px) {
-      .section.active .fadeDown {
+      .section.animated .fadeDown {
         -webkit-animation: fadeDown 2s 0s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
         animation: fadeDown 2s 0s cubic-bezier(0.075, 0.82, 0.165, 1) forwards; } }
-  .section.active .fadeUp {
+  .section.animated .fadeUp {
     opacity: 0;
     -webkit-animation: fadeUp 2s 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     animation: fadeUp 2s 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
@@ -789,7 +793,22 @@ footer {
       -webkit-box-flex: 1;
       -ms-flex: 1;
       flex: 1;
-      text-align: left; }
+      text-align: left;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start; }
       footer > ul > li:nth-child(1) {
         -webkit-box-flex: 3;
         -ms-flex: 3;
@@ -798,7 +817,10 @@ footer {
         display: -ms-flexbox;
         display: flex;
         -ms-flex-wrap: wrap;
-        flex-wrap: wrap; }
+        flex-wrap: wrap;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end; }
         @media screen and (max-width: 576px) and (min-width: 300px) {
           footer > ul > li:nth-child(1) {
             -webkit-box-ordinal-group: 5;
@@ -808,18 +830,32 @@ footer {
               margin-bottom: 20px; } }
         footer > ul > li:nth-child(1) > * {
           display: block;
-          -ms-flex-item-align: end;
-          align-self: flex-end; }
+          -ms-flex-item-align: start;
+          align-self: flex-start; }
         footer > ul > li:nth-child(1) img {
           margin-bottom: 16px;
           max-width: 106px; }
       footer > ul > li h4 {
         margin-bottom: 45px;
         font-size: 12px;
-        font-weight: bold; }
+        font-weight: bold;
+        width: 100%;
+        display: block; }
         @media screen and (max-width: 576px) and (min-width: 300px) {
           footer > ul > li h4 {
             margin-bottom: 30px; } }
+      footer > ul > li ul {
+        height: 100%;
+        height: calc(100% - 60px);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column; }
       footer > ul > li li {
         margin-bottom: 27px;
         font-size: 12px;
@@ -833,6 +869,11 @@ footer {
             font-size: 14px; }
             footer > ul > li li:last-child {
               margin-bottom: 55px; } }
+        footer > ul > li li.contact {
+          margin-top: auto; }
+          footer > ul > li li.contact img {
+            width: 20px;
+            margin-left: 20px; }
   footer a {
     color: #787878;
     text-decoration: none;
@@ -1302,8 +1343,8 @@ footer {
 @-webkit-keyframes fadeIndex {
   0% {
     opacity: 0;
-    -webkit-transform: translate(-50%, 20px);
-    transform: translate(-50%, 20px); }
+    -webkit-transform: translate(-50%, 50%);
+    transform: translate(-50%, 50%); }
   100% {
     opacity: 1;
     -webkit-transform: translate(-50%, 0);
@@ -1312,8 +1353,8 @@ footer {
 @keyframes fadeIndex {
   0% {
     opacity: 0;
-    -webkit-transform: translate(-50%, 20px);
-    transform: translate(-50%, 20px); }
+    -webkit-transform: translate(-50%, 50%);
+    transform: translate(-50%, 50%); }
   100% {
     opacity: 1;
     -webkit-transform: translate(-50%, 0);

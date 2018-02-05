@@ -146,7 +146,7 @@
 
             </div>
             <!-- 區塊佔一半 -->
-            <div class="section " style="background-image:url('Content/img/section2.jpg')">
+            <!-- <div class="section " style="background-image:url('Content/img/section2.jpg')">
 
                 <div class="content half-block">
                     <div class="half halfR">
@@ -175,9 +175,9 @@
                     </div>
 
                 </div>
-                <!-- 設定的圖片 -->
+              
 
-            </div>
+            </div> -->
             <!-- 區塊佔一半 -->
             <div class="section">
 
@@ -360,6 +360,7 @@
                             <ul>
                                 <li>News</li>
                                 <li>Contact</li>
+                                
                             </ul>
                         </li>
                     </ul>
@@ -444,15 +445,21 @@
                 targets: '.target',
                 images: '.thumbnail'
             });
-
+            // 增加sectionIndex
+            function addSection() {
+                var sections = document.querySelectorAll('.section');
+                for (i = 0; i < sections.length; i++) {
+                    sections[i].className += (' section' + i);
+                }
+            }
+            addSection();
             var winWidth = $(window).width();
 
             function initialization() {
 
                 $('#fullpage').fullpage({
                     anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage',
-                        '7thPage', 'footer'
-                    ],
+                        '7thPage', 'footer'],
                     menu: '#dots',
                     keyboardScrolling: true,
                     animateAnchor: true,
@@ -479,7 +486,8 @@
                     afterLoad: function (anchorLink, index) {
 
                         // console.log(winWidth);
-
+                          var num = index - 1;
+                        $('.section' + num).addClass('animated');
                         if (anchorLink == '3rdPage') {
                             svgCircle();
                         } else if (anchorLink == 'footer') {

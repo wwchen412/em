@@ -7,12 +7,13 @@ $(window).scroll(function() {
 //   console.log(footerHeight);
   // console.log(scrollHeight);
   var a = bodyH - footerHeight - windowHeight;
+  console.log
   // console.log(a);
   if (scrollHeight >= a) {
     $(".slider-footer").fadeOut();
     $("#dots").fadeOut();
   } else {
-    $(".slider-footer").fadeIn();
+    // $(".slider-footer").fadeIn();
     $("#dots").fadeIn();
   }
 });

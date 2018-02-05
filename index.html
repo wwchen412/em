@@ -181,6 +181,16 @@
                             <ul>
                                 <li><a href="news.html">News</a></li>
                                 <li><a href="contact.html">Contact</a></li>
+                               
+                                <li class="text-left contact d-flex">
+                                    <a class="inlineBlock">EN / CN</a>
+                                    <a href="">
+                                        <img src="Content/img/fb.svg" alt="" class="inlineBlock">
+                                    </a>
+                                    <a href="">
+                                        <img src="Content/img/mail.svg" alt="" class="inlineBlock">
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -252,6 +262,13 @@
             targets: '.target',
             images: '.thumbnail'
         });
+         function addSection() {
+                var sections = document.querySelectorAll('.section');
+                for (i = 0; i < sections.length; i++) {
+                    sections[i].className += (' section' + i);
+                }
+            }
+            addSection();
         $(document).ready(function () {
             var winWidth=$(window).width();
             // fullpage 螢幕高
@@ -277,6 +294,10 @@
                     
                 },
                 afterLoad: function (anchorLink, index) {
+
+                    // console.log(winWidth);
+                    var num = index - 1;
+                    $('.section' + num).addClass('animated');
                     if (winWidth <= 768 && anchorLink == 'footer') {
                          $('header').fadeOut(100);
                     }else{

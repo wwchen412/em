@@ -189,8 +189,8 @@
 
         </div> -->
 
-        <!--  -->
-        <div class="slider-footer">
+        <!--trems 跟priv 桌機版本不顯示 所以加上d-md-none -->
+        <div class="slider-footer d-md-none">
             <ul>
                 <li class="d-sm-none">
                     <a href="index.html">
@@ -233,7 +233,7 @@
 
     <!-- layout -->
     <script src="scripts/layout.js"></script>
-    <script src="scripts/notfullpage.js"></script>
+    <!-- <script src="scripts/notfullpage.js"></script> -->
 <script>
     $(document).ready(function () {
         function initialization() {
@@ -255,21 +255,23 @@
                         $('.arrow').fadeOut();
                         $('.arrow+p').fadeOut();
                         $('header').fadeOut(100);
+                        
                     } else {
                         $('.arrow').fadeIn();
                         $('.arrow+p').fadeIn();
                         $('header').fadeIn(100);
+                       
                     }
 
                 },
                 afterLoad: function (anchorLink, index) {
 
                     if (anchorLink == 'footer') {
-                        $('.slider-footer').fadeOut(100);
+                        // $('.slider-footer').fadeOut(100);
                         $('#dots').fadeOut(100);
 
                     } else {
-                        $('.slider-footer').fadeIn();
+                        // $('.slider-footer').fadeIn();
                         $('#dots').fadeIn();
                     }
                 },

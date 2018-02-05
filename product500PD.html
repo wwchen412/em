@@ -453,6 +453,17 @@
                 images: '.thumbnail'
             });
 
+            // 增加sectionIndex
+            function addSection(){
+                 var sections = document.querySelectorAll('.section');
+                 for(i=0;i<sections.length;i++){
+                     sections[i].className += (' section'+i);
+                 }
+            }
+            addSection();
+           
+           
+
             var winWidth = $(window).width();
 
             function initialization() {
@@ -487,7 +498,10 @@
                     afterLoad: function (anchorLink, index) {
 
                         // console.log(winWidth);
+                        var num = index - 1;
+                        $('.section'+num).addClass('animated');
 
+                        // console.log($('.section' + num));
                         if (anchorLink == '3rdPage') {
                             svgCircle();
                         } else if (anchorLink == 'footer') {
@@ -495,6 +509,7 @@
                             $('#dots').fadeOut(100);
                             $('#header').fadeOut(100);
                         } else {
+                           
                             $('.slider-footer').fadeIn();
                             $('#dots').fadeIn();
                             $('header').fadeIn(100);
