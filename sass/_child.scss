@@ -59,7 +59,7 @@
 
 article {
   color: #000;
-  margin-bottom: 40px;
+  margin:40px 0 40px;
   .container {
     max-width: 800px;
   }
@@ -84,7 +84,7 @@ article {
     }
   }
   @include range-width(300px, 768px) {
-    margin-bottom: 40px;
+    margin:0 0 40px;
   }
 }
 

@@ -1434,7 +1434,7 @@ footer {
 
 article {
   color: #000;
-  margin-bottom: 40px; }
+  margin: 40px 0 40px; }
   article .container {
     max-width: 800px; }
   article h4 {
@@ -1453,7 +1453,7 @@ article {
     direction: rtl; }
   @media screen and (max-width: 768px) and (min-width: 300px) {
     article {
-      margin-bottom: 40px; } }
+      margin: 0 0 40px; } }
 
 .faq-list {
   font-size: 0;
