@@ -257,10 +257,10 @@
 
     <!-- layout -->
     <script src="scripts/layout.js"></script>
-    <!-- <script src="scripts/notfullpage.js"></script> -->
+ 
 
     <script>
-        $(document).ready(function () {
+        var windowW = $(window).width();
             function initialization() {
                 $('#fullpage').fullpage({
                     anchors: ['firstPage', 'footer'],
@@ -304,9 +304,28 @@
                 });
             }
             initialization();
+             function mobileHeader() {
 
+
+                    if (windowW <= 768) {
+                        $(window).scroll(function () {
+                            var lastScrollTop = 0;
+                            var st = $(this).scrollTop();
+                            if (st > lastScrollTop) {
+                                $('header').fadeOut();
+                                
+                            } else {
+                                $('header').fadeIn();
+                            }
+                        }
+                        )
+                    }
+
+                }
+
+                mobileHeader();
            
-
+    $(document).ready(function () {
             $('#moveSectionDown').click(function (e) {
                 e.preventDefault();
                 $.fn.fullpage.moveSectionDown();

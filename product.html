@@ -455,7 +455,35 @@
             addSection();
             var winWidth = $(window).width();
 
-            function initialization() {
+           
+
+            // 箭頭典籍往下
+            $('#moveSectionDown').click(function (e) {
+                e.preventDefault();
+                $.fn.fullpage.moveSectionDown();
+            });
+
+
+           
+            // 選擇商品
+
+            var productSelect = document.querySelectorAll('.product-select li');
+            for (i = 0; i < productSelect.length; i++) {
+                productSelect[i].addEventListener('click', refreshMain)
+            }
+
+            function refreshMain() {
+                var img = $(this).data('img');
+                var bg = $(this).data('bg');
+                $(this).parents('.content').siblings('.bgimg').attr('src', img);
+                $(this).parents('.section').css('background-image', "url(" + bg + ")");
+                BackgroundCheck.get('targets');
+                BackgroundCheck.set('images', '.mainpage')
+                BackgroundCheck.refresh();
+            }
+
+        });
+         function initialization() {
 
                 $('#fullpage').fullpage({
                     anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage',
@@ -480,13 +508,13 @@
                             $('.arrow+p').fadeIn();
 
                         }
-                      
+
                     },
 
                     afterLoad: function (anchorLink, index) {
 
                         // console.log(winWidth);
-                          var num = index - 1;
+                        var num = index - 1;
                         $('.section' + num).addClass('animated');
                         if (anchorLink == '3rdPage') {
                             svgCircle();
@@ -506,103 +534,78 @@
                     },
                     afterRender: function () {
                         $.fn.fullpage.setRecordHistory(false);
-                        
+
 
                     }
                 });
             }
             initialization();
 
-            // 箭頭典籍往下
-            $('#moveSectionDown').click(function (e) {
-                e.preventDefault();
-                $.fn.fullpage.moveSectionDown();
-            });
+             // 圓圈動畫
+                function svgCircle() {
+                    var path = $('.circle svg').find('path');
+                    var pathLength = path[0].getTotalLength();
+                    var speed = 1.5;
+                    var percentspan = parseInt($('.figure span').html());
+                    var percent = 1;
 
-
-            // 圓圈動畫
-            function svgCircle() {
-                var path = $('.circle svg').find('path');
-                var pathLength = path[0].getTotalLength();
-                var speed = 1.5;
-                var percentspan = parseInt($('.figure span').html());
-                var percent = 1;
-
-                path.css({
-                    'stroke-dasharray': pathLength + ' ' + pathLength,
-                    'stroke-dashoffset': pathLength
-                });
-
-                if (!isIE()) {
-                    $('.path').velocity({
-                        'stroke-dashoffset': 0
-                    }, {
-                        duration: speed * 1000,
-                        progress: function () {
-                            var percentText = percentspan - Math.round(parseFloat($(this).css(
-                                'stroke-dashoffset')) / pathLength * percentspan);
-                            // console.log(percentText);
-                            $('.figure span').html(percentText + '%');
-                        }
-
+                    path.css({
+                        'stroke-dasharray': pathLength + ' ' + pathLength,
+                        'stroke-dashoffset': pathLength
                     });
 
-                } else {
-                    var currentPathLength = pathLength;
-                    var requestAnimationFrameID = requestAnimationFrame(doAnim);
+                    if (!isIE()) {
+                        $('.path').velocity({
+                            'stroke-dashoffset': 0
+                        }, {
+                                duration: speed * 1000,
+                                progress: function () {
+                                    var percentText = percentspan - Math.round(parseFloat($(this).css(
+                                        'stroke-dashoffset')) / pathLength * percentspan);
+                                    // console.log(percentText);
+                                    $('.figure span').html(percentText + '%');
+                                }
 
-                    function doAnim() {
-                        if (currentPathLength <= pathLength * (1 - percent)) {
-                            cancelAnimationFrame(requestAnimationFrameID);
-                            return;
+                            });
+
+                    } else {
+                        var currentPathLength = pathLength;
+                        var requestAnimationFrameID = requestAnimationFrame(doAnim);
+
+                        function doAnim() {
+                            if (currentPathLength <= pathLength * (1 - percent)) {
+                                cancelAnimationFrame(requestAnimationFrameID);
+                                return;
+                            }
+
+                            var percentText = percentspan - Math.round(parseFloat(currentPathLength) / pathLength *
+                                percentspan);
+                            $('.figure h4 span').html(percentText + '%');
+
+                            $('.path').css({
+                                'stroke-dashoffset': currentPathLength
+                            });
+                            currentPathLength -= 2;
+                            requestAnimationFrameID = requestAnimationFrame(doAnim);
                         }
+                    }
 
-                        var percentText = percentspan - Math.round(parseFloat(currentPathLength) / pathLength *
-                            percentspan);
-                        $('.figure h4 span').html(percentText + '%');
-
-                        $('.path').css({
-                            'stroke-dashoffset': currentPathLength
-                        });
-                        currentPathLength -= 2;
-                        requestAnimationFrameID = requestAnimationFrame(doAnim);
+                    function isIE(userAgent) {
+                        userAgent = userAgent || navigator.userAgent;
+                        return userAgent.indexOf("MSIE ") > -1 || userAgent.indexOf("Trident/") > -1;
                     }
                 }
 
-                function isIE(userAgent) {
-                    userAgent = userAgent || navigator.userAgent;
-                    return userAgent.indexOf("MSIE ") > -1 || userAgent.indexOf("Trident/") > -1;
-                }
-            }
-
-            // wave
-            var SW = new SiriWave({
-                width: 500,
-                height: 100,
-                speed: 0.03,
-                color: '#00d0aa',
-                amplitude: .3,
-                container: document.getElementById('wave'),
-                autostart: true,
-            });
-            // 選擇商品
-
-            var productSelect = document.querySelectorAll('.product-select li');
-            for (i = 0; i < productSelect.length; i++) {
-                productSelect[i].addEventListener('click', refreshMain)
-            }
-
-            function refreshMain() {
-                var img = $(this).data('img');
-                var bg = $(this).data('bg');
-                $(this).parents('.content').siblings('.bgimg').attr('src', img);
-                $(this).parents('.section').css('background-image', "url(" + bg + ")");
-                BackgroundCheck.get('targets');
-                BackgroundCheck.set('images', '.mainpage')
-                BackgroundCheck.refresh();
-            }
-
-        });
+                // wave
+                var SW = new SiriWave({
+                    width: 500,
+                    height: 100,
+                    speed: 0.03,
+                    color: '#00d0aa',
+                    amplitude: .3,
+                    container: document.getElementById('wave'),
+                    autostart: true,
+                });
     </script>
 
 </body>

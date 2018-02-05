@@ -25,7 +25,7 @@
             <div class="section text-only">
                 <div class="container text-left" style="max-width:800px;">
                     <h3>Terms And Conditions</h3>
-                    
+
 
                     <p>EnergieMAX Corporation (&quot;EnergieMAX &quot;) has developed these Site Terms to govern your use of
                         EnergieMAX &#39;s site, located at www. energiemax.com (the &quot;Site&quot;). EnergieMAX provides
@@ -233,19 +233,19 @@
 
     <!-- layout -->
     <script src="scripts/layout.js"></script>
-    <!-- <script src="scripts/notfullpage.js"></script> -->
-<script>
-    $(document).ready(function () {
+
+    <script>
+        var windowW = $(window).width();
         function initialization() {
             $('#fullpage').fullpage({
-                anchors: ['firstPage', 'footer'],
+                // anchors: ['firstPage', 'footer'],
                 menu: '#dots',
                 keyboardScrolling: true,
                 animateAnchor: true,
                 // scrollOverflow: true,
-                 fitToSection: false,
+                fitToSection: false,
                 autoScrolling: false,
-                // responsiveWidth: 769,
+                responsiveWidth: 768,
 
                 onLeave: function (index, nextIndex, direction) {
                     var leavingSection = $(this);
@@ -255,12 +255,12 @@
                         $('.arrow').fadeOut();
                         $('.arrow+p').fadeOut();
                         $('header').fadeOut(100);
-                        
+
                     } else {
                         $('.arrow').fadeIn();
                         $('.arrow+p').fadeIn();
                         $('header').fadeIn(100);
-                       
+
                     }
 
                 },
@@ -281,16 +281,37 @@
             });
         }
         initialization();
+        function mobileHeader() {
 
-        $('#moveSectionDown').click(function (e) {
-            e.preventDefault();
-            $.fn.fullpage.moveSectionDown();
+
+            if (windowW <= 768) {
+                $(window).scroll(function () {
+                    var lastScrollTop = 0;
+                    var st = $(this).scrollTop();
+                    if (st > lastScrollTop) {
+                        $('header').fadeOut();
+                        console.log('fade');
+                    } else {
+                        $('header').fadeIn();
+                    }
+                }
+                )
+            }
+
+        }
+
+        mobileHeader();
+
+        $(document).ready(function () {
+            $('#moveSectionDown').click(function (e) {
+                e.preventDefault();
+                $.fn.fullpage.moveSectionDown();
+            });
+
+
+
         });
-
-
-
-    });
-</script>
+    </script>
 
 
 </body>

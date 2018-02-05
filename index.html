@@ -33,7 +33,7 @@
             <div class="menu-list">
                 <div class="logo-area">
                     <a href="index.html">
-                    <img src="Content/img/logo.svg" alt="">
+                        <img src="Content/img/logo.svg" alt="">
                     </a>
                     <p style="font-size:12px;margin:10px 0;font-weight:200">POWER ON THE GO</p>
                 </div>
@@ -77,12 +77,12 @@
                 </div>
                 <!-- 次選單商品列表 -->
                 <ul>
-                  
+
                 </ul>
             </div>
         </nav>
     </header>
-   
+
     <div class="mainSlider slider-container">
         <div class="slider-wrapper" id="fullpage">
             <!-- 第一區塊  -->
@@ -121,7 +121,7 @@
                         <!-- 圖文編輯器內容 -->
                         <div class="main-content" style="animation-timing-function: ease;">
                             <h2 class="target fadeDown" style="animation-timing-function: ease;">500PD</h2>
-                            <p style="animation-delay: 1s;animation-timing-function: ease;" class="target fadeUp" >Power for all</p>
+                            <p style="animation-delay: 1s;animation-timing-function: ease;" class="target fadeUp">Power for all</p>
                         </div>
                         <a href="product500PD.html" class="target fadeUp" style="animation-delay: 1.5s;animation-timing-function: ease;">Explore</a>
                     </div>
@@ -152,7 +152,8 @@
                         <li>
                             <div>
                                 <a href="index.html">
-                                <img src="Content/img/logo2.svg" alt="" width="163px"></a>
+                                    <img src="Content/img/logo2.svg" alt="" width="163px">
+                                </a>
                                 <p style="color:#787878">© 2017 EnergieMAX Design Corp. All Rights Reserved
                                 </p>
                             </div>
@@ -161,27 +162,45 @@
                         <li>
                             <h4>Product</h4>
                             <ul>
-                                <li><a href="product.html">Power</a></li>
-                                <li><a href="product.html">Cable</a></li>
-                                <li><a href="product.html">Accessories</a></li>
+                                <li>
+                                    <a href="product.html">Power</a>
+                                </li>
+                                <li>
+                                    <a href="product.html">Cable</a>
+                                </li>
+                                <li>
+                                    <a href="product.html">Accessories</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
                             <h4>Support</h4>
                             <ul>
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="warranty.html">Warranty</a></li>
-                                <li><a href="priv.html">Privacy Policy</a></li>
-                                <li><a href="terms.html">Terms & Conditions</a></li>
+                                <li>
+                                    <a href="faq.html">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="warranty.html">Warranty</a>
+                                </li>
+                                <li>
+                                    <a href="priv.html">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="terms.html">Terms & Conditions</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
                             <h4>About EnergieMAX
                             </h4>
                             <ul>
-                                <li><a href="news.html">News</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                               
+                                <li>
+                                    <a href="news.html">News</a>
+                                </li>
+                                <li>
+                                    <a href="contact.html">Contact</a>
+                                </li>
+
                                 <li class="text-left contact d-flex">
                                     <a class="inlineBlock">EN / CN</a>
                                     <a href="">
@@ -262,65 +281,66 @@
             targets: '.target',
             images: '.thumbnail'
         });
-         function addSection() {
-                var sections = document.querySelectorAll('.section');
-                for (i = 0; i < sections.length; i++) {
-                    sections[i].className += (' section' + i);
-                }
+        function addSection() {
+            var sections = document.querySelectorAll('.section');
+            for (i = 0; i < sections.length; i++) {
+                sections[i].className += (' section' + i);
             }
-            addSection();
-        $(document).ready(function () {
-            var winWidth=$(window).width();
-            // fullpage 螢幕高
-            $('#fullpage').fullpage({
-                anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'footer'],
-                menu: '#dots',
-                keyboardScrolling: true,
-                animateAnchor: true,
-                scrollOverflow: true,
-                // responsiveWidth: 768,
-                onLeave: function (index, nextIndex, direction) {
-                    var leavingSection = $(this);
+        }
+        addSection();
 
-                    //after leaving section 2
-                    if (index == 4 && direction == 'down') {
-                        $('.slider-footer').fadeOut();
-                        $('#dots').fadeOut();
-                    } else {
-                        $('.slider-footer').fadeIn();
-                        $('#dots').fadeIn();
-                    }
-                    
-                    
-                },
-                afterLoad: function (anchorLink, index) {
+        var winWidth = $(window).width();
+        // fullpage 螢幕高
+        $('#fullpage').fullpage({
+            anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'footer'],
+            menu: '#dots',
+            keyboardScrolling: true,
+            animateAnchor: true,
+            scrollOverflow: true,
+            // responsiveWidth: 768,
+            onLeave: function (index, nextIndex, direction) {
+                var leavingSection = $(this);
 
-                    // console.log(winWidth);
-                    var num = index - 1;
-                    $('.section' + num).addClass('animated');
-                    if (winWidth <= 768 && anchorLink == 'footer') {
-                         $('header').fadeOut(100);
-                    }else{
-                        $('header').fadeIn(100);
-                    }
-                    BackgroundCheck.refresh();
-                },
-                afterRender: function () {
-                    BackgroundCheck.refresh();
-                    $.fn.fullpage.setRecordHistory(false);
-                
+                //after leaving section 2
+                if (index == 4 && direction == 'down') {
+                    $('.slider-footer').fadeOut();
+                    $('#dots').fadeOut();
+                } else {
+                    $('.slider-footer').fadeIn();
+                    $('#dots').fadeIn();
                 }
 
-            });
+
+            },
+            afterLoad: function (anchorLink, index) {
+
+                // console.log(winWidth);
+                var num = index - 1;
+                $('.section' + num).addClass('animated');
+                if (winWidth <= 768 && anchorLink == 'footer') {
+                    $('header').fadeOut(100);
+                } else {
+                    $('header').fadeIn(100);
+                }
+                BackgroundCheck.refresh();
+            },
+            afterRender: function () {
+                BackgroundCheck.refresh();
+                $.fn.fullpage.setRecordHistory(false);
+
+            }
+
+        });
+        $(document).ready(function () {
             // 點箭頭往下移動
             $('#moveSectionDown').click(function (e) {
                 e.preventDefault();
                 $.fn.fullpage.moveSectionDown();
             });
-            
+
         });
     </script>
-  
+
 
 </body>
 

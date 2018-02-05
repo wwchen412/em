@@ -1413,7 +1413,7 @@ footer {
   padding-bottom: 100%; }
   @media screen and (max-width: 768px) and (min-width: 300px) {
     .childpage .squareImg {
-      margin: 20px 0; } }
+      margin: 10px 0; } }
   .childpage .squareImg img {
     position: absolute;
     top: 0;
@@ -1591,7 +1591,8 @@ article {
     max-width: 800px;
     margin: auto; }
     .faq .faq-content .content-text p {
-      margin-bottom: 10px; }
+      margin-bottom: 10px;
+      text-align: left; }
 
 .warranty {
   padding: 52px 0; }

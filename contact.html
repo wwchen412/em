@@ -21,7 +21,7 @@
     <div class="mainSlider">
         <div id="fullpage">
             <!-- 內頁區塊首頁 -->
-            <div class="section childpage bg-darken" >
+            <div class="section childpage bg-darken">
                 <div class="content">
                     <div class="container">
                         <!-- 圖文編輯器內容 -->
@@ -112,7 +112,10 @@
                             <p>Question</p>
                         </div>
                         <div class="faq-content">
-                            <p>Email with EnergieMAX customer service representative and get answers.<br> <a href="mailto:hello@energiemax.com">hello@energiemax.com</a></p>
+                            <p>Email with EnergieMAX customer service representative and get answers.
+                                <br>
+                                <a href="mailto:hello@energiemax.com">hello@energiemax.com</a>
+                            </p>
                         </div>
                     </li>
                     <li>
@@ -145,10 +148,11 @@
                             <p>Sales</p>
                         </div>
                         <div class="faq-content">
-                    <p>If you’d like to do business with EnergieMAX, <br>email us about yourself and what you’re looking for.
-                        <br>
-                        <a href="mailto:sales@energiemax.com">sales@energiemax.com</a>
-                    </p>
+                            <p>If you’d like to do business with EnergieMAX,
+                                <br>email us about yourself and what you’re looking for.
+                                <br>
+                                <a href="mailto:sales@energiemax.com">sales@energiemax.com</a>
+                            </p>
                         </div>
                     </li>
                     <li>
@@ -221,11 +225,24 @@
                     </li>
                 </ul>
                 <div class="faq-answer">
-                    <p >NO.20 Pinghe S. Rd., Xiaogang District, Kaohsiung, Taiwan</p>
-                    <p>Email with EnergieMAX customer service representative and get answers.<br> <a href="mailto:hello@energiemax.com">hello@energiemax.com</a></p>
-                    <p>If you’d like to do business with EnergieMAX, <br>email us about yourself and what you’re looking for.<br> <a href="mailto:sales@energiemax.com">sales@energiemax.com</a></p>
-                    <p>Let's work together to create powerful integrations of our products to make the life better.<br> <a href="mailto:partnership@energiemax.com">partnership@energiemax.com</a></p>
-                    <p>Press releases, pics and video can be found on our press page. For inquiries:<br> <a href="mailto:press@energiemax.com">press@energiemax.com</a></p>
+                    <p>NO.20 Pinghe S. Rd., Xiaogang District, Kaohsiung, Taiwan</p>
+                    <p>Email with EnergieMAX customer service representative and get answers.
+                        <br>
+                        <a href="mailto:hello@energiemax.com">hello@energiemax.com</a>
+                    </p>
+                    <p>If you’d like to do business with EnergieMAX,
+                        <br>email us about yourself and what you’re looking for.
+                        <br>
+                        <a href="mailto:sales@energiemax.com">sales@energiemax.com</a>
+                    </p>
+                    <p>Let's work together to create powerful integrations of our products to make the life better.
+                        <br>
+                        <a href="mailto:partnership@energiemax.com">partnership@energiemax.com</a>
+                    </p>
+                    <p>Press releases, pics and video can be found on our press page. For inquiries:
+                        <br>
+                        <a href="mailto:press@energiemax.com">press@energiemax.com</a>
+                    </p>
                 </div>
             </div>
 
@@ -306,7 +323,7 @@
                 </li>
                 <li class="text-center">
                     <img id="moveSectionDown" src="Content/img/arrow.svg" alt="" class="inlineBlock  arrow d-sm-none">
-                    
+
                 </li>
                 <li class="text-right contact d-sm-none">
                     <p class="inlineBlock ">EN / CN</p>
@@ -339,85 +356,85 @@
 
     <!-- layout -->
     <script src="scripts/layout.js"></script>
-    <script src="scripts/notfullpage.js"></script>
+    <script src="scripts/scroll.js"></script>
 
     <script type="text/javascript">
-        $(document).ready(function () {
-            
-            function initialization() {
-                $('#fullpage').fullpage({
-                    anchors: ['firstPage', 'secondPage', 'footer'],
-                    menu: '#dots',
-                    keyboardScrolling: true,
-                    animateAnchor: true,
-                    // scrollOverflow: true,
-                     fitToSection: false,
-                    autoScrolling: false,
-                    // responsiveWidth: 769,
 
-                    onLeave: function (index, nextIndex, direction) {
-                        var leavingSection = $(this);
 
-                        //after leaving section 2
-                        if (index >= 2 && direction == 'down') {
-                            $('.arrow').fadeOut();
-                            $('.arrow+p').fadeOut();
-                            $('header').fadeOut(100);
-                        } else {
-                            $('.arrow').fadeIn();
-                            $('.arrow+p').fadeIn();
-                            $('header').fadeIn(100);
-                        }
-                    },
-                    afterLoad: function (anchorLink, index) {
+        function initialization() {
+            $('#fullpage').fullpage({
+                anchors: ['firstPage', 'secondPage', 'footer'],
+                menu: '#dots',
+                keyboardScrolling: true,
+                animateAnchor: true,
+                // scrollOverflow: true,
+                fitToSection: false,
+                autoScrolling: false,
+                // responsiveWidth: 769,
 
-                        if (anchorLink == 'footer') {
-                            $('.slider-footer').fadeOut(100);
-                            $('#dots').fadeOut(100);
-                             $.fn.fullpage.reBuild();
-                        }
-                    },
-                    afterRender: function () {
-                        $.fn.fullpage.setRecordHistory(false);
+                onLeave: function (index, nextIndex, direction) {
+                    var leavingSection = $(this);
+
+                    //after leaving section 2
+                    if (index >= 2 && direction == 'down') {
+                        $('.arrow').fadeOut();
+                        $('.arrow+p').fadeOut();
+                        $('header').fadeOut(100);
+                    } else {
+                        $('.arrow').fadeIn();
+                        $('.arrow+p').fadeIn();
+                        $('header').fadeIn(100);
                     }
-                });
-            }
-            initialization();
+                },
+                afterLoad: function (anchorLink, index) {
 
+                    if (anchorLink == 'footer') {
+                        $('.slider-footer').fadeOut(100);
+                        $('#dots').fadeOut(100);
+                        $.fn.fullpage.reBuild();
+                    }
+                },
+                afterRender: function () {
+                    $.fn.fullpage.setRecordHistory(false);
+                }
+            });
+        }
+        initialization();
+        $(document).ready(function () {
             $('#moveSectionDown').click(function (e) {
                 e.preventDefault();
                 $.fn.fullpage.moveSectionDown();
             });
 
 
-            
-           function faqcontact(){
-               // 手機版聯絡問題
-               var $windowWidth = $(window).width();
-            //    console.log($windowWidth);
-               if ($windowWidth <= 768) {
-                   $('.faq-title').click(function () {
+
+            function faqcontact() {
+                // 手機版聯絡問題
+                var $windowWidth = $(window).width();
+                //    console.log($windowWidth);
+                if ($windowWidth <= 768) {
+                    $('.faq-title').click(function () {
                         $.fn.fullpage.reBuild();
-                       $(this).toggleClass('active').parents().siblings('li').children('.faq-title').removeClass(
-                           'active');
-                       $(this).siblings('.faq-content').slideToggle().parents().siblings('li').children(
-                           '.faq-content').slideUp();
-                       // $(this).siblings('.faq-content').toggleClass('active');
-                   })
-               }else {
-                   $('.faq-list li').click(function(){
+                        $(this).toggleClass('active').parents().siblings('li').children('.faq-title').removeClass(
+                            'active');
+                        $(this).siblings('.faq-content').slideToggle().parents().siblings('li').children(
+                            '.faq-content').slideUp();
+                        // $(this).siblings('.faq-content').toggleClass('active');
+                    })
+                } else {
+                    $('.faq-list li').click(function () {
                         $.fn.fullpage.reBuild();
-                       $(this).find('.faq-title').addClass('active');
-                       $(this).siblings().find('.faq-title').removeClass('active');
-                         var a = $(this).index();
-                       $('.faq-answer p').eq(a).fadeIn().siblings().hide();
-                   })
-               }
-           }
+                        $(this).find('.faq-title').addClass('active');
+                        $(this).siblings().find('.faq-title').removeClass('active');
+                        var a = $(this).index();
+                        $('.faq-answer p').eq(a).fadeIn().siblings().hide();
+                    })
+                }
+            }
             faqcontact();
 
         });
-        
+
     </script>
 
 </body>

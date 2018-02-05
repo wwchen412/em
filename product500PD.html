@@ -447,7 +447,7 @@
     <script src="scripts/layout.js"></script>
 
     <script type="text/javascript">
-        $(document).ready(function () {
+       
             BackgroundCheck.init({
                 targets: '.target',
                 images: '.thumbnail'
@@ -527,12 +527,13 @@
                 });
             }
             initialization();
-
+             $(document).ready(function () {
             // 箭頭典籍往下
             $('#moveSectionDown').click(function (e) {
                 e.preventDefault();
                 $.fn.fullpage.moveSectionDown();
             });
+             });
 
 
             // 圓圈動畫
@@ -617,7 +618,7 @@
                 BackgroundCheck.refresh();
             }
 
-        });
+       
     </script>
 
 </body>

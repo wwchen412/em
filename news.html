@@ -226,18 +226,18 @@
 
     <!-- layout -->
     <script src="scripts/layout.js"></script>
-    <script src="scripts/notfullpage.js"></script>
+    <script src="scripts/scroll.js"></script>
 
     <script type="text/javascript">
-        $(document).ready(function () {
-             function initialization() {
+        
+            function initialization() {
                 $('#fullpage').fullpage({
                     anchors: ['firstPage', 'secondPage', 'footer'],
-                   autoScrolling: false,
+                    autoScrolling: false,
                     menu: '#dots',
                     keyboardScrolling: true,
                     animateAnchor: true,
-                     fitToSection: false,
+                    fitToSection: false,
                     // scrollOverflow: true,
                     // responsiveWidth: 769,
 
@@ -249,15 +249,15 @@
                             $('.arrow').fadeOut();
                             $('.arrow+p').fadeOut();
                             $('header').fadeOut(100);
-                            $('.slider-footer').fadeOut(100);
-                        }else if(index >= 2 && direction == 'down'){
-                             $('.slider-footer').fadeOut(100);
+                            
+                        } else if (index >= 2 && direction == 'down') {
+                           
                             $('#dots').fadeOut(100);
-                        }else {
+                        } else {
                             $('.arrow').fadeIn();
                             $('.arrow+p').fadeIn();
                             $('header').fadeIn(100);
-                              $('.slider-footer').fadeIn(100);
+                            
                         }
                     },
                     afterLoad: function (anchorLink, index) {
@@ -265,7 +265,7 @@
                             $('.slider-footer').fadeOut(100);
                             $('#dots').fadeOut(100);
 
-                        } 
+                        }
                     },
                     afterRender: function () {
                         $.fn.fullpage.setRecordHistory(false);
@@ -273,16 +273,18 @@
                 });
             }
             initialization();
-         
-            
-            $('#moveSectionDown').click(function (e) {
-                e.preventDefault();
-                $.fn.fullpage.moveSectionDown();
-            });
 
+            $(function(){
+                 $('#moveSectionDown').click(function (e) {
+                    e.preventDefault();
+                    $.fn.fullpage.moveSectionDown();
+                });
+            })
            
 
-        });
+
+
+        
     </script>
 
 </body>
