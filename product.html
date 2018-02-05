@@ -542,7 +542,7 @@
             initialization();
 
              // 圓圈動畫
-                function svgCircle() {
+                var svgCircle = function () {
                     var path = $('.circle svg').find('path');
                     var pathLength = path[0].getTotalLength();
                     var speed = 1.5;
@@ -594,6 +594,7 @@
                         userAgent = userAgent || navigator.userAgent;
                         return userAgent.indexOf("MSIE ") > -1 || userAgent.indexOf("Trident/") > -1;
                     }
+                    svgCircle = function(){};
                 }
 
                 // wave
