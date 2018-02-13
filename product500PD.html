@@ -410,7 +410,7 @@
                     </a>
                     <p style="" class="">© 2017 EnergieMAX Design Corp. All Rights Reserved</p>
                 </li>
-                <li class="text-center">
+                <li class="text-center d-sm-none">
                     <img id="moveSectionDown" src="Content/img/arrow.svg" alt="" class="inlineBlock  arrow ">
                     <p class="inlineBlock d-sm-none " style="margin-left:20px">Scroll Down</p>
                 </li>
@@ -465,7 +465,21 @@
            
 
             var winWidth = $(window).width();
+              if (winWidth <= 768) {
+                    $(window).scroll(function () {
+                        var windowHeight = $(this).scrollTop();
 
+                        $('.section').each(function () {
+                            var sectionHeight = $(this).height() / 3;
+                            var sectionTOP = $(this).offset().top;
+                            console.log(sectionHeight);
+                            if (windowHeight > sectionTOP - sectionHeight) {
+                                $(this).addClass('animated');
+                            }
+                        })
+
+                    })
+                }
             function initialization() {
 
                 $('#fullpage').fullpage({
