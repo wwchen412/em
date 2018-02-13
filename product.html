@@ -145,39 +145,7 @@
                 <!-- 設定的圖片 -->
 
             </div>
-            <!-- 區塊佔一半 -->
-            <!-- <div class="section " style="background-image:url('Content/img/section2.jpg')">
 
-                <div class="content half-block">
-                    <div class="half halfR">
-                        <div class="text">
-                            <div class="text-inner">
-                                <h3 class="fadeDown">缺資料</h3>
-                                <p class="fadeUp">缺資料</p>
-                            </div>
-
-                        </div>
-                        <div class="img-wrap">
-                            <img src="Content/img/2017-11-15_.jpg" alt="" class="img-fluid fadeDown" style="animation-delay: 0s">
-                        </div>
-                    </div>
-                    <div class="half halfL">
-                        <div class="text">
-                            <div class="text-inner">
-                                <h3 class="fadeDown">缺資料</h3>
-                                <p class="fadeUp">缺資料</p>
-                            </div>
-
-                        </div>
-                        <div class="img-wrap">
-                            <img src="Content/img/qc.png" alt="" class="img-fluid fadeDown" style="animation-delay: 0s">
-                        </div>
-                    </div>
-
-                </div>
-              
-
-            </div> -->
             <!-- 區塊佔一半 -->
             <div class="section">
 
@@ -360,7 +328,7 @@
                             <ul>
                                 <li>News</li>
                                 <li>Contact</li>
-                                
+
                             </ul>
                         </li>
                     </ul>
@@ -403,7 +371,7 @@
                     </a>
                     <p style="" class="">© 2017 EnergieMAX Design Corp. All Rights Reserved</p>
                 </li>
-                <li class="text-center">
+                <li class="text-center d-sm-none">
                     <img id="moveSectionDown" src="Content/img/arrow.svg" alt="" class="inlineBlock  arrow ">
                     <p class="inlineBlock d-sm-none " style="margin-left:20px">Scroll Down</p>
                 </li>
@@ -455,16 +423,11 @@
             addSection();
             var winWidth = $(window).width();
 
-           
-
             // 箭頭典籍往下
             $('#moveSectionDown').click(function (e) {
                 e.preventDefault();
                 $.fn.fullpage.moveSectionDown();
             });
-
-
-           
             // 選擇商品
 
             var productSelect = document.querySelectorAll('.product-select li');
@@ -481,132 +444,148 @@
                 BackgroundCheck.set('images', '.mainpage')
                 BackgroundCheck.refresh();
             }
+            if (winWidth <= 768) {
+                $(window).scroll(function () {
+                    var windowHeight = $(this).scrollTop();
+
+                    $('.section').each(function () {
+                        var sectionHeight = $(this).height() / 3;
+                        var sectionTOP = $(this).offset().top;
+                        console.log(sectionHeight);
+                        if (windowHeight > sectionTOP - sectionHeight) {
+                            $(this).addClass('animated');
+                        }
+                    })
+
+                })
+            }
+
 
         });
-         function initialization() {
+        function initialization() {
 
-                $('#fullpage').fullpage({
-                    anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage',
-                        '7thPage', 'footer'],
-                    menu: '#dots',
-                    keyboardScrolling: true,
-                    animateAnchor: true,
-                    scrollOverflow: true,
+            $('#fullpage').fullpage({
+                anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage',
+                    '7thPage', 'footer'],
+                menu: '#dots',
+                keyboardScrolling: true,
+                animateAnchor: true,
+                scrollOverflow: true,
 
-                    responsiveWidth: 769,
+                responsiveWidth: 769,
 
-                    onLeave: function (index, nextIndex, direction) {
+                onLeave: function (index, nextIndex, direction) {
 
-                        var leavingSection = $(this);
-                        // console.log(index);
-                        //after leaving section 2
-                        if (index >= 1 && direction == 'down') {
-                            $('.arrow').fadeOut();
-                            $('.arrow+p').fadeOut();
-                        } else {
-                            $('.arrow').fadeIn();
-                            $('.arrow+p').fadeIn();
-
-                        }
-
-                    },
-
-                    afterLoad: function (anchorLink, index) {
-
-                        // console.log(winWidth);
-                        var num = index - 1;
-                        $('.section' + num).addClass('animated');
-                        if (anchorLink == '3rdPage') {
-                            svgCircle();
-                        } else if (anchorLink == 'footer') {
-                            $('.slider-footer').fadeOut(100);
-                            $('#dots').fadeOut(100);
-                            $('#header').fadeOut(100);
-                        } else {
-                            $('.slider-footer').fadeIn();
-                            $('#dots').fadeIn();
-                            $('header').fadeIn(100);
-                        }
-                        BackgroundCheck.get('targets');
-                        BackgroundCheck.set('images', '.thumbnail');
-                        BackgroundCheck.refresh();
-
-                    },
-                    afterRender: function () {
-                        $.fn.fullpage.setRecordHistory(false);
-
+                    var leavingSection = $(this);
+                    // console.log(index);
+                    //after leaving section 2
+                    if (index >= 1 && direction == 'down') {
+                        $('.arrow').fadeOut();
+                        $('.arrow+p').fadeOut();
+                    } else {
+                        $('.arrow').fadeIn();
+                        $('.arrow+p').fadeIn();
 
                     }
-                });
-            }
-            initialization();
 
-             // 圓圈動畫
-                var svgCircle = function () {
-                    var path = $('.circle svg').find('path');
-                    var pathLength = path[0].getTotalLength();
-                    var speed = 1.5;
-                    var percentspan = parseInt($('.figure span').html());
-                    var percent = 1;
+                },
 
-                    path.css({
-                        'stroke-dasharray': pathLength + ' ' + pathLength,
-                        'stroke-dashoffset': pathLength
+                afterLoad: function (anchorLink, index) {
+
+                    // console.log(winWidth);
+                    var num = index - 1;
+                    $('.section' + num).addClass('animated');
+                    if (anchorLink == '3rdPage') {
+                        svgCircle();
+                    } else if (anchorLink == 'footer') {
+                        $('.slider-footer').fadeOut(100);
+                        $('#dots').fadeOut(100);
+                        $('#header').fadeOut(100);
+                    } else {
+                        $('.slider-footer').fadeIn();
+                        $('#dots').fadeIn();
+                        $('header').fadeIn(100);
+                    }
+                    BackgroundCheck.get('targets');
+                    BackgroundCheck.set('images', '.thumbnail');
+                    BackgroundCheck.refresh();
+
+                },
+                afterRender: function () {
+                    $.fn.fullpage.setRecordHistory(false);
+
+
+                }
+            });
+        }
+        initialization();
+
+        // 圓圈動畫
+        var svgCircle = function () {
+            var path = $('.circle svg').find('path');
+            var pathLength = path[0].getTotalLength();
+            var speed = 1.5;
+            var percentspan = parseInt($('.figure span').html());
+            var percent = 1;
+
+            path.css({
+                'stroke-dasharray': pathLength + ' ' + pathLength,
+                'stroke-dashoffset': pathLength
+            });
+
+            if (!isIE()) {
+                $('.path').velocity({
+                    'stroke-dashoffset': 0
+                }, {
+                        duration: speed * 1000,
+                        progress: function () {
+                            var percentText = percentspan - Math.round(parseFloat($(this).css(
+                                'stroke-dashoffset')) / pathLength * percentspan);
+                            // console.log(percentText);
+                            $('.figure span').html(percentText + '%');
+                        }
+
                     });
 
-                    if (!isIE()) {
-                        $('.path').velocity({
-                            'stroke-dashoffset': 0
-                        }, {
-                                duration: speed * 1000,
-                                progress: function () {
-                                    var percentText = percentspan - Math.round(parseFloat($(this).css(
-                                        'stroke-dashoffset')) / pathLength * percentspan);
-                                    // console.log(percentText);
-                                    $('.figure span').html(percentText + '%');
-                                }
+            } else {
+                var currentPathLength = pathLength;
+                var requestAnimationFrameID = requestAnimationFrame(doAnim);
 
-                            });
-
-                    } else {
-                        var currentPathLength = pathLength;
-                        var requestAnimationFrameID = requestAnimationFrame(doAnim);
-
-                        function doAnim() {
-                            if (currentPathLength <= pathLength * (1 - percent)) {
-                                cancelAnimationFrame(requestAnimationFrameID);
-                                return;
-                            }
-
-                            var percentText = percentspan - Math.round(parseFloat(currentPathLength) / pathLength *
-                                percentspan);
-                            $('.figure h4 span').html(percentText + '%');
-
-                            $('.path').css({
-                                'stroke-dashoffset': currentPathLength
-                            });
-                            currentPathLength -= 2;
-                            requestAnimationFrameID = requestAnimationFrame(doAnim);
-                        }
+                function doAnim() {
+                    if (currentPathLength <= pathLength * (1 - percent)) {
+                        cancelAnimationFrame(requestAnimationFrameID);
+                        return;
                     }
 
-                    function isIE(userAgent) {
-                        userAgent = userAgent || navigator.userAgent;
-                        return userAgent.indexOf("MSIE ") > -1 || userAgent.indexOf("Trident/") > -1;
-                    }
-                    svgCircle = function(){};
+                    var percentText = percentspan - Math.round(parseFloat(currentPathLength) / pathLength *
+                        percentspan);
+                    $('.figure h4 span').html(percentText + '%');
+
+                    $('.path').css({
+                        'stroke-dashoffset': currentPathLength
+                    });
+                    currentPathLength -= 2;
+                    requestAnimationFrameID = requestAnimationFrame(doAnim);
                 }
+            }
 
-                // wave
-                var SW = new SiriWave({
-                    width: 500,
-                    height: 100,
-                    speed: 0.03,
-                    color: '#00d0aa',
-                    amplitude: .3,
-                    container: document.getElementById('wave'),
-                    autostart: true,
-                });
+            function isIE(userAgent) {
+                userAgent = userAgent || navigator.userAgent;
+                return userAgent.indexOf("MSIE ") > -1 || userAgent.indexOf("Trident/") > -1;
+            }
+            svgCircle = function () { };
+        }
+
+        // wave
+        var SW = new SiriWave({
+            width: 500,
+            height: 100,
+            speed: 0.03,
+            color: '#00d0aa',
+            amplitude: .3,
+            container: document.getElementById('wave'),
+            autostart: true,
+        });
     </script>
 
 </body>

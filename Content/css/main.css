@@ -950,7 +950,7 @@ footer {
       font-size: 36px; }
       @media screen and (max-width: 768px) and (min-width: 300px) {
         .products .content .animation-text .circle h4 {
-          font-size: 28px; } }
+          font-size: 22px; } }
     .products .content .animation-text .circle svg + div {
       position: absolute;
       top: 50%;

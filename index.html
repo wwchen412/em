@@ -291,46 +291,49 @@
 
         var winWidth = $(window).width();
         // fullpage 螢幕高
-        $('#fullpage').fullpage({
-            anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'footer'],
-            menu: '#dots',
-            keyboardScrolling: true,
-            animateAnchor: true,
-            scrollOverflow: true,
-            // responsiveWidth: 768,
-            onLeave: function (index, nextIndex, direction) {
-                var leavingSection = $(this);
+        function initialization() {
+            $('#fullpage').fullpage({
+                anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'footer'],
+                menu: '#dots',
+                keyboardScrolling: true,
+                animateAnchor: true,
+                scrollOverflow: true,
+                // responsiveWidth: 768,
+                onLeave: function (index, nextIndex, direction) {
+                    var leavingSection = $(this);
 
-                //after leaving section 2
-                if (index == 4 && direction == 'down') {
-                    $('.slider-footer').fadeOut();
-                    $('#dots').fadeOut();
-                } else {
-                    $('.slider-footer').fadeIn();
-                    $('#dots').fadeIn();
+                    //after leaving section 2
+                    if (index == 4 && direction == 'down') {
+                        $('.slider-footer').fadeOut();
+                        $('#dots').fadeOut();
+                    } else {
+                        $('.slider-footer').fadeIn();
+                        $('#dots').fadeIn();
+                    }
+
+
+                },
+                afterLoad: function (anchorLink, index) {
+
+                    // console.log(winWidth);
+                    var num = index - 1;
+                    $('.section' + num).addClass('animated');
+                    if (winWidth <= 768 && anchorLink == 'footer') {
+                        $('header').fadeOut(100);
+                    } else {
+                        $('header').fadeIn(100);
+                    }
+                    BackgroundCheck.refresh();
+                },
+                afterRender: function () {
+                    BackgroundCheck.refresh();
+                    $.fn.fullpage.setRecordHistory(false);
+
                 }
 
-
-            },
-            afterLoad: function (anchorLink, index) {
-
-                // console.log(winWidth);
-                var num = index - 1;
-                $('.section' + num).addClass('animated');
-                if (winWidth <= 768 && anchorLink == 'footer') {
-                    $('header').fadeOut(100);
-                } else {
-                    $('header').fadeIn(100);
-                }
-                BackgroundCheck.refresh();
-            },
-            afterRender: function () {
-                BackgroundCheck.refresh();
-                $.fn.fullpage.setRecordHistory(false);
-
-            }
-
-        });
+            });        
+        };
+        initialization();
         $(document).ready(function () {
             // 點箭頭往下移動
             $('#moveSectionDown').click(function (e) {
